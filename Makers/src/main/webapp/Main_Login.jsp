@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,11 +18,11 @@
 
   <div class="e239_3616">
     <div class="MAKERSback"></div>
-    <h1 class="e123_1">��ú���� Ȯ���ϴ� ���� �Ƿº�ȭ</h1>
-    <p class="e123_2">�������� �󸶳� �þ�����?</p>
+    <h1 class="e123_1">대시보드로 확인하는 나의 실력변화</h1>
+    <p class="e123_2">어제보다 얼마나 늘었을까?</p>
     <h1 class="MAKERS">: MAKERS</h1>
     <h1 class="Login_Study_with">Study with us!</h1>
-    <p class="Login_Study">����Ŀ���� �Բ� �����غ�����</p>
+    <p class="Login_Study">메이커스와 함께 공부해보세요</p>
 
     <h1 class="you">you are new? <a href="Join.html">Create new</a></h1>
     
@@ -61,13 +61,13 @@
 		
       <div class="icon-input1">
         
-        <input class="in_put" name = "id" type="text" autofocus name="id" placeholder="���̵� �Է�">
+        <input class="in_put" name = "id" type="text" autofocus name="id" placeholder="아이디 입력">
       </div>
       <br>
       <br>
 
       <div class="icon-input1">
-        <input class="in_put" name = "pw" type="password" name="pw" placeholder="�ܡܡܡܡܡܡ�">
+        <input class="in_put" name = "pw" type="password" name="pw" placeholder="●●●●●●●">
       </div>
       <br>
       <br>
