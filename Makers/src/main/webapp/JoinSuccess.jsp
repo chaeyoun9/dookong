@@ -1,9 +1,12 @@
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="com.dookong.model.MemberDTO" %>
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
-
-    <title>Html Generated</title>
+	
+    <title>Makers</title>
     <meta name="description" content="Figma htmlGenerator">
     <meta name="author" content="htmlGenerator">
     <link rel="stylesheet" href="assets/css/styles.css?after">
@@ -17,11 +20,11 @@
 </head>
 
 <body>
-
+	
     <div class="e239_3616">
         <div class="MAKERSback"></div>
-        <h1 class="e123_1">대시보드로 확인하는 나의 실력변화</h1>
-        <p class="e123_2">어제보다 얼마나 늘었을까?</p>
+        <h1 class="e123_1">��ú���� Ȯ���ϴ� ���� �Ƿº�ȭ</h1>
+        <p class="e123_2">�������� �󸶳� �þ�����?</p>
         <h1 class="MAKERS">: MAKERS</h1>
         <!-- <div class="e239_4043"></div> -->
         <div class="myChart">
@@ -51,7 +54,8 @@
             });
         </script>
         <h1 class="SUCCESS_WELCOME">WELCOME!</h1>
-        <p class="SUCCESS_Study">메이커스와 함께 빛날 김건형님의 미래를 응원합니다</p>
+        <% String name= (String)request.getAttribute("info"); %>
+        <p class="SUCCESS_Study">����Ŀ���� �Բ� ���� <%=name%>���� �̷��� �����մϴ�</p>
 
         <form action="" class="id">
             <br>
@@ -63,5 +67,4 @@
     </div>
 
 </body>
-
 </html>
