@@ -29,7 +29,7 @@ public class JoinService extends HttpServlet {
 			e.printStackTrace();
 		}
 		// 2. 요청값에서 필요한 데이터 꺼내오기! 
-		//    -> email, pw, tel, address 변수에 꺼내온 데이터 저장!
+		//    -
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String nick = request.getParameter("nick");
@@ -49,11 +49,16 @@ public class JoinService extends HttpServlet {
 			// 회원의 이메일 값을 JoinSuccess.jsp 페이지로 공유하기!
 			// -> request 영역 활용하기!
 			// -> 페이지 이동 방식 -> forward 방식
-			request.setAttribute("id", id);
+			request.setAttribute("info", nick);
+			
 			System.out.println("가입 성공");
+			
+			String path="JoinSuccess.jsp";
+			request.setAttribute("info", nick);
+	        request.getRequestDispatcher(path).forward(request, response);
 //			rd.forward(request, response);
 			
-		}else {
+		}else{
 			System.out.println("가입 실패");
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
