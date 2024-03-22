@@ -60,7 +60,7 @@
         <form action="" class="id">
             <br>
             <br>
-            <button class="singin2" type="button" onclick="window.location.href='Login.html';">Login</button>
+            <button class="singin2" type="button" onclick="window.location.href='Main_Login.jsp';">Login</button>
         </form>
 
 
