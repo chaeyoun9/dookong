@@ -9,12 +9,11 @@ public class MemberDTO {
 
 	
 	
-	public MemberDTO(String mb_id, String mb_pw, String mb_name, String joined_at) {
+	public MemberDTO(String mb_id, String mb_pw, String mb_name) {
 		super();
 		this.mb_id = mb_id;
 		this.mb_pw = mb_pw;
 		this.mb_name = mb_name;
-		this.joined_at = joined_at;
 	}
 	
 	

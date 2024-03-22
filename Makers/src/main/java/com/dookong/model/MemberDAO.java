@@ -30,4 +30,23 @@ public class MemberDAO {
 			return result;
 
 		}
+		
+		public int join(MemberDTO dto) {
+			// 1. sqlSession 빌려오기!
+
+			// 2. sql문장 전달!
+			int result = sqlSession.insert("join", dto);
+
+			// 3. 결과 처리
+			if (result > 0) {
+				System.out.println("회원 가입 성공!");
+			}
+
+			// 4. sqlSession 반납!
+			sqlSession.close();
+
+			return result;
+
+			
+		}
 }

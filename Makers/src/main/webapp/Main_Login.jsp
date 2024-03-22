@@ -55,7 +55,7 @@
     </script>
     <h1 class="Login_Study_with">Study with us!
 
-    <h1 class="you">you are new? <a href="Join.html">Create new</a></h1>
+    <h1 class="you">you are new? <a href="Main_Join.jsp">Create new</a></h1>
 
     <form action="LoginService" class="id">
 		

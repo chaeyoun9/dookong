@@ -1,18 +1,16 @@
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="utf-8">
 
-    <title>Html Generated</title>
+    <title>Makers</title>
     <meta name="description" content="Figma htmlGenerator">
     <meta name="author" content="htmlGenerator">
     <link rel="stylesheet" href="assets/css/styles.css?after">
 
-    <style>
-        body {
-            background: #E5E5E5;
-        }
-    </style>
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
@@ -20,8 +18,8 @@
 
     <div class="e239_3616">
         <div class="MAKERSback"></div>
-        <h1 class="e123_1">ëŒ€ì‹œë³´ë“œë¡œ í™•ì¸í•˜ëŠ” ë‚˜ì˜ ì‹¤ë ¥ë³€í™”</h1>
-        <p class="e123_2">ì–´ì œë³´ë‹¤ ì–¼ë§ˆë‚˜ ëŠ˜ì—ˆì„ê¹Œ?</p>
+        <h1 class="e123_1">´ë½Ãº¸µå·Î È®ÀÎÇÏ´Â ³ªÀÇ ½Ç·Âº¯È­</h1>
+        <p class="e123_2">¾îÁ¦º¸´Ù ¾ó¸¶³ª ´Ã¾úÀ»±î?</p>
         <h1 class="MAKERS">: MAKERS</h1>
         <!-- <div class="e239_4043"></div> -->
         <div class="myChart">
@@ -51,24 +49,24 @@
             });
         </script>
         <h1 class="JOIN_Create">Create new!</h1>
-        <p class="JOIN_Study">ë©”ì´ì»¤ìŠ¤ì™€ í•¨ê»˜ ê³µë¶€í•´ë³´ì„¸ìš”</p>
+        <p class="JOIN_Study">¸ÞÀÌÄ¿½º¿Í ÇÔ²² °øºÎÇØº¸¼¼¿ä</p>
 
-        <form action="JoinService" class="id1">
+        <form action="JoinService" method="post" class="id1">
             <div class="icon-input">
                 <p>ID</p>
-                <input class="in_put input-field" type="text" autofocus name="id" placeholder="ì˜ë¬¸,ìˆ«ìž ì¡°í•©ìœ¼ë¡œ 6~12ìž">
+                <input class="in_put" type="text" autofocus name="id" placeholder="¿µ¹®,¼ýÀÚ Á¶ÇÕÀ¸·Î 6~12ÀÚ">
             </div>
             <div class="icon-input">
                 <p>NICK NAME</p>
-                <input class="in_put input-field" type="text" name="nick" placeholder="ì˜ë¬¸/í•œê¸€ 1~10ìž">
+                <input class="in_put" type="text" name="nick" placeholder="¿µ¹®/ÇÑ±Û 1~10ÀÚ">
             </div>
             <div class="icon-input">
                 <p>PASSWORD</p>
-                <input class="in_put input-field" type="password" name="pw" placeholder="ì˜ë¬¸/ì†Œë¬¸ìž,ìˆ«ìž,íŠ¹ìˆ˜ê¸°í˜¸ í¬í•¨ 8~16ìž">
+                <input class="in_put" type="password" name="pw" placeholder="¿µ¹®/¼Ò¹®ÀÚ,¼ýÀÚ,Æ¯¼ö±âÈ£ Æ÷ÇÔ 8~16ÀÚ">
             </div>
             <div class="icon-input">
                 <p>PASSWORD CHECK</p>
-                <input class="in_put input-field" type="password" name="pwCheck" placeholder="ë¹„ë°€ë²ˆí˜¸ í™•ì¸">
+                <input class="in_put" type="password" name="pwCheck" placeholder="ºñ¹Ð¹øÈ£ È®ÀÎ">
             </div>
 
 
@@ -82,5 +80,4 @@
     </div>
 
 </body>
-
 </html>

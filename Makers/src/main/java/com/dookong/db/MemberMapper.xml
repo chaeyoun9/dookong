@@ -8,5 +8,9 @@
 		select * from members where mb_id=#{mb_id} and mb_pw=#{mb_pw}
 	</select>
 	
+	<insert id="join" parameterType="com.dookong.model.MemberDTO">
+		insert into members values(#{mb_id}, #{mb_pw} , #{mb_name} ,sysdate)	
+	</insert>
+	
 </mapper>
 

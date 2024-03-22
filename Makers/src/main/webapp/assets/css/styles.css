@@ -1,6 +1,10 @@
 
 
 
+body {
+       background: #E5E5E5;
+      }
+
 
 .e239_3616 { 
 	overflow:hidden;
@@ -143,7 +147,7 @@
     border: 1px solid #000;
     border-radius: 10px;
     background-color: white;
-    color: #000;
+    color: rgb(0, 0, 0);
     width: 350px;
     height: 40px;
     margin-bottom: 10px;
@@ -168,15 +172,7 @@
     left: 60px; /* 아이콘의 왼쪽 여백 */
 }
 
-.icon-input1 {
-    position: relative;
-}
-.icon-input1 i {
-    position: absolute;
-    top: 65%;
-    transform: translateY(-50%);
-    left: 10px; /* 아이콘의 왼쪽 여백 */
-}
+
 .input-field {
     padding-left: 30px; /* 아이콘 공간 확보 */
 }
@@ -185,7 +181,7 @@
     border: 1px solid #000; 
     border-radius: 10px;
     background-color: #000; 
-    color: #fff;
+    color: white;
 	width: 350px;
 	height: 40px
 }
