@@ -1,6 +1,7 @@
 package com.dookong.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 
 import javax.servlet.ServletException;
@@ -54,6 +55,12 @@ public class JoinService extends HttpServlet {
 			
 		}else {
 			System.out.println("가입 실패");
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script type=\"text/javascript\">");
+		    out.println("alert('아이디 또는 비밀번호가 올바르지 않습니다 다시 시도해주세요.');");
+		    out.println("window.location.href = 'Main_Login.jsp';"); // 로그인 페이지로 이동
+		    out.println("</script>");
 		}
 	
 	}

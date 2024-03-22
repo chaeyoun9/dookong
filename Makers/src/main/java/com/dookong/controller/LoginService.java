@@ -51,7 +51,11 @@ public class LoginService extends HttpServlet {
 		}else {
 			System.out.println("실패");
 			// 뭔가 다른 값을 연결해 주고 싶음(경고창 출력)
-			out.print("alert('아이디나 비밀번호를 확인해 주세요')");
+			response.setContentType("text/html;charset=EUC-KR");
+			out.println("<script type=\"text/javascript\">");
+		    out.println("alert('아이디 또는 비밀번호가 올바르지 않습니다 다시 시도해주세요.');");
+		    out.println("window.location.href = 'Main_Login.jsp';"); // 로그인 페이지로 이동
+		    out.println("</script>");
 		}
 	}
 
