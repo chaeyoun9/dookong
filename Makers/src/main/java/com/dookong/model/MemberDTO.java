@@ -18,7 +18,7 @@ public class MemberDTO {
 	}
 	
 	
-	public MemberDTO(String id, String pw) {
+	public MemberDTO() {
 		
 	}
 

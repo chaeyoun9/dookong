@@ -1,18 +1,16 @@
-<html lang="en">
-
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
 
-  <title>:Makers</title>
+  <title>Makers</title>
   <meta name="description" content="Figma htmlGenerator">
   <meta name="author" content="htmlGenerator">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-  <style>
-    body {
-      background: #E5E5E5;
-    }
-  </style>
+ 
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
 
@@ -20,9 +18,14 @@
 
   <div class="e239_3616">
     <div class="MAKERSback"></div>
-    <h1 class="e123_1">ëŒ€ì‹œë³´ë“œë¡œ í™•ì¸í•˜ëŠ” ë‚˜ì˜ ì‹¤ë ¥ë³€í™”</h1>
-    <p class="e123_2">ì–´ì œë³´ë‹¤ ì–¼ë§ˆë‚˜ ëŠ˜ì—ˆì„ê¹Œ?</p>
+    <h1 class="e123_1">´ë½Ãº¸µå·Î È®ÀÎÇÏ´Â ³ªÀÇ ½Ç·Âº¯È­</h1>
+    <p class="e123_2">¾îÁ¦º¸´Ù ¾ó¸¶³ª ´Ã¾úÀ»±î?</p>
     <h1 class="MAKERS">: MAKERS</h1>
+    <h1 class="Login_Study_with">Study with us!</h1>
+    <p class="Login_Study">¸ŞÀÌÄ¿½º¿Í ÇÔ²² °øºÎÇØº¸¼¼¿ä</p>
+
+    <h1 class="you">you are new? <a href="Join.html">Create new</a></h1>
+    
     <!-- <div class="e239_4043"></div> -->
     <div class="myChart">
       <canvas id="myChart"></canvas>
@@ -50,32 +53,32 @@
 
       });
     </script>
-    <h1 class="Study">Study with us!</h1>
-    <p class="Study1">ë©”ì´ì»¤ìŠ¤ì™€ í•¨ê»˜ ê³µë¶€í•´ë³´ì„¸ìš”</p>
-    <h1 class="you">you are new?<a href="Join.html">Create new</a></h1>
+    <h1 class="Login_Study_with">Study with us!
 
-    <form action="LoginService" method="post" class="id">
+    <h1 class="you">you are new? <a href="Join.html">Create new</a></h1>
+
+    <form action="LoginService" class="id">
+		
+      <div class="icon-input1">
+        
+        <input class="in_put" name = "id" type="text" autofocus name="id" placeholder="¾ÆÀÌµğ ÀÔ·Â">
+      </div>
+      <br>
+      <br>
 
       <div class="icon-input1">
-        <i class="fab fa-user"></i>
-        <input class="in_put input-field" type="text" autofocus name="id" placeholder="ì•„ì´ë”” ì…ë ¥">
+        <input class="in_put" name = "pw" type="password" name="pw" placeholder="¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü¡Ü">
       </div>
-
       <br>
       <br>
 
-      <div class="icon-input1">
-        <i class="fab fa-lock"></i>
-        <input class="in_put input-field" type="password" name="pw" placeholder="â—â—â—â—â—â—â—">
-      </div>
-
-      <br>
-      <br>
-
-      <button class="loginBtn" type="submit" value="LOGIN">Login</button>
+      <button class="singin "name = "LoginBtn" type="submit">Login</button>
 
     </form>
 
+	<script>
+		
+	</script>
 
   </div>
 

@@ -5,7 +5,7 @@
 	
 	<select id="login" parameterType="com.dookong.model.MemberDTO"
 	resultType="com.dookong.model.MemberDTO">
-		select * from members
+		select * from members where mb_id=#{mb_id} and mb_pw=#{mb_pw}
 	</select>
 	
 </mapper>
