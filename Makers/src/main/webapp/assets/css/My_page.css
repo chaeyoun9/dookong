@@ -20,7 +20,7 @@
 	height:1024px;
 	position:absolute;
 	left:0px;
-	top:3px;
+	top:0px;
 }
 .e270_6085 { 
 	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
@@ -28,7 +28,7 @@
 	height:182px;
 	position:absolute;
 	left:51px;
-	top:71px;
+	top:40px;
 }
 .e270_6093 { 
 	background-color:rgba(221.00000202655792, 225.00000178813934, 230.00000149011612, 1);
@@ -38,53 +38,47 @@
 	left:631px;
 	top:205px;
 }
-.e270_6087 { /* 메뉴 학습 페이지 */
-	color:rgba(105.00000134110451, 112.000000923872, 119.00000050663948, 1);
-	width:100px;
-	height:16px;
-	position:absolute;
-	left:94px;
-	top:354px;
-	font-family:SeoulHangang CBL;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+.categories {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	margin: 20px;
+	left: 55px;
+	bottom: 100px;
 }
-.e270_6091 { /* 메뉴 마이페이지 */
-	color:rgba(105.00000134110451, 112.000000923872, 119.00000050663948, 1);
-	width:100px;
-	height:16px;
-	position:absolute;
-	left:94px;
-	top:472px;
-	font-family:SeoulHangang CBL;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.category-btn {
+	max-width: 200px;
+	text-align: center;
+	background-color: white;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease-in-out;
+	margin-bottom: 50px;
+	text-decoration: none;
+	/* 링크에 밑줄 제거 */
+	color: #333;
+	/* 버튼 텍스트 색상 */
+	display: inline-block;
+	/* 인라인 레벨 요소로 변경 */
 }
-.e270_6089 { /* 메뉴 SIGN OUT */
-	color:rgba(105.00000134110451, 112.000000923872, 119.00000050663948, 1);
-	width:100px;
-	height:16px;
-	position:absolute;
-	left:94px;
-	top:535px;
-	font-family:SeoulHangang CBL;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.category-btn:hover {
+	transform: translateY(-5px);
 }
-.e270_6088 { /* 메뉴 학습 대시보드 */
-	color:rgba(105.00000134110451, 112.000000923872, 119.00000050663948, 1);
-	width:120px;
-	height:16px;
-	position:absolute;
-	left:94px;
-	top:417px;
-	font-family:SeoulHangang CBL;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.category-icon {
+	font-size: 20px;
+	margin-top: 20px;
+	color: #5e72e4;
+}
+
+.category-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 10px 0;
 }
 .e270_6092 { 
 	color:rgba(0, 0, 0, 1);
@@ -155,66 +149,6 @@
 	text-align:left;
 	font-size:16px;
 	letter-spacing:0;
-}
-.e270_6097 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:437px;
-	height:46px;
-	position:absolute;
-	left:610px;
-	top:466px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e270_6097 { 
-	border:1px solid rgba(0, 0, 0, 1);
-}
-.e270_6103 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:437px;
-	height:46px;
-	position:absolute;
-	left:610px;
-	top:790px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e270_6103 { 
-	border:1px solid rgba(0, 0, 0, 1);
-}
-.e270_6121 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:437px;
-	height:46px;
-	position:absolute;
-	left:610px;
-	top:682px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e270_6121 { 
-	border:1px solid rgba(0, 0, 0, 1);
-}
-.e270_6108 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:437px;
-	height:46px;
-	position:absolute;
-	left:610px;
-	top:574px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
-.e270_6108 { 
-	border:1px solid rgba(0, 0, 0, 1);
 }
 .e270_6098 { 
 	width:18.93960952758789px;
@@ -367,7 +301,7 @@
 }
 .e270_6109 { /* 현재 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
 	color:rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
-	width:330px;
+	width: 330px;
 	height:23px;
 	position:absolute;
 	left:660px;
@@ -416,38 +350,85 @@
 	letter-spacing:0;
 	line-height:px;
 }
-.e270_6135 { 
-	background-color:rgba(0, 0, 0, 1);
-	width:437px;
-	height:46px;
-	position:absolute;
-	left:610px;
-	top:878px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
-}
 .e270_6136 { /* 수정완료 */
 	color:rgba(255, 255, 255, 1);
 	width:80px;
 	height:23px;
 	position:absolute;
-	left:800px;
+	left:7px;
 	top:889px;
 	font-family:SeoulHangang CB;
 	text-align:center;
 	font-size:16.57215690612793px;
 	letter-spacing:0;
-	line-height:px;
+	line-height:0px;
 }
-.e270_6137 { 
-	border:2.3674511909484863px solid rgba(255, 255, 255, 1);
+.co_1{
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
+	width:500px;
+	height:46px;
+	left:610px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	top:460px;
 }
-.e270_6137 { 
-	width:4.734902381896973px;
-	height:9.469804763793945px;
+.co_2{
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
+	width:500px;
+	height:46px;
+	left:610px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	top:570px;
+}
+.co_3{	
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
+	width:500px;
+	height:46px;
+	left:610px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	top:680px;
+}
+.co_4{	
+	background-color: rgba(255, 255, 255, 1);
+	position: absolute;
+	width:500px;
+	height:46px;
+	left:610px;
+	border-radius: 10px;
+	border: 1px solid rgba(0, 0, 0, 1);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	top:790px;
+}
+.co_5 { 
+	background-color: black;
 	position:absolute;
-	left:885px;
-	top:895px;
+	width:500px;
+	color: white;
+	height:46px;
+	left:610px;
+	top:880px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
 }

@@ -1,6 +1,7 @@
 package com.dookong.model;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
@@ -20,12 +21,11 @@ public class MemberDAO {
 		
 		
 	
-		public MemberDTO login(MemberDTO dto) {
+		public String login(MemberDTO dto) {
 
 			// 전체 테이블중 일부분만 확인할 수 있는 selectOne() 사용!
-			MemberDTO result = sqlSession.selectOne("login", dto);
+			String result = sqlSession.selectOne("login", dto);
 
-			sqlSession.close();
 
 			return result;
 
@@ -49,4 +49,11 @@ public class MemberDAO {
 
 			
 		}
+		
+//		// 회원 닉네임 조회하는 메서드
+//		public String findNick(String mb_id,String mb_pw) {
+//			String result =sqlSession.selectOne("findNick",Map.of("mb_id",mb_id,"mb_pw",mb_pw));
+//			sqlSession.close();
+//			return result;
+//		}
 }

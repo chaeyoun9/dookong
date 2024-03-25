@@ -42,15 +42,24 @@ public class LoginService extends HttpServlet {
 		memberDTO.setMb_pw(mb_pw);
 		
 		// 로그인 메서드에 memberDTO(id,pw 세팅된 dto) 넣어서 나온 결과를 -> loginMember에 할당
-		MemberDTO loginMember = dao.login(memberDTO);
+//		MemberDTO loginMember = dao.login(memberDTO);
+		
+		String loginMember = dao.login(memberDTO);
+		
+		
+	
 		
 		// 만약, 결과가 비어있지 않다면(사용자가 올바르게 아이디, 비번 연결)
 		if(loginMember!=null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("info", loginMember);
-			response.sendRedirect("Main_Page.html");
+			
+			String path="Main.jsp";
+			request.setAttribute("info", loginMember);
+	        request.getRequestDispatcher(path).forward(request, response);
+	        
+	        
+	        
+//			rd.forward(request, response);
 		}else {
-			System.out.println("실패");
 			// 뭔가 다른 값을 연결해 주고 싶음(경고창 출력)
 			out.println("<script type=\"text/javascript\">");
 		    out.println("alert('아이디 또는 비밀번호가 올바르지 않습니다 다시 시도해주세요.');");

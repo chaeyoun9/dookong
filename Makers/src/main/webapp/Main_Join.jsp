@@ -73,7 +73,7 @@
             <br>
             <br>
 
-            <button class="singin" type="submit" value="Join" ></button>
+            <button class="singin" type="submit" value="Join" >Join</button>
         </form>
 
 

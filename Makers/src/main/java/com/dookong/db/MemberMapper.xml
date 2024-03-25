@@ -4,13 +4,26 @@
 	
 	
 	<select id="login" parameterType="com.dookong.model.MemberDTO"
+	resultType="string">
+		select mb_name from members where mb_id=#{mb_id} and mb_pw=#{mb_pw}
+	</select>
+	
+	<!--
+	<select id="login" parameterType="com.dookong.model.MemberDTO"
 	resultType="com.dookong.model.MemberDTO">
 		select * from members where mb_id=#{mb_id} and mb_pw=#{mb_pw}
 	</select>
+	 -->
+	
 	
 	<insert id="join" parameterType="com.dookong.model.MemberDTO">
 		insert into members values(#{mb_id}, #{mb_pw} , #{mb_name} ,sysdate)	
 	</insert>
+	
+	<select id="findNick" parameterType="map"
+	resultType="string">
+		select mb_name from members where md_id=#{mb_id} and mb_pw=#{mb_pw}
+	</select>
 	
 </mapper>
 
