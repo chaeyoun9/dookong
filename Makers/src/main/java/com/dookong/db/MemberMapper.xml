@@ -15,15 +15,14 @@
 	</select>
 	 -->
 	
-	
 	<insert id="join" parameterType="com.dookong.model.MemberDTO">
-		insert into members values(#{mb_id}, #{mb_pw} , #{mb_name} ,sysdate)	
+		insert into members values(#{mb_id}, #{mb_pw} , #{mb_name})	
 	</insert>
 	
-	<select id="findNick" parameterType="map"
-	resultType="string">
-		select mb_name from members where md_id=#{mb_id} and mb_pw=#{mb_pw}
-	</select>
+	
+	<update id="updateMember" parameterType="com.dookong.model.MemberDTO">
+		update members set mb_pw=#{mb_pw}, mb_name=#{mb_name} where mb_id=#{mb_id}
+	</update>
 	
 </mapper>
 

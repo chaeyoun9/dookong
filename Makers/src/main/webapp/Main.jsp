@@ -21,20 +21,24 @@
 </head>
 
 <body>
+
   <div class="e266_5958">
     <div class="e253_5953">
       <div class="e253_5898"></div>
       <div class="e253_5955">
         <div class="e253_5943">
           <div class="e253_5875"></div>
+          
+          <!--  사용자 이름 출력 부분  -->
           <div class="e253_5876"></div>
-          <%String name = (String)session.getAttribute("name"); %>
+          <%String name = (String)session.getAttribute("name"); 
+          String id=(String)session.getAttribute("id");%>
           <h1 class="e253_5894">어서오세요 <%=name %>님!</h1>
           <div class="e253_5897"><img src="img/두콩이.png" width="153" height="182"></div>
           
           
+           <!-- 카테고리 버튼 -->
           <div class="categories">
-            <!-- 카테고리 버튼 -->
             <a href="Study_page.html" class="category-btn">
               <div class="category-icon">&#128218;</div>
               <div class="category-title">학습 페이지</div>
@@ -57,6 +61,7 @@
           </div>
 
 
+		<!-- 차트 부분 -->
           <div class="e253_5902"><!--주차별 개선율-->
             <canvas id="snake" width="150" height="90"></canvas>
           </div>
@@ -73,6 +78,8 @@
             <canvas id="snake3" width="180" height="140"></canvas>
           </div>
 
+
+			<!--  평균 점수 랭킹 -->
           <div class="e253_5906"></div><!--평균 점수 랭킹-->
           <div class="e253_5907"></div><!--지도API 백그라운드-->
           <div class="e253_5908"></div><!--풀이시간-->

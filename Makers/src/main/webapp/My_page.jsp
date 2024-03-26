@@ -35,18 +35,19 @@
     <span class="e270_6089"><a href="Main_Login.jsp">SIGN OUT</a></span>
     <span class="e270_6088"><a href="Main.jsp">학습 대시보드</a></span>
     <h1 class="e270_6092">마이페이지</h1>
-    <h2 class="e270_6094">완두콩님</h2>
+    <%String name = (String)session.getAttribute("name"); %>
+    <h2 class="e270_6094"><%=name %>님</h2>
     <p class="e270_6095">정보처리기사</p>
     <span class="e270_6096">NICKNAME</span>
     <span class="e270_6120">바꿀 PASSWORD</span>
     <span class="e270_6107">현재 PASSWORD</span>
     
-    <form>
+    <form action="UpdateService" method="post">
       <div>
-        <input class="co_1" type="nick" autofocus name="nick" placeholder="  한글/영문 1~10자">
-        <input class="co_2" type="cur_pw" autofocus name="pw" placeholder="  영문 대/소문자, 숫자, 특수기호 포함 8~16자">
-        <input class="co_3" type="re_pw" autofocus name="re_pw" placeholder="  영문 대/소문자, 숫자, 특수기호 포함 8~16자">
-        <input class="co_4" type="check_pw" autofocus name="pw" placeholder="  영문 대/소문자, 숫자, 특수기호 포함 8~16자">
+        <input class="co_1" type="test" autofocus name="nick" placeholder="  한글/영문 1~10자">
+        <input class="co_2" type="password" autofocus name="cur_pw" placeholder="  영문 대/소문자, 숫자, 특수기호 포함 8~16자">
+        <input class="co_3" type="password" autofocus name="re_pw" placeholder="  영문 대/소문자, 숫자, 특수기호 포함 8~16자">
+        <input class="co_4" type="password" autofocus name="check_pw" placeholder="  영문 대/소문자, 숫자, 특수기호 포함 8~16자">
         <button class="co_5" type="submit" >수정 완료</button>
       </div>
     </form>

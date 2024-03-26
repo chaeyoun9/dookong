@@ -59,6 +59,7 @@ public class MemberDAO {
 			sqlSession.close();
 
 			return cnt;
+			
 		}
 		
 //		// 회원 닉네임 조회하는 메서드

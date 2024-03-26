@@ -16,6 +16,12 @@ public class MemberDTO {
 		this.mb_name = mb_name;
 	}
 	
+	public MemberDTO(String mb_id, String mb_pw, String mb_name,String joined_at) {
+		super();
+		this.mb_id = mb_id;
+		this.mb_pw = mb_pw;
+		this.mb_name = mb_name;
+	}
 	
 	public MemberDTO() {
 		

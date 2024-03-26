@@ -44,18 +44,20 @@ public class LoginService extends HttpServlet {
 		// 로그인 메서드에 memberDTO(id,pw 세팅된 dto) 넣어서 나온 결과를 -> loginMember에 할당
 //		MemberDTO loginMember = dao.login(memberDTO);
 		
+		// 로그인 메서드에 memberDTO 세팅해서 나온 결과 -> name 할당 (select mb_name)
 		String name = dao.login(memberDTO);
 		
-		
-		request.setAttribute("info", name);
+
 		System.out.println(name);
 		
 		// 만약, 결과가 비어있지 않다면(사용자가 올바르게 아이디, 비번 연결)
 		if(name!=null) {
-			request.setAttribute("name", name);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("name", name);
+			session.setAttribute("id", mb_id);
 			String path="Main.jsp";
 	        request.getRequestDispatcher(path).forward(request, response);
-	        
 	        
 	        
 //			rd.forward(request, response);
