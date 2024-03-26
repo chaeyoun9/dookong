@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.dookong.model.MemberDTO" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +28,8 @@
         <div class="e253_5943">
           <div class="e253_5875"></div>
           <div class="e253_5876"></div>
-          <h1 class="e253_5894">어서오세요 완두콩님!</h1>
+          <%String name = (String)session.getAttribute("name"); %>
+          <h1 class="e253_5894">어서오세요 <%=name %>님!</h1>
           <div class="e253_5897"><img src="img/두콩이.png" width="153" height="182"></div>
           
           
@@ -39,17 +40,17 @@
               <div class="category-title">학습 페이지</div>
             </a>
         
-            <a href="Main_Page.html" class="category-btn">
+            <a href="Main.jsp" class="category-btn">
               <div class="category-icon">&#128202;</div>
               <div class="category-title">학습 대시보드</div>
             </a>
         
-            <a href="My_page.html" class="category-btn">
+            <a href="My_page.jsp" class="category-btn">
               <div class="category-icon">&#128100;</div>
               <div class="category-title">마이페이지</div>
             </a>
         
-            <a href="Login.html" class="category-btn">
+            <a href="Main_Login.jsp" class="category-btn">
               <div class="category-icon">&#128075;</div>
               <div class="category-title">Sign Out</div>
             </a>
@@ -97,10 +98,16 @@
             </div>
           </div>
 
-          <div>
-            <input class="e253_5912" type="text" autofocus name="question" placeholder="     궁금한 것이 있나요?">
+          <div class="search-container2">
+            <div>
+              <input id="search-input2" type="text" autofocus name="question" placeholder="궁금한 것이 있나요?">
+            </div>
+            <div>
+              <button id="search-btn2">검색</button>
+            </div>
           </div>
-        </div>
+          <div id="search-results2">
+          </div>
         <div class="e253_5944">
           <div class="ei253_5944_3_9146"></div>
           <div class="ei253_5944_3_9147"></div>
@@ -109,9 +116,17 @@
         <div class="e253_5947"></div><span class="e253_5948">한줄 지식</span>
         <div class="e253_59471"></div>
         <h1 class="e253_59481">:Makers 평균 점수 랭킹</h1>
-        <div>
-          <input class="e253_59472" type="text" autofocus name="question" placeholder="     주소입력">
+        
+        <div class="search-container">
+          <div>
+            <input id="search-input" type="text" autofocus name="question" placeholder="주소를 입력하세요">
+          </div>
+          <div>
+            <button id="search-btn">검색</button>
+          </div>
         </div>
+
+        
           
         <div class="e253_59492">
         <div id="map" style="width:320px;height:200px;"></div>

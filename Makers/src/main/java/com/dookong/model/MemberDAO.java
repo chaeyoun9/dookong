@@ -12,6 +12,7 @@ import com.dookong.db.SqlSessionManager;
 
 
 
+
 public class MemberDAO {
 
 	
@@ -26,7 +27,8 @@ public class MemberDAO {
 			// 전체 테이블중 일부분만 확인할 수 있는 selectOne() 사용!
 			String result = sqlSession.selectOne("login", dto);
 
-
+			sqlSession.close();
+			
 			return result;
 
 		}
@@ -48,6 +50,15 @@ public class MemberDAO {
 			return result;
 
 			
+		}
+
+		public int updateMember(MemberDTO updateMember) {
+			int cnt = 0;
+
+			cnt = sqlSession.update("updateMember", updateMember);
+			sqlSession.close();
+
+			return cnt;
 		}
 		
 //		// 회원 닉네임 조회하는 메서드

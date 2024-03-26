@@ -4,7 +4,7 @@
 	
 	
 	<select id="login" parameterType="com.dookong.model.MemberDTO"
-	resultType="string">
+	resultType="String">
 		select mb_name from members where mb_id=#{mb_id} and mb_pw=#{mb_pw}
 	</select>
 	

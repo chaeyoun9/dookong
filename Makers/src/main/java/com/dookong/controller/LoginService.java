@@ -25,6 +25,7 @@ public class LoginService extends HttpServlet {
 		// 인코딩 작업
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();	
 		
 		// 값 가져오기
 		String mb_id = request.getParameter("id");
@@ -35,7 +36,6 @@ public class LoginService extends HttpServlet {
 		MemberDTO memberDTO = new MemberDTO();
 		MemberDAO dao = new MemberDAO();
 		
-		PrintWriter out = response.getWriter();	
 		
 		// DTO에 값 세팅
 		memberDTO.setMb_id(mb_id);
@@ -44,16 +44,16 @@ public class LoginService extends HttpServlet {
 		// 로그인 메서드에 memberDTO(id,pw 세팅된 dto) 넣어서 나온 결과를 -> loginMember에 할당
 //		MemberDTO loginMember = dao.login(memberDTO);
 		
-		String loginMember = dao.login(memberDTO);
+		String name = dao.login(memberDTO);
 		
 		
-	
+		request.setAttribute("info", name);
+		System.out.println(name);
 		
 		// 만약, 결과가 비어있지 않다면(사용자가 올바르게 아이디, 비번 연결)
-		if(loginMember!=null) {
-			
+		if(name!=null) {
+			request.setAttribute("name", name);
 			String path="Main.jsp";
-			request.setAttribute("info", loginMember);
 	        request.getRequestDispatcher(path).forward(request, response);
 	        
 	        

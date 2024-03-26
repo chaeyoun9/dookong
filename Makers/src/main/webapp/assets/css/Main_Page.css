@@ -1,8 +1,5 @@
 .e266_5958 {
 	overflow: hidden;
-}
-
-.e266_5958 {
 	width: 1440px;
 	height: 1024px;
 	position: absolute;
@@ -42,7 +39,7 @@
 }
 
 .e253_5875 {
-	background-color: rgba(221.00000202655792, 225.00000178813934, 230.00000149011612, 1);
+	background-color: rgba(175, 238, 238, 1);
 	width: 1440px;
 	height: 1024px;
 	position: absolute;
@@ -55,6 +52,7 @@
 	width: 256px;
 	height: 1024px;
 	position: absolute;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5894 {
@@ -91,6 +89,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5903 {
@@ -104,6 +103,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5904 {
@@ -117,6 +117,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5905 {
@@ -130,6 +131,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5906 {
@@ -143,6 +145,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5907 {
@@ -156,6 +159,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5908 {
@@ -169,6 +173,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5909 {
@@ -182,6 +187,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_59091 {
@@ -209,6 +215,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5911 {
@@ -222,6 +229,7 @@
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5912 {
@@ -236,6 +244,7 @@
 	border-top-right-radius: 30px;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
+	border: 4px solid black;
 }
 
 .e253_5913 {
@@ -474,7 +483,7 @@
 	color: black;
 	height: 30px;
 	position: absolute;
-	left: 740px;
+	left: 770px;
 	top: 730px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -483,6 +492,20 @@
 	border: 1px solid black;
 }
 
+.e253_59475 {
+	background-color: rgba(255, 255, 255, 1);
+	width: 192px;
+	color: black;
+	height: 30px;
+	position: absolute;
+	left: 770px;
+	top: 730px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: 1px solid black;
+}
 
 .e253_59473 {
 	width: 175px;
@@ -578,6 +601,7 @@
 	margin: 20px;
 	left: 55px;
 	bottom: 100px;
+
 }
 
 .category-btn {
@@ -595,6 +619,7 @@
 	/* 버튼 텍스트 색상 */
 	display: inline-block;
 	/* 인라인 레벨 요소로 변경 */
+	border: 2px solid rgb(152, 251, 152);
 }
 
 .category-btn:hover {
@@ -611,4 +636,61 @@
 	font-size: 18px;
 	font-weight: bold;
 	margin: 10px 0;
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 750px;
+	bottom: 230px;
+	width: 300px; /* 원하는 너비로 조절 가능 */
+	margin-bottom: 20px;
+}
+
+#search-input {
+	flex: 1;
+	padding: 10px;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-right: 10px;
+	border: 3px solid black; /* 입력란과 버튼 사이 간격 조절 */
+}
+
+#search-btn {
+	padding: 10px 20px;
+	background-color: #98e01b; /* 원하는 색상으로 변경 가능 */
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.search-container2 {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 1100px;
+	top: 50px;
+	width: 500px; /* 원하는 너비로 조절 가능 */
+	margin-bottom: 20px;
+}
+
+#search-input2 {
+	flex: 1;
+	padding: 10px;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 20px;
+	margin-right: 10px;
+	border: 3px solid black; /* 입력란과 버튼 사이 간격 조절 */
+}
+
+#search-btn2 {
+	padding: 10px 20px;
+	background-color: #98e01b; /* 원하는 색상으로 변경 가능 */
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
 }

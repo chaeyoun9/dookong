@@ -22,12 +22,10 @@ public class JoinService extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try {
-			request.setCharacterEncoding("UTF-8");
-		} catch (UnsupportedEncodingException e) {
-	
-			e.printStackTrace();
-		}
+		// 인코딩 작업
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
 		// 2. 요청값에서 필요한 데이터 꺼내오기! 
 		//    -
 		String id = request.getParameter("id");
