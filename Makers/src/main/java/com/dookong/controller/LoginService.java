@@ -25,6 +25,7 @@ public class LoginService extends HttpServlet {
 		// 인코딩 작업
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();	
 		
 		// 값 가져오기
 		String mb_id = request.getParameter("id");
@@ -35,22 +36,32 @@ public class LoginService extends HttpServlet {
 		MemberDTO memberDTO = new MemberDTO();
 		MemberDAO dao = new MemberDAO();
 		
-		PrintWriter out = response.getWriter();	
 		
 		// DTO에 값 세팅
 		memberDTO.setMb_id(mb_id);
 		memberDTO.setMb_pw(mb_pw);
 		
 		// 로그인 메서드에 memberDTO(id,pw 세팅된 dto) 넣어서 나온 결과를 -> loginMember에 할당
-		MemberDTO loginMember = dao.login(memberDTO);
+//		MemberDTO loginMember = dao.login(memberDTO);
+		
+		// 로그인 메서드에 memberDTO 세팅해서 나온 결과 -> name 할당 (select mb_name)
+		String name = dao.login(memberDTO);
+		
+
+		System.out.println(name);
 		
 		// 만약, 결과가 비어있지 않다면(사용자가 올바르게 아이디, 비번 연결)
-		if(loginMember!=null) {
+		if(name!=null) {
+			
 			HttpSession session = request.getSession();
-			session.setAttribute("info", loginMember);
-			response.sendRedirect("Main_Page.html");
+			session.setAttribute("name", name);
+			session.setAttribute("id", mb_id);
+			String path="Main.jsp";
+	        request.getRequestDispatcher(path).forward(request, response);
+	        
+	        
+//			rd.forward(request, response);
 		}else {
-			System.out.println("실패");
 			// 뭔가 다른 값을 연결해 주고 싶음(경고창 출력)
 			out.println("<script type=\"text/javascript\">");
 		    out.println("alert('아이디 또는 비밀번호가 올바르지 않습니다 다시 시도해주세요.');");
