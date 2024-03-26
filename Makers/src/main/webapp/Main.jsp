@@ -39,7 +39,7 @@
           
            <!-- 카테고리 버튼 -->
           <div class="categories">
-            <a href="Study_page.html" class="category-btn">
+            <a href="Study_page.jsp" class="category-btn">
               <div class="category-icon">&#128218;</div>
               <div class="category-title">학습 페이지</div>
             </a>
