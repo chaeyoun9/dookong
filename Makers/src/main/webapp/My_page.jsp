@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="com.dookong.model.MemberDTO" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +36,9 @@
     <span class="e270_6089"><a href="Main_Login.jsp">SIGN OUT</a></span>
     <span class="e270_6088"><a href="Main.jsp">학습 대시보드</a></span>
     <h1 class="e270_6092">마이페이지</h1>
-    <%String name = (String)session.getAttribute("name"); %>
+              <%String name = (String)session.getAttribute("name"); 
+          MemberDTO dto=(MemberDTO)session.getAttribute("dto");
+  %>
     <h2 class="e270_6094"><%=name %>님</h2>
     <p class="e270_6095">정보처리기사</p>
     <span class="e270_6096">NICKNAME</span>

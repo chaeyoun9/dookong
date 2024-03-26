@@ -12,7 +12,8 @@
   <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/Main_Page.css?after">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
+
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
   <style>
     body {
       background: #E5E5E5;
@@ -32,7 +33,8 @@
           <!--  사용자 이름 출력 부분  -->
           <div class="e253_5876"></div>
           <%String name = (String)session.getAttribute("name"); 
-          String id=(String)session.getAttribute("id");%>
+          MemberDTO dto=(MemberDTO)session.getAttribute("dto");
+          %>
           <h1 class="e253_5894">어서오세요 <%=name %>님!</h1>
           <div class="e253_5897"><img src="img/두콩이.png" width="153" height="182"></div>
           
@@ -124,59 +126,23 @@
         <div class="e253_59471"></div>
         <h1 class="e253_59481">:Makers 평균 점수 랭킹</h1>
         
+        
         <div class="search-container">
           <div>
-            <input id="search-input" type="text" autofocus name="question" placeholder="주소를 입력하세요">
+            <input id="searchInput" type="text" placeholder="주소를 입력하세요">
           </div>
           <div>
-            <button id="search-btn">검색</button>
+            <button id="search-btn" type="submit" onclick="search()" >검색</button>
           </div>
         </div>
-
         
-          
+
         <div class="e253_59492">
         <div id="map" style="width:320px;height:200px;"></div>
+   
 
 		
-		<script>
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-   			 mapOption = {
-      			  center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-       			 level: 3 // 지도의 확대 레벨
-  				  };  
-
-		// 지도를 생성합니다    
-			var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-		// 주소-좌표 변환 객체를 생성합니다
-			var geocoder = new kakao.maps.services.Geocoder();
-
-		// 주소로 좌표를 검색합니다
-			geocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {
-
-   		 // 정상적으로 검색이 완료됐으면 
-     		if (status === kakao.maps.services.Status.OK) {
-
-       			 var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-        // 결과값으로 받은 위치를 마커로 표시합니다
-       			 var marker = new kakao.maps.Marker({
-           	 	map: map,
-           		 position: coords
-        		});
-
-        // 인포윈도우로 장소에 대한 설명을 표시합니다
-        	var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">우리회사</div>'
-        	});
-        	infowindow.open(map, marker);
-
-        	// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-        	map.setCenter(coords);
-    	} 
-		});    
-	</script>
+		
         </div>
         
         <div class="e253_59491"></div>
@@ -187,6 +153,7 @@
     <h1 class="e253_5941">완두콩님의</h1>
     <h1 class="e266_5957">회차당 평균 풀이시간</h1>
   </div>
+  <script src="assets/js/mapScript.js"></script>
   <script src="assets/js/Chart.js"></script>
 
 </body>

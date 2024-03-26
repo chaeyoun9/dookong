@@ -55,7 +55,7 @@ public class LoginService extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("name", name);
-			session.setAttribute("id", mb_id);
+			session.setAttribute("dto", memberDTO);
 			String path="Main.jsp";
 	        request.getRequestDispatcher(path).forward(request, response);
 	        
