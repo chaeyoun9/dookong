@@ -20,6 +20,7 @@
    
     body {
       background: #E5E5E5;
+      margin:0;
     }
   </style>
 
@@ -31,10 +32,27 @@
     <div class="e270_6083"></div>
     <div class="e270_6085"><img src="img/두콩이.png" width="153" height="182"></div>
     <div class="e270_6093"><img src="img/두콩이.png" width="153" height="182"></div>
-    <span class="e270_6087"><a href="Study_page.html">학습 페이지</a></span>
-    <span class="e270_6091">마이페이지</span>
-    <span class="e270_6089"><a href="Main_Login.jsp">SIGN OUT</a></span>
-    <span class="e270_6088"><a href="Main.jsp">학습 대시보드</a></span>
+   <div class="categories">
+            <a href="Study_page.jsp" class="category-btn">
+              <div class="category-icon">&#128218;</div>
+              <div class="category-title">학습 페이지</div>
+            </a>
+        
+            <a href="Main.jsp" class="category-btn">
+              <div class="category-icon">&#128202;</div>
+              <div class="category-title">학습 대시보드</div>
+            </a>
+        
+            <a href="My_page.jsp" class="category-btn">
+              <div class="category-icon">&#128100;</div>
+              <div class="category-title">마이페이지</div>
+            </a>
+        
+            <a href="Main_Login.jsp" class="category-btn">
+              <div class="category-icon">&#128075;</div>
+              <div class="category-title">Sign Out</div>
+            </a>
+          </div>
     <h1 class="e270_6092">마이페이지</h1>
               <%String name = (String)session.getAttribute("name"); 
           MemberDTO dto=(MemberDTO)session.getAttribute("dto");

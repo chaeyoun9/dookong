@@ -5,7 +5,6 @@
 .e296_3574 {
 	width: 1440px;
 	height: 1024px;
-	position: absolute;
 }
 
 .e296_3519 {
@@ -18,17 +17,15 @@
 
 .e296_3409 {
 	background-color: rgba(175, 238, 238, 1);
-	width: 1439.000732421875px;
+	width: 1440px;
 	height: 1024px;
 	position: absolute;
-	left: 0.99951171875px;
-	top: 0px;
 }
 
 .e296_3411 {
 	background-color: rgba(255, 255, 255, 1);
 	width: 255.8223419189453px;
-	height: 1024px;
+	height: 1007px;
 	position: absolute;
 	border: 8px solid rgb(152, 251, 152);
 }
@@ -169,17 +166,6 @@
 	text-align: center;
 	font-size: 16px;
 	letter-spacing: 0;
-}
-
-.e296_3464 {
-	background-color: rgba(242.00000077486038, 244.0000006556511, 248.0000004172325, 1);
-	width: 1035px;
-	height: 937px;
-	position: absolute;
-	left: 330px;
-	top: 87px;
-	border: 8px solid rgb(152, 251, 152);
-
 }
 
 .e296_3465 {
@@ -477,8 +463,9 @@
 	border-radius: 10px;
 	cursor: pointer;
 }
-.e296_35111{
-	background-color:white;
+
+.e296_35111 {
+	background-color: white;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	width: 1035px;
 	height: 61px;
@@ -488,9 +475,10 @@
 	font-size: 35px;
 	text-align: center;
 }
+
 /*================================================================*/
 .custom-container {
-	background-color:white;
+	background-color: white;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	width: 1035px;
 	height: 80px;
@@ -628,4 +616,43 @@
 
 .e296_3466:hover {
 	transform: translateY(-5px);
+}
+
+.e296_3464 {
+	background-color: white;
+	width: 1035px;
+	height: 920px;
+	left: 330px;
+	top: 87px;
+	position: absolute;
+	border: 8px solid rgb(152, 251, 152);
+
+}
+
+/*==========================================================*/
+.file-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+}
+.file-item {
+	margin-left: 80px;
+	margin-right: 80px;
+	margin-top: 60px;
+	margin-bottom: 30px;
+	/* 각 아이템 간격 설정 */
+	text-align: center;
+	cursor: pointer;
+}
+
+.file-icon {
+	font-size: 100px;
+	color: #3498db;
+}
+.file-label {
+	margin-top: 5px;
+	font-size: 16px;
+	color: #333;
 }

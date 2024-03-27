@@ -53,7 +53,13 @@ public class LoginService extends HttpServlet {
 		// 만약, 결과가 비어있지 않다면(사용자가 올바르게 아이디, 비번 연결)
 		if(name!=null) {
 			
+			// 결과 비어있지 않으면 무조건 데이터 존재하기에 출석 데이터 받아줌
+			int date = dao.dateCnt(memberDTO);
+			memberDTO.setMb_date(date);
+			
 			HttpSession session = request.getSession();
+			
+			session.setAttribute("dateCnt", date);
 			session.setAttribute("name", name);
 			session.setAttribute("dto", memberDTO);
 			String path="Main.jsp";

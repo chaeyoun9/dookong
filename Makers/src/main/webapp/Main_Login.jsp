@@ -57,7 +57,7 @@
 
     <h1 class="you">you are new? <a href="Main_Join.jsp">Create new</a></h1>
 
-    <form action="LoginService" class="id">
+    <form action="LoginService" class="id" method="post">
 		
       <div class="icon-input1">
         
