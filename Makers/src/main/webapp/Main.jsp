@@ -104,7 +104,7 @@
           </form>
           
     		
-          
+          <!--  출석 데이터 연결 스크립트 -->
 			<script>
 				function updateCount(){
 					var countSpan = document.getElementById("clickCount");
