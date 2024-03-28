@@ -14,7 +14,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
-<<<<<<< HEAD
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  <link href='fullcalendar/main.css' rel='stylesheet' />
     <script src='fullcalendar/main.js'></script>
@@ -24,7 +23,7 @@
   <style>
 =======
    <style>
->>>>>>> branch 'master' of https://github.com/chaeyoun9/dookong.git
+branch 'master' of https://github.com/chaeyoun9/dookong.git
     body {
       background: white;
       font-family: "Gowun Dodum", sans-serif;
@@ -143,6 +142,7 @@
           
           <!-- FullCalendar -->
            <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
+           <button id="addEventButton">일정 추가</button>
           
 <!-- ==================================================================================== -->
 	<!-- 기존캘린더 작업 주석처리 -->

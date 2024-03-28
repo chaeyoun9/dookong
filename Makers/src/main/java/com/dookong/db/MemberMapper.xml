@@ -39,6 +39,7 @@
 		update members set mb_date=#{mb_date} where mb_id=#{mb_id}
 	</update>
 	
+	
 
 </mapper>
 
