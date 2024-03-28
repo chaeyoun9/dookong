@@ -32,9 +32,9 @@
       <div class="e253_5955">
         <div class="e253_5943">
           <div class="e253_5875"></div>
+          <div class="e253_5876"></div>
           
           <!--  사용자 이름 출력 부분  -->
-          <div class="e253_5876"></div>
           <%String name = (String)session.getAttribute("name"); 
           MemberDTO dto=(MemberDTO)session.getAttribute("dto");
           %>

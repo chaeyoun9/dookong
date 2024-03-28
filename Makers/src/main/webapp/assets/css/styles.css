@@ -182,3 +182,31 @@
 	width: 350px;
 	height: 40px
 }
+
+
+
+.double_check {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.double_check:hover {
+    background-color: #45a049;
+}
+
+.double_check:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

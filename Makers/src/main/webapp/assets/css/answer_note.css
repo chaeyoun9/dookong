@@ -16,14 +16,15 @@
 }
 
 .e296_3409 {
-	background-color: rgba(175, 238, 238, 1);
-	width: 1440px;
-	height: 1024px;
+	background-image: linear-gradient(to bottom right, white, #ebc3eb);
+	width: 1425px;
+	height: 1010px;
 	position: absolute;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e296_3411 {
-	background-color: rgba(255, 255, 255, 1);
+	background-image: linear-gradient(to bottom right, white,white,#e6b5e1,#e6b5e1);
 	width: 255.8223419189453px;
 	height: 1007px;
 	position: absolute;
@@ -37,6 +38,7 @@
 	position: absolute;
 	left: 51px;
 	top: 40px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e296_3412 {
@@ -394,11 +396,14 @@
 	align-items: center;
 	position: absolute;
 	margin: 20px;
-	left: 55px;
-	bottom: 100px;
+	left: 35px;
+	bottom: 50px;
 }
 
 .category-btn {
+	width: 150px; 
+    height: 100px;
+    max-width: 100%;
 	max-width: 200px;
 	text-align: center;
 	background-color: white;
@@ -408,12 +413,9 @@
 	transition: transform 0.3s ease-in-out;
 	margin-bottom: 50px;
 	text-decoration: none;
-	/* 링크에 밑줄 제거 */
 	color: #333;
-	/* 버튼 텍스트 색상 */
 	display: inline-block;
-	/* 인라인 레벨 요소로 변경 */
-	border: 2px solid rgb(152, 251, 152);
+	border: 7px solid rgb(175,238,238);;
 }
 
 .category-btn:hover {
@@ -421,15 +423,15 @@
 }
 
 .category-icon {
-	font-size: 20px;
-	margin-top: 20px;
+	font-size: 30px;
+	margin-top: 10px;
 	color: #5e72e4;
 }
 
 .category-title {
 	font-size: 18px;
 	font-weight: bold;
-	margin: 10px 0;
+	margin: 10px;
 }
 
 .search-container3 {
@@ -619,7 +621,7 @@
 }
 
 .e296_3464 {
-	background-color: white;
+	background-color: rgb(240,240,240);
 	width: 1035px;
 	height: 920px;
 	left: 330px;
@@ -635,7 +637,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
+	background-color: rgb(240,240,240);
 }
 .file-item {
 	margin-left: 80px;
@@ -649,10 +651,151 @@
 
 .file-icon {
 	font-size: 100px;
-	color: #3498db;
+	color: black;
 }
 .file-label {
 	margin-top: 5px;
 	font-size: 16px;
 	color: #333;
+}
+.e253_58978 {
+	background-color: black;
+	width: 256px;
+	height: 60px;
+	position: absolute;
+	left: 8px;
+	bottom: 8px;
+}
+.search-container2 {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 750px;
+	top: 20px;
+	width: 710px;
+	margin-bottom: 20px;
+}
+
+#search-input2 {
+	flex: 1;
+	padding:16px 40px;
+	width: calc(500% - 10px);
+	height: calc(200% - 10px);
+	border-radius: 20px;
+	border: 3px solid rgb(123, 104, 238);
+	font-size: 15px;
+}
+
+#search-input2:hover {
+	border-color: rgb(123, 104, 238);
+}
+
+#search-input2:focus {
+	outline: none;
+	border-color: rgb(123, 104, 238);
+}
+
+#search-btn2 {
+	right: 110px;
+	background-color: white;
+	padding: 2px 30px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.fa-search {
+	font-size: 30px;
+}
+
+.modal1 {
+	display: none;
+	/* 초기에는 숨김 */
+	position: fixed;
+	/* 고정 위치 */
+	z-index: 1;
+	/* 다른 요소 위에 표시 */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	/* 모달 내용이 넘칠 경우 스크롤 가능하게 설정 */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* 반투명 배경 */
+}
+
+.modal-content1 {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 8px;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close1 {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*=========================gpt===========================*/
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: auto;
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.modal-content {
+	background-color: rgb(222, 247, 240);
+	margin: 15% auto;
+	padding: 20px;
+	border: 2px solid #888;
+	border-radius: 30px;
+	max-width: 400px;
+	text-align: center;
+}
+
+.modal-btn {
+	padding: 10px 20px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.close-btn {
+	background-color: #ccc;
+}
+
+.confirm-btn {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.logout-text {
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 20px;
 }
