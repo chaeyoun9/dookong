@@ -14,6 +14,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
+<<<<<<< HEAD
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  <link href='fullcalendar/main.css' rel='stylesheet' />
     <script src='fullcalendar/main.js'></script>
@@ -21,8 +22,14 @@
   
   
   <style>
+=======
+   <style>
+>>>>>>> branch 'master' of https://github.com/chaeyoun9/dookong.git
     body {
-      background: #E5E5E5;
+      background: white;
+      font-family: "Gowun Dodum", sans-serif;
+      margin: 0%;
+      padding: auto;
     }
   </style>
 </head>
@@ -35,9 +42,9 @@
       <div class="e253_5955">
         <div class="e253_5943">
           <div class="e253_5875"></div>
+          <div class="e253_5876"></div>
           
           <!--  사용자 이름 출력 부분  -->
-          <div class="e253_5876"></div>
           <%String name = (String)session.getAttribute("name"); 
           MemberDTO dto=(MemberDTO)session.getAttribute("dto");
           %>
@@ -97,14 +104,48 @@
           <div class="e253_59099">
             <canvas id="snake5"></canvas><!--도넛새끼-->
           </div>
-          <span class="e253_59473">이번달 메이커스와 함께<h1>15일</h1>공부했어요</span><!--변수지정-->
-          <button class="e253_59474">출석하기</button>
+          <!--  출석 데이터 연결 완료 -->
+          
+          <form action="ClickCountService">
+          
+          <span class="e253_59473">메이커스와 함께<h1 id="clickCount"><%= session.getAttribute("dateCnt") %></h1>일 공부했어요</span>
+        	<button class="e253_59474" type="submit" id="clickButton" name="clicked" onclick="updateCount()()">출석하기</button>
+
+          </form>
+          
+    		
+          <!--  출석 데이터 연결 스크립트 -->
+			<script>
+				function updateCount(){
+					var countSpan = document.getElementById("clickCount");
+				    var currentCount = parseInt(countSpan.textContent);
+				    currentCount++;
+				    countSpan.textContent = currentCount;
+
+				   
+				    // 버튼 비활성화 및 다시 활성화
+				    document.getElementById("clickButton").disabled = true;
+				    setTimeout(function() {
+				        document.getElementById("clickButton").disabled = false;
+				    }, 24 * 60 * 60 * 1000); // 24시간 후에 다시 활성화 (24 * 60 * 60 * 1000)
+					
+				}
+				
+				
+	
+			</script>
+          
+          
           <div class="e253_5910"></div><!--한줄지식-->
+          
+<!-- ==================================================================================== -->
+<!-- FullCalendar -->
           
           <!-- FullCalendar -->
            <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
           
-           
+<!-- ==================================================================================== -->
+	<!-- 기존캘린더 작업 주석처리 -->
           <!--<div class="e253_5911"></div><!--캘린더-->
 			<!-- 
           <div class="calendar">

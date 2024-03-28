@@ -36,6 +36,7 @@ public class UpdateService extends HttpServlet {
 		String check_pw = request.getParameter("check_pw");
 		
 		String mb_id=memDTO.getMb_id();
+		
 		MemberDTO updateMember = new MemberDTO();
 		
 		if(re_pw!=null) { // 바꿀 비밀번호가 null이 아닐 경우 -> pw 수정

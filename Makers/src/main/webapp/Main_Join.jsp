@@ -52,10 +52,16 @@
         <p class="JOIN_Study">메이커스와 함께 공부해보세요</p>
 
         <form action="JoinService" method="post" class="id1">
+        	
             <div class="icon-input">
                 <p>ID</p>
+<<<<<<< HEAD
                 <input onclick="idCheck()" class="in_put" type="text" autofocus name="id" placeholder="영문,숫자 조합으로 6~12자">
              
+=======
+                <input class="in_put" type="text" autofocus name="id" placeholder="영문,숫자 조합으로 6~12자">
+               <input type="button" value="중복 검사" onclick="">
+>>>>>>> branch 'master' of https://github.com/chaeyoun9/dookong.git
             </div>
             <div class="icon-input">
                 <p>NICK NAME</p>

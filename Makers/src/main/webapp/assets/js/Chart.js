@@ -149,14 +149,14 @@ const config2 = {
                 min: 0,
                 max: 100,
                 ticks: {
-                    stepSize: 20, 
+                    stepSize: 20,
                     color: 'rgba(50, 55, 103, 1)',
                     font: {
                         weight: 'bold',
                     },
                 },
                 grid: {
-                    display: true, 
+                    display: true,
                 },
             },
         },
@@ -269,15 +269,15 @@ const config4 = {
         scales: {
             x: {
                 grid: {
-                    display: false, 
+                    display: false,
                 },
             },
             y: {
-                min: 0, 
+                min: 0,
                 max: 100,
                 ticks: {
-                    stepSize: 10, 
-                    beginAtZero: true 
+                    stepSize: 10,
+                    beginAtZero: true
                 },
 
 
@@ -332,58 +332,115 @@ document.getElementById('snake5').style.height = '170px';
 
 // 캘린더 디자인
 let currentDate = new Date();
-    let currentMonth = currentDate.getMonth();
-    let currentYear = currentDate.getFullYear();
-    const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
-    const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
+const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
 
-    function generateCalendar(month, year) {
-      const firstDayOfMonth = new Date(year, month, 1);
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
+function generateCalendar(month, year) {
+    const firstDayOfMonth = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-      document.getElementById('month-year').innerText = `${monthNames[month]} ${year}`;
+    document.getElementById('month-year').innerText = `${monthNames[month]} ${year}`;
 
-      const calendarGrid = document.getElementById('calendar-grid');
-      calendarGrid.innerHTML = '';
+    const calendarGrid = document.getElementById('calendar-grid');
+    calendarGrid.innerHTML = '';
 
-      for (let i = 0; i < dayNames.length; i++) {
+    for (let i = 0; i < dayNames.length; i++) {
         const dayNameCell = document.createElement('div');
         dayNameCell.classList.add('calendar-day');
         dayNameCell.textContent = dayNames[i];
         dayNameCell.style.backgroundColor = '#f0f0f0';
         calendarGrid.appendChild(dayNameCell);
-      }
+    }
 
-      for (let i = 0; i < firstDayOfMonth.getDay(); i++) {
+    for (let i = 0; i < firstDayOfMonth.getDay(); i++) {
         const emptyCell = document.createElement('div');
         emptyCell.classList.add('calendar-day', 'empty-cell');
         calendarGrid.appendChild(emptyCell);
-      }
+    }
 
-      for (let day = 1; day <= daysInMonth; day++) {
+    for (let day = 1; day <= daysInMonth; day++) {
         const dayCell = document.createElement('div');
         dayCell.classList.add('calendar-day');
         dayCell.textContent = day;
         calendarGrid.appendChild(dayCell);
-      }
     }
+}
 
-    function prevMonth() {
-      currentMonth--;
-      if (currentMonth < 0) {
+function prevMonth() {
+    currentMonth--;
+    if (currentMonth < 0) {
         currentMonth = 11;
         currentYear--;
-      }
-      generateCalendar(currentMonth, currentYear);
     }
+    generateCalendar(currentMonth, currentYear);
+}
 
-    function nextMonth() {
-      currentMonth++;
-      if (currentMonth > 11) {
+function nextMonth() {
+    currentMonth++;
+    if (currentMonth > 11) {
         currentMonth = 0;
         currentYear++;
-      }
-      generateCalendar(currentMonth, currentYear);
     }
-
     generateCalendar(currentMonth, currentYear);
+}
+
+generateCalendar(currentMonth, currentYear);
+
+
+//==============================================캘린더
+//주소검색 스크립트
+document.getElementById("search-btn").addEventListener("click", function () {
+    var userInput = document.getElementById("search-input").value;
+    searchAddress(userInput);
+});
+
+function searchAddress(query) {
+    console.log("사용자가 검색한 주소:", query);
+}
+//궁금한것 스크립트_메인
+document.getElementById("search-btn2").addEventListener("click", function () {
+    var userInput = document.getElementById("search-input2").value;
+    searchAddress(userInput);
+});
+
+function searchAddress(query) {
+    console.log("사용자가 검색한 주소:", query);
+}
+//궁금한것 스크립트_학습페이지
+document.getElementById("search-btn3").addEventListener("click", function () {
+    var userInput = document.getElementById("search-input3").value;
+    searchAddress(userInput);
+});
+
+function searchAddress(query) {
+    console.log("사용자가 검색한 주소:", query);
+}
+//===================================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const logoutBtn = document.getElementById('logout-btn');
+    const modal = document.getElementById('logoutModal');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    logoutBtn.addEventListener('click', function () {
+        modal.style.display = 'block'; // 모달 표시
+    });
+
+    confirmBtn.addEventListener('click', function () {
+        window.location.href = 'Logout.html'; // 로그아웃 페이지 경로로 수정
+    });
+
+    closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none'; // 모달 숨김
+    });
+
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none'; // 모달 숨김
+        }
+    });
+});
+

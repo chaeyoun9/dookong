@@ -1,54 +1,70 @@
-.e270_6138 { 
-	overflow:hidden;
+.e270_6138 {
+	overflow: hidden;
 }
-.e270_6138 { 
-	width:1442px;
-	height:1027px;
-	position:absolute;
+
+.e270_6138 {
+	width: 1442px;
+	height: 1027px;
+	position: absolute;
 }
-.e270_6082 { 
-	background-color:rgba(221.00000202655792, 225.00000178813934, 230.00000149011612, 1);
-	width:1440px;
-	height:1024px;
-	position:absolute;
-	left:2px;
-	top:0px;
+
+.e270_6082 {
+	background-image: linear-gradient(to bottom right, white, #ebc3eb);
+	width: 1425px;
+	height: 1010px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	border: 8px solid rgb(152, 251, 152);
 }
-.e270_6083 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:256px;
-	height:1024px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+.e270_6083 {
+	background-image: linear-gradient(to bottom right, white, white, #e6b5e1, #e6b5e1);
+	width: 256px;
+	width: 256px;
+	height: 1010px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border: 8px solid rgb(152, 251, 152);
 }
-.e270_6085 { 
-	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
-	width:153.0800018310547px;
-	height:182px;
-	position:absolute;
-	left:51px;
-	top:40px;
+
+.e270_6085 {
+	background-color: rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 1);
+	width: 153.0800018310547px;
+	height: 182px;
+	position: absolute;
+	left: 51px;
+	top: 40px;
+	border: 8px solid rgb(152, 251, 152);
 }
-.e270_6093 { 
-	background-color:rgba(221.00000202655792, 225.00000178813934, 230.00000149011612, 1);
-	width:153.0800018310547px;
-	height:182px;
-	position:absolute;
-	left:631px;
-	top:205px;
+
+.e270_6093 {
+	background-color: rgba(221.00000202655792, 225.00000178813934, 230.00000149011612, 1);
+	width: 153.0800018310547px;
+	height: 182px;
+	position: absolute;
+	left: 631px;
+	top: 205px;
+	border: 8px solid rgb(152, 251, 152);
 }
+
 .categories {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: absolute;
 	margin: 20px;
-	left: 55px;
-	bottom: 100px;
+	left: 35px;
+	bottom: 50px;
 }
 
 .category-btn {
+	width: 150px;
+	height: 100px;
+	max-width: 100%;
 	max-width: 200px;
 	text-align: center;
 	background-color: white;
@@ -58,11 +74,10 @@
 	transition: transform 0.3s ease-in-out;
 	margin-bottom: 50px;
 	text-decoration: none;
-	/* 링크에 밑줄 제거 */
 	color: #333;
-	/* 버튼 텍스트 색상 */
 	display: inline-block;
-	/* 인라인 레벨 요소로 변경 */
+	border: 7px solid rgb(175, 238, 238);
+	;
 }
 
 .category-btn:hover {
@@ -70,365 +85,461 @@
 }
 
 .category-icon {
-	font-size: 20px;
-	margin-top: 20px;
+	font-size: 30px;
+	margin-top: 10px;
 	color: #5e72e4;
 }
 
 .category-title {
 	font-size: 18px;
 	font-weight: bold;
-	margin: 10px 0;
+	margin: 10px;
 }
-.e270_6092 { 
-	color:rgba(0, 0, 0, 1);
-	width:270px;
-	height:54px;
-	position:absolute;
-	left:334px;
-	top:71px;
-	font-family:SeoulHangang CBL;
-	text-align:left;
-	font-size:54px;
-	letter-spacing:0;
+
+.e270_6092 {
+	color: rgba(0, 0, 0, 1);
+	width: 270px;
+	height: 54px;
+	position: absolute;
+	left: 334px;
+	top: 71px;
+	text-align: left;
+	font-size: 54px;
+	letter-spacing: 0;
 }
-.e270_6094 { 
-	color:rgba(0, 0, 0, 1);
-	width:154px;
-	height:59px;
-	position:absolute;
-	left:816px;
-	top:247px;
-	font-family:SeoulHangang CBL;
-	text-align:left;
+
+.e270_6094 {
+	color: rgba(0, 0, 0, 1);
+	width: 154px;
+	height: 59px;
+	position: absolute;
+	left: 816px;
+	top: 247px;
+	text-align: left;
 }
-.e270_6095 { 
-	color:rgba(0, 0, 0, 1);
-	width:140px;
-	height:33px;
-	position:absolute;
-	left:816px;
+
+.e270_6095 {
+	color: rgba(0, 0, 0, 1);
+	width: 140px;
+	height: 33px;
+	position: absolute;
+	left: 816px;
 	top: 290px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:23px;
-	letter-spacing:0;
+	text-align: left;
+	font-size: 23px;
+	letter-spacing: 0;
 }
-.e270_6096 { /* NICKNAME */
-	color:rgba(0, 0, 0, 1);
-	width:69px;
-	height:18px;
-	position:absolute;
-	left:625px;
-	top:433px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.e270_6096 {
+	/* NICKNAME */
+	color: rgba(0, 0, 0, 1);
+	width: 69px;
+	height: 18px;
+	position: absolute;
+	left: 625px;
+	top: 433px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
 }
-.e270_6120 { /* 바꿀 PW */
-	color:rgba(0, 0, 0, 1);
-	width:150px;
-	height:18px;
-	position:absolute;
-	left:624px;
-	top:649px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.e270_6120 {
+	/* 바꿀 PW */
+	color: rgba(0, 0, 0, 1);
+	width: 150px;
+	height: 18px;
+	position: absolute;
+	left: 624px;
+	top: 649px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
 }
-.e270_6107 { /* 현재 PASSWORD */
-	color:rgba(0, 0, 0, 1);
-	width:150px;
-	height:18px;
-	position:absolute;
-	left:624px;
-	top:541px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.e270_6107 {
+	/* 현재 PASSWORD */
+	color: rgba(0, 0, 0, 1);
+	width: 150px;
+	height: 18px;
+	position: absolute;
+	left: 624px;
+	top: 541px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
 }
-.e270_6098 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:626px;
-	top:480px;
+
+.e270_6098 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 626px;
+	top: 480px;
 }
-.e270_6099 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+.e270_6099 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
-.i270_6099_22_865 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6099_22_865 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6099_22_865 { 
-	width:14.204706192016602px;
-	height:8.68065357208252px;
-	position:absolute;
-	left:2.3674511909484863px;
-	top:8.68065357208252px;
+
+.ei270_6099_22_865 {
+	width: 14.204706192016602px;
+	height: 8.68065357208252px;
+	position: absolute;
+	left: 2.3674511909484863px;
+	top: 8.68065357208252px;
 }
-.i270_6099_22_866 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6099_22_866 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6099_22_866 { 
-	width:7.89150333404541px;
-	height:7.102353096008301px;
-	position:absolute;
-	left:5.524052619934082px;
-	top:1.5783007144927979px;
+
+.ei270_6099_22_866 {
+	width: 7.89150333404541px;
+	height: 7.102353096008301px;
+	position: absolute;
+	left: 5.524052619934082px;
+	top: 1.5783007144927979px;
 }
-.e270_6110 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:626px;
-	top:588px;
+
+.e270_6110 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 626px;
+	top: 588px;
 }
-.e270_6111 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+.e270_6111 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
-.i270_6111_22_865 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6111_22_865 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6111_22_865 { 
-	width:14.204706192016602px;
-	height:8.68065357208252px;
-	position:absolute;
-	left:2.3674511909484863px;
-	top:8.68065357208252px;
+
+.ei270_6111_22_865 {
+	width: 14.204706192016602px;
+	height: 8.68065357208252px;
+	position: absolute;
+	left: 2.3674511909484863px;
+	top: 8.68065357208252px;
 }
-.i270_6111_22_866 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6111_22_866 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6111_22_866 { 
-	width:7.89150333404541px;
-	height:7.102353096008301px;
-	position:absolute;
-	left:5.524052619934082px;
-	top:1.5783007144927979px;
+
+.ei270_6111_22_866 {
+	width: 7.89150333404541px;
+	height: 7.102353096008301px;
+	position: absolute;
+	left: 5.524052619934082px;
+	top: 1.5783007144927979px;
 }
-.e270_6129 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:628px;
-	top:804px;
+
+.e270_6129 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 628px;
+	top: 804px;
 }
-.e270_6130 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+.e270_6130 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
-.i270_6130_22_865 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6130_22_865 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6130_22_865 { 
-	width:14.204706192016602px;
-	height:8.68065357208252px;
-	position:absolute;
-	left:2.3674511909484863px;
-	top:8.68065357208252px;
+
+.ei270_6130_22_865 {
+	width: 14.204706192016602px;
+	height: 8.68065357208252px;
+	position: absolute;
+	left: 2.3674511909484863px;
+	top: 8.68065357208252px;
 }
-.i270_6130_22_866 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6130_22_866 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6130_22_866 { 
-	width:7.89150333404541px;
-	height:7.102353096008301px;
-	position:absolute;
-	left:5.524052619934082px;
-	top:1.5783007144927979px;
+
+.ei270_6130_22_866 {
+	width: 7.89150333404541px;
+	height: 7.102353096008301px;
+	position: absolute;
+	left: 5.524052619934082px;
+	top: 1.5783007144927979px;
 }
-.e270_6122 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:628px;
-	top:696px;
+
+.e270_6122 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 628px;
+	top: 696px;
 }
-.e270_6123 { 
-	width:18.93960952758789px;
-	height:18.93960952758789px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+.e270_6123 {
+	width: 18.93960952758789px;
+	height: 18.93960952758789px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
 }
-.i270_6123_22_865 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6123_22_865 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6123_22_865 { 
-	width:14.204706192016602px;
-	height:8.68065357208252px;
-	position:absolute;
-	left:2.3674511909484863px;
-	top:8.68065357208252px;
+
+.ei270_6123_22_865 {
+	width: 14.204706192016602px;
+	height: 8.68065357208252px;
+	position: absolute;
+	left: 2.3674511909484863px;
+	top: 8.68065357208252px;
 }
-.i270_6123_22_866 { 
-	border:1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
+
+.i270_6123_22_866 {
+	border: 1.5783007144927979px solid rgba(24.000000469386578, 25.000000409781933, 31.000000052154064, 1);
 }
-.ei270_6123_22_866 { 
-	width:7.89150333404541px;
-	height:7.102353096008301px;
-	position:absolute;
-	left:5.524052619934082px;
-	top:1.5783007144927979px;
+
+.ei270_6123_22_866 {
+	width: 7.89150333404541px;
+	height: 7.102353096008301px;
+	position: absolute;
+	left: 5.524052619934082px;
+	top: 1.5783007144927979px;
 }
-.e270_6105 { /* 한글 / 영문 1~10자 */
-	color:rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
-	width:200px;
-	height:23px;
-	position:absolute;
-	left:660px;
-	top:480px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
-	line-height:px;
+
+.e270_6105 {
+	/* 한글 / 영문 1~10자 */
+	color: rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
+	width: 200px;
+	height: 23px;
+	position: absolute;
+	left: 660px;
+	top: 480px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: px;
 }
-.e270_6109 { /* 현재 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
-	color:rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
+
+.e270_6109 {
+	/* 현재 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
+	color: rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
 	width: 330px;
-	height:23px;
-	position:absolute;
-	left:660px;
-	top:588px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
-	line-height:px;
+	height: 23px;
+	position: absolute;
+	left: 660px;
+	top: 588px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: px;
 }
-.e270_6127 { /* 바꿀 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
-	color:rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
-	width:330px;
-	height:23px;
-	position:absolute;
-	left:660px;
-	top:695px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
-	line-height:px;
+
+.e270_6127 {
+	/* 바꿀 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
+	color: rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
+	width: 330px;
+	height: 23px;
+	position: absolute;
+	left: 660px;
+	top: 695px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: px;
 }
-.e270_6128 { /* PW 확인 */
-	color:rgba(0, 0, 0, 1);
-	width:150px;
-	height:18px;
-	position:absolute;
-	left:625px;
-	top:757px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
+
+.e270_6128 {
+	/* PW 확인 */
+	color: rgba(0, 0, 0, 1);
+	width: 150px;
+	height: 18px;
+	position: absolute;
+	left: 625px;
+	top: 757px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
 }
-.e270_6134 { /* 확인 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
-	color:rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
-	width:330px;
-	height:23px;
-	position:absolute;
-	left:660px;
-	top:805px;
-	font-family:SeoulHangang CB;
-	text-align:left;
-	font-size:16px;
-	letter-spacing:0;
-	line-height:px;
+
+.e270_6134 {
+	/* 확인 PW 영문 대/소문자, 숫자, 특수기호 포함 8~16 */
+	color: rgba(146.00000649690628, 146.00000649690628, 149.00000631809235, 1);
+	width: 330px;
+	height: 23px;
+	position: absolute;
+	left: 660px;
+	top: 805px;
+	text-align: left;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: px;
 }
-.e270_6136 { /* 수정완료 */
-	color:rgba(255, 255, 255, 1);
-	width:80px;
-	height:23px;
-	position:absolute;
-	left:7px;
-	top:889px;
-	font-family:SeoulHangang CB;
-	text-align:center;
-	font-size:16.57215690612793px;
-	letter-spacing:0;
-	line-height:0px;
+
+.e270_6136 {
+	/* 수정완료 */
+	color: rgba(255, 255, 255, 1);
+	width: 80px;
+	height: 23px;
+	position: absolute;
+	left: 7px;
+	top: 889px;
+	text-align: center;
+	font-size: 16.57215690612793px;
+	letter-spacing: 0;
+	line-height: 0px;
 }
-.co_1{
+
+.co_1 {
 	background-color: rgba(255, 255, 255, 1);
 	position: absolute;
-	width:500px;
-	height:46px;
-	left:610px;
+	width: 500px;
+	height: 46px;
+	left: 610px;
 	border-radius: 10px;
 	border: 1px solid rgba(0, 0, 0, 1);
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	top:460px;
+	top: 460px;
 }
-.co_2{
+
+.co_2 {
 	background-color: rgba(255, 255, 255, 1);
 	position: absolute;
-	width:500px;
-	height:46px;
-	left:610px;
+	width: 500px;
+	height: 46px;
+	left: 610px;
 	border-radius: 10px;
 	border: 1px solid rgba(0, 0, 0, 1);
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	top:570px;
+	top: 570px;
 }
-.co_3{	
+
+.co_3 {
 	background-color: rgba(255, 255, 255, 1);
 	position: absolute;
-	width:500px;
-	height:46px;
-	left:610px;
+	width: 500px;
+	height: 46px;
+	left: 610px;
 	border-radius: 10px;
 	border: 1px solid rgba(0, 0, 0, 1);
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	top:680px;
+	top: 680px;
 }
-.co_4{	
+
+.co_4 {
 	background-color: rgba(255, 255, 255, 1);
 	position: absolute;
-	width:500px;
-	height:46px;
-	left:610px;
+	width: 500px;
+	height: 46px;
+	left: 610px;
 	border-radius: 10px;
 	border: 1px solid rgba(0, 0, 0, 1);
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	top:790px;
+	top: 790px;
 }
-.co_5 { 
+
+.co_5 {
 	background-color: black;
-	position:absolute;
-	width:500px;
+	position: absolute;
+	width: 500px;
 	color: white;
-	height:46px;
-	left:610px;
-	top:880px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	border-bottom-left-radius:10px;
-	border-bottom-right-radius:10px;
+	height: 46px;
+	left: 610px;
+	top: 880px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.e253_58978 {
+	background-color: black;
+	width: 256px;
+	height: 60px;
+	position: absolute;
+	left: 8px;
+	bottom: 10px;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: auto;
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.modal-content {
+	background-color: rgb(222, 247, 240);
+	margin: 15% auto;
+	padding: 20px;
+	border: 2px solid #888;
+	border-radius: 30px;
+	max-width: 400px;
+	text-align: center;
+}
+
+.modal-btn {
+	padding: 10px 20px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.close-btn {
+	background-color: #ccc;
+}
+
+.confirm-btn {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.logout-text {
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 20px;
 }

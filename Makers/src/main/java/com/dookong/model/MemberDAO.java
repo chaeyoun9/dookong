@@ -1,14 +1,7 @@
 package com.dookong.model;
 
-import java.util.List;
-import java.util.Map;
-
-import javax.xml.crypto.dsig.spec.ExcC14NParameterSpec;
-
-import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 
 import com.dookong.db.SqlSessionManager;
 
@@ -23,18 +16,17 @@ public class MemberDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
 		
 		
-	
+		// 로그인 조회
 		public String login(MemberDTO dto) {
 
 			// 전체 테이블중 일부분만 확인할 수 있는 selectOne() 사용!
 			String result = sqlSession.selectOne("login", dto);
-
-			sqlSession.close();
 			
 			return result;
 
 		}
 		
+		// 회원 가입
 		public int join(MemberDTO dto) {
 			// 1. sqlSession 빌려오기!
 
@@ -54,6 +46,7 @@ public class MemberDAO {
 			
 		}
 
+		// 회원 정보 수정
 		public int updateMember(MemberDTO updateMember) {
 			int cnt = 0;
 
@@ -64,6 +57,34 @@ public class MemberDAO {
 			
 		}
 		
+		// 아이디 중복체크
+		public boolean idCheck(String inputId) {
+			boolean checkE = false;
+			 try {
+				 checkE = sqlSession.selectOne("idCheck",inputId);
+			 }catch(Exception e) {
+				 e.printStackTrace();
+			 }finally {
+				 sqlSession.close();
+			 }
+			return checkE;
+		}
+		
+		public int saveToDB(MemberDTO updateCnt) {
+			int cnt = 0;
+			cnt = sqlSession.update("checkCnt",updateCnt);
+			sqlSession.close();
+			return cnt;
+		}
+		
+		// 출석 데이터 불러오기
+		public int dateCnt(MemberDTO memberDTO) {
+			int cnt = 0;
+			cnt = sqlSession.selectOne("dateCheck",memberDTO);
+			sqlSession.close();
+			return cnt;
+		}
+		
 //		// 회원 닉네임 조회하는 메서드
 //		public String findNick(String mb_id,String mb_pw) {
 //			String result =sqlSession.selectOne("findNick",Map.of("mb_id",mb_id,"mb_pw",mb_pw));
@@ -71,16 +92,16 @@ public class MemberDAO {
 //			return result;
 //		}
 		
-		// id 중복 확인
-		public boolean idCheck(String inputE) {
-			boolean checkE = false;
-			try {
-				checkE = sqlSession.selectOne("idCheck", inputE);
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally {
-				sqlSession.close();
-			}
-			return checkE;
-		}	
+//		// id 중복 확인
+//		public boolean idCheck(String inputE) {
+//			boolean checkE = false;
+//			try {
+//				checkE = sqlSession.selectOne("idCheck", inputE);
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}finally {
+//				sqlSession.close();
+//			}
+//			return checkE;
+//		}	
 }

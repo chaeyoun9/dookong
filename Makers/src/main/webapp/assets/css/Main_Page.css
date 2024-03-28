@@ -39,34 +39,35 @@
 }
 
 .e253_5875 {
-	background-color: rgba(175, 238, 238, 1);
-	width: 1440px;
-	height: 1024px;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-}
-
-.e253_5876 {
-	background-color: rgba(255, 255, 255, 1);
-	width: 256px;
-	height: 1024px;
+	/*큰 배경*/
+	background-image: linear-gradient(to bottom right, white, #ebc3eb);
+	width: 1425px;
+	height: 1010px;
 	position: absolute;
 	border: 8px solid rgb(152, 251, 152);
 }
 
-.e253_5894 {
+.e253_5876 {
+	background-image: linear-gradient(to bottom right, white, white, #e6b5e1, #e6b5e1);
+	width: 256px;
+	height: 1010px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	border: 8px solid rgb(152, 251, 152);
+}
+
+/* .e253_5894 {
 	color: rgba(0, 0, 0, 1);
 	width: 560px;
 	height: 60px;
 	position: absolute;
 	left: 305px;
 	top: 10px;
-	font-family: SeoulHangang CBL;
 	text-align: left;
 	font-size: 54px;
 	letter-spacing: 0;
-}
+} */
 
 
 .e253_5897 {
@@ -76,6 +77,7 @@
 	position: absolute;
 	left: 51px;
 	top: 40px;
+	border: 8px solid rgb(152, 251, 152);
 }
 
 .e253_5902 {
@@ -83,7 +85,7 @@
 	width: 348px;
 	height: 243px;
 	position: absolute;
-	left: 305px;
+	left: 290px;
 	top: 129px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -97,7 +99,7 @@
 	width: 348px;
 	height: 243px;
 	position: absolute;
-	left: 691px;
+	left: 670px;
 	top: 129px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -111,7 +113,7 @@
 	width: 350px;
 	height: 289px;
 	position: absolute;
-	left: 307px;
+	left: 290px;
 	top: 400px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -125,7 +127,7 @@
 	width: 350px;
 	height: 289px;
 	position: absolute;
-	left: 691px;
+	left: 670px;
 	top: 400px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -139,7 +141,7 @@
 	width: 352px;
 	height: 281px;
 	position: absolute;
-	left: 307px;
+	left: 290px;
 	top: 717px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -153,7 +155,7 @@
 	width: 352px;
 	height: 281px;
 	position: absolute;
-	left: 691px;
+	left: 670px;
 	top: 717px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -167,8 +169,8 @@
 	width: 367.75px;
 	height: 122px;
 	position: absolute;
-	left: 1054px;
-	top: 129px;
+	left: 1045px;
+	top: 130px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -181,7 +183,7 @@
 	width: 360px;
 	height: 207px;
 	position: absolute;
-	left: 1054px;
+	left: 1045px;
 	top: 265px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -196,7 +198,6 @@
 }
 
 .e253_59099 {
-	background-color: rgba(255, 255, 255, 1);
 	width: 250px;
 	height: 207px;
 	left: 1140px;
@@ -209,8 +210,8 @@
 	width: 367.75px;
 	height: 122px;
 	position: absolute;
-	left: 1054px;
-	top: 486px;
+	left: 1045px;
+	top: 493px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -223,7 +224,7 @@
 	width: 368px;
 	height: 362px;
 	position: absolute;
-	left: 1054px;
+	left: 1045px;
 	top: 636px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -254,7 +255,6 @@
 	position: absolute;
 	left: 1226px;
 	top: 55px;
-	font-family: SeoulHangang CB;
 	text-align: center;
 	font-size: 16px;
 	letter-spacing: 0.20000000298023224;
@@ -263,13 +263,12 @@
 .e253_5942 {
 	color: rgba(0, 0, 0, 1);
 	width: 83px;
-	height: 120px;
+	height: 110px;
 	position: absolute;
 	left: 1313px;
 	top: 120px;
-	font-family: SeoulHangang CBL;
 	text-align: center;
-	font-size: 50px;
+	font-size: 40px;
 	letter-spacing: 0.20000000298023224;
 }
 
@@ -311,7 +310,7 @@
 	height: 17.020000457763672px;
 	position: absolute;
 	left: 1142px;
-	top: 495px;
+	top: 510px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -325,8 +324,8 @@
 	color: black;
 	height: 30px;
 	position: absolute;
-	left: 385px;
-	top: 730px;
+	left: 375px;
+	top: 735px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -340,8 +339,7 @@
 	height: 10px;
 	position: absolute;
 	left: 1215px;
-	top: 499px;
-	font-family: SeoulHangang CB;
+	top: 513px;
 	text-align: center;
 	font-size: 10px;
 	font-weight: bold;
@@ -353,9 +351,8 @@
 	width: 220px;
 	height: 10px;
 	position: absolute;
-	left: 375px;
-	top: 725px;
-	font-family: SeoulHangang CB;
+	left: 363px;
+	top: 730px;
 	text-align: center;
 	font-size: 15px;
 }
@@ -365,8 +362,8 @@
 	width: 327px;
 	height: 81px;
 	position: absolute;
-	left: 1076px;
-	top: 520px;
+	left: 1080px;
+	top: 535px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
 	border-bottom-left-radius: 20px;
@@ -378,7 +375,7 @@
 	width: 320px;
 	height: 200px;
 	position: absolute;
-	left: 323px;
+	left: 315px;
 	top: 780px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
@@ -406,8 +403,7 @@
 	height: 20px;
 	position: absolute;
 	left: 1170px;
-	top: 527px;
-	font-family: SeoulHangang CBL;
+	top: 540px;
 	text-align: center;
 	font-size: 14px;
 	letter-spacing: 0;
@@ -419,8 +415,7 @@
 	height: 15px;
 	position: absolute;
 	left: 1174px;
-	top: 561px;
-	font-family: SeoulHangang CB;
+	top: 570px;
 	text-align: center;
 	font-size: 11px;
 	letter-spacing: 0;
@@ -432,8 +427,7 @@
 	height: 15px;
 	position: absolute;
 	left: 1124px;
-	top: 576px;
-	font-family: SeoulHangang CB;
+	top: 585px;
 	text-align: center;
 	font-size: 11px;
 	letter-spacing: 0;
@@ -446,8 +440,7 @@
 	height: 20px;
 	position: absolute;
 	left: 1095px;
-	top: 180px;
-	font-family: SeoulHangang CBL;
+	top: 170px;
 	text-align: center;
 	font-size: 20px;
 }
@@ -455,12 +448,11 @@
 .e253_5941 {
 	/*완두콩님의*/
 	color: rgba(0, 0, 0, 1);
-	width: 190px;
+	width: 180px;
 	height: 20px;
 	position: absolute;
 	left: 1100px;
-	top: 145px;
-	font-family: SeoulHangang CBL;
+	top: 125px;
 	text-align: center;
 	font-size: 20px;
 }
@@ -599,12 +591,14 @@
 	align-items: center;
 	position: absolute;
 	margin: 20px;
-	left: 55px;
-	bottom: 100px;
-
+	left: 35px;
+	bottom: 50px;
 }
 
 .category-btn {
+	width: 150px;
+	height: 100px;
+	max-width: 100%;
 	max-width: 200px;
 	text-align: center;
 	background-color: white;
@@ -614,12 +608,10 @@
 	transition: transform 0.3s ease-in-out;
 	margin-bottom: 50px;
 	text-decoration: none;
-	/* 링크에 밑줄 제거 */
 	color: #333;
-	/* 버튼 텍스트 색상 */
 	display: inline-block;
-	/* 인라인 레벨 요소로 변경 */
-	border: 2px solid rgb(152, 251, 152);
+	border: 7px solid rgb(175, 238, 238);
+	;
 }
 
 .category-btn:hover {
@@ -627,15 +619,15 @@
 }
 
 .category-icon {
-	font-size: 20px;
-	margin-top: 20px;
+	font-size: 30px;
+	margin-top: 10px;
 	color: #5e72e4;
 }
 
 .category-title {
 	font-size: 18px;
 	font-weight: bold;
-	margin: 10px 0;
+	margin: 10px;
 }
 
 .search-container {
@@ -644,53 +636,178 @@
 	position: absolute;
 	left: 750px;
 	bottom: 230px;
-	width: 300px; /* 원하는 너비로 조절 가능 */
+	width: 300px;
+	/* 원하는 너비로 조절 가능 */
 	margin-bottom: 20px;
 }
 
-#searchInput {
+#search-input {
 	flex: 1;
 	padding: 10px;
 	width: 100%;
 	border: 1px solid #ccc;
 	border-radius: 20px;
 	margin-right: 10px;
-	border: 3px solid black; /* 입력란과 버튼 사이 간격 조절 */
+	border: 3px solid black;
+	/* 입력란과 버튼 사이 간격 조절 */
 }
 
 #search-btn {
 	padding: 10px 20px;
-	background-color: #98e01b; /* 원하는 색상으로 변경 가능 */
+	background-color: #98e01b;
+	/* 원하는 색상으로 변경 가능 */
 	color: #fff;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
 }
+
 .search-container2 {
 	display: flex;
 	align-items: center;
 	position: absolute;
-	left: 1100px;
-	top: 50px;
-	width: 500px; /* 원하는 너비로 조절 가능 */
+	left: 300px;
+	top: 30px;
+	width: 1240px;
 	margin-bottom: 20px;
 }
 
 #search-input2 {
 	flex: 1;
-	padding: 10px;
-	width: 100%;
-	border: 1px solid #ccc;
+	padding: 20px 40px;
+	width: calc(500% - 10px);
+	height: calc(200% - 10px);
 	border-radius: 20px;
-	margin-right: 10px;
-	border: 3px solid black; /* 입력란과 버튼 사이 간격 조절 */
+	border: 3px solid rgb(123, 104, 238);
+	font-size: 30px;
+}
+
+#search-input2:hover {
+	border-color: rgb(123, 104, 238);
+}
+
+#search-input2:focus {
+	outline: none;
+	border-color: rgb(123, 104, 238);
 }
 
 #search-btn2 {
-	padding: 10px 20px;
-	background-color: #98e01b; /* 원하는 색상으로 변경 가능 */
-	color: #fff;
+	right: 138px;
+	background-color: white;
+	padding: 11px 40px;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.fa-search {
+	font-size: 50px;
+}
+
+
+
+/*================================================================*/
+/* 모달 스타일 */
+.modal1 {
+	display: none;
+	/* 초기에는 숨김 */
+	position: fixed;
+	/* 고정 위치 */
+	z-index: 1;
+	/* 다른 요소 위에 표시 */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	/* 모달 내용이 넘칠 경우 스크롤 가능하게 설정 */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* 반투명 배경 */
+}
+
+.modal-content1 {
+	background-color: #fefefe;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	border-radius: 8px;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close1 {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/*로고 사진*/
+.e253_58978 {
+	background-color: black;
+	width: 256px;
+	height: 60px;
+	position: absolute;
+	left: 8px;
+	bottom: 8px;
+}
+
+/*=============================================================*/
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: auto;
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.modal-content {
+	background-color: rgb(222, 247, 240);
+	margin: 15% auto;
+	padding: 20px;
+	border: 2px solid #888;
+	border-radius: 30px;
+	max-width: 400px;
+	text-align: center;
+}
+
+.modal-btn {
+	padding: 10px 20px;
+	margin-top: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.close-btn {
+	background-color: #ccc;
+}
+
+.confirm-btn {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.logout-text {
+	font-weight: bold;
+	font-size: 24px;
+	margin-bottom: 20px;
 }
