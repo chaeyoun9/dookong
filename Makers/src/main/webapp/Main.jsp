@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="assets/css/Main_Page.css?after">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
+
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
  <link href='fullcalendar/main.css' rel='stylesheet' />
     <script src='fullcalendar/main.js'></script>
@@ -21,9 +23,9 @@
   
   
   <style>
-=======
+
    <style>
-branch 'master' of https://github.com/chaeyoun9/dookong.git
+
     body {
       background: white;
       font-family: "Gowun Dodum", sans-serif;
@@ -97,15 +99,17 @@ branch 'master' of https://github.com/chaeyoun9/dookong.git
           <div class="e253_5906"></div><!--평균 점수 랭킹-->
           <div class="e253_5907"></div><!--지도API 백그라운드-->
           <div class="e253_5908"></div><!--풀이시간-->
-          <span class="e253_5942">1H 47M</span>
+          <div class="e253_5942">
+            <div id="elapsedTimeContainer"><span id="elapsedTime"></span>M</div>
+          </div>
 
           <div class="e253_5909"></div>
-          <div class="e253_59099">
+          <div class="e253_59099">	
             <canvas id="snake5"></canvas><!--도넛새끼-->
           </div>
           <!--  출석 데이터 연결 완료 -->
           
-          <form action="ClickCountService">
+          <form action="ClickCountService" method="post">
           
           <span class="e253_59473">메이커스와 함께<h1 id="clickCount"><%= session.getAttribute("dateCnt") %></h1>일 공부했어요</span>
         	<button class="e253_59474" type="submit" id="clickButton" name="clicked" onclick="updateCount()()">출석하기</button>
@@ -203,8 +207,7 @@ branch 'master' of https://github.com/chaeyoun9/dookong.git
         <span class="e253_5954">응용 프로그램을 이용하는가를 설계하는 작업이다.</span>
       </div>
     </div>
-    <h1 class="e253_5941">완두콩님의</h1>
-    <h1 class="e266_5957">회차당 평균 풀이시간</h1>
+    <h1 class="e253_5941">완두콩님의<br>회차당 평균 풀이시간</h1>
   </div>
   <script src="assets/js/mapScript.js"></script>
   <script src="assets/js/Chart.js"></script>

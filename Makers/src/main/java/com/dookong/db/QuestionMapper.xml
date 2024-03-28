@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dookong.db.AnswerMapper">
+<mapper namespace="com.dookong.db.QuestionMapper">
 	
-	<select id="answerCnt">
-		select correct_yn from answer_sheets where tt_idx=#{tt_dix} and mb_idx=#{mb_idx}
+	
+	<select id="questionSelect">
+		select * from Questions where test_idx=#{text_idx}
 	</select>
 	
 </mapper>

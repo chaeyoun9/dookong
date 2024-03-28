@@ -22,5 +22,6 @@
   <mappers>
     <mapper resource="com/dookong/db/MemberMapper.xml"/>
     <mapper resource="com/dookong/db/Wrong_answerMapper.xml"/>
+    <mapper resource="com/dookong/db/QuestionMapper.xml"/>
   </mappers>
 </configuration>
