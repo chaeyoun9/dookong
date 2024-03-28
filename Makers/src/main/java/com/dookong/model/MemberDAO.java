@@ -1,12 +1,7 @@
 package com.dookong.model;
 
-import java.util.List;
-import java.util.Map;
-
-import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 
 import com.dookong.db.SqlSessionManager;
 
@@ -75,10 +70,11 @@ public class MemberDAO {
 			return checkE;
 		}
 		
-		public int saveToDB(MemberDTO updateCnt) {
+		public int saveToDB(MemberDTO dto) {
 			int cnt = 0;
-			cnt = sqlSession.update("checkCnt",updateCnt);
+			cnt = sqlSession.update("updateCnt",dto);
 			sqlSession.close();
+			
 			return cnt;
 		}
 		
@@ -96,4 +92,17 @@ public class MemberDAO {
 //			sqlSession.close();
 //			return result;
 //		}
+		
+//		// id 중복 확인
+//		public boolean idCheck(String inputE) {
+//			boolean checkE = false;
+//			try {
+//				checkE = sqlSession.selectOne("idCheck", inputE);
+//			}catch(Exception e) {
+//				e.printStackTrace();
+//			}finally {
+//				sqlSession.close();
+//			}
+//			return checkE;
+//		}	
 }

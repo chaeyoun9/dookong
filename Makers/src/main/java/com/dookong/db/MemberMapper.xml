@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dookong.db.MemberMapper">
+ <mapper namespace="com.dookong.db.MemberMapper">
 	
 	
 	<select id="login" parameterType="com.dookong.model.MemberDTO"
@@ -16,6 +16,10 @@
 	resultType="com.dookong.model.MemberDTO">
 		select * from members where mb_id=#{mb_id} and mb_pw=#{mb_pw}
 	</select>
+	
+	<select id="idCheck" parameterType="String" resultType="boolean">
+		select case when count(*)>0 then 1 else 0 end result from members where id=#{id}
+	</select>
 	 -->
 	
 	<insert id="join" parameterType="com.dookong.model.MemberDTO">
@@ -26,15 +30,12 @@
 	<update id="updateMember" parameterType="com.dookong.model.MemberDTO">
 		update members set mb_pw=#{mb_pw}, mb_name=#{mb_name} where mb_id=#{mb_id}
 	</update>
+
 	
-	<select id="idCheck" parameterType="String" resultType="String">
-		
-		select case when count(*)>0 then 1 else 0 end result from members where mb_id=#{mb_id}
-	</select>
-	
-	<update id="checkCnt" parameterType="com.dookong.model.MemberDTO" >
+	<update id="updateCnt" parameterType="com.dookong.model.MemberDTO" >
 		update members set mb_date=#{mb_date} where mb_id=#{mb_id}
 	</update>
 	
+
 </mapper>
 

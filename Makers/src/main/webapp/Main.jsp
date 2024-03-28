@@ -14,7 +14,17 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  
+  
+  <style>
+
    <style>
+
     body {
       background: white;
       font-family: "Gowun Dodum", sans-serif;
@@ -88,15 +98,17 @@
           <div class="e253_5906"></div><!--평균 점수 랭킹-->
           <div class="e253_5907"></div><!--지도API 백그라운드-->
           <div class="e253_5908"></div><!--풀이시간-->
-          <span class="e253_5942">1H 47M</span>
+          <div class="e253_5942">
+            <div id="elapsedTimeContainer"><span id="elapsedTime"></span>M</div>
+          </div>
 
           <div class="e253_5909"></div>
-          <div class="e253_59099">
+          <div class="e253_59099">	
             <canvas id="snake5"></canvas><!--도넛새끼-->
           </div>
           <!--  출석 데이터 연결 완료 -->
           
-          <form action="ClickCountService">
+          <form action="ClickCountService" method="post">
           
           <span class="e253_59473">메이커스와 함께<h1 id="clickCount"><%= session.getAttribute("dateCnt") %></h1>일 공부했어요</span>
         	<button class="e253_59474" type="submit" id="clickButton" name="clicked" onclick="updateCount()()">출석하기</button>
@@ -126,10 +138,18 @@
 			</script>
           
           
-          
           <div class="e253_5910"></div><!--한줄지식-->
-          <div class="e253_5911"></div><!--캘린더-->
-
+          
+<!-- ==================================================================================== -->
+<!-- FullCalendar -->
+          
+          <!-- FullCalendar -->
+           <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
+          
+<!-- ==================================================================================== -->
+	<!-- 기존캘린더 작업 주석처리 -->
+          <!--<div class="e253_5911"></div><!--캘린더-->
+			<!-- 
           <div class="calendar">
             <div class="calendar-header">
               <button onclick="prevMonth()">&lt; 이전 달</button>
@@ -139,7 +159,8 @@
             <div class="calendar-grid" id="calendar-grid"></div>
             <div class="btn-container">
             </div>
-          </div>
+          </div> -->
+          
 
           <div class="search-container2">
             <div>
@@ -184,12 +205,13 @@
         <span class="e253_5954">응용 프로그램을 이용하는가를 설계하는 작업이다.</span>
       </div>
     </div>
-    <h1 class="e253_5941">완두콩님의</h1>
-    <h1 class="e266_5957">회차당 평균 풀이시간</h1>
+    <h1 class="e253_5941">완두콩님의<br>회차당 평균 풀이시간</h1>
   </div>
   <script src="assets/js/mapScript.js"></script>
   <script src="assets/js/Chart.js"></script>
-
+  
+  <script src="assets/js/calendar.js"></script>
+	
 </body>
 
 </html>

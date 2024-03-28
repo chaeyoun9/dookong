@@ -71,6 +71,16 @@ public class UpdateService extends HttpServlet {
 		// 콘솔창에서 성공실패 확인하기 -- 성공 확인
 		if(cnt>0) {
 			System.out.println("성공");
+			out.println("<script type=\"text/javascript\">");
+		    out.println("alert('수정이 완료되었습니다.');");
+		    out.println("</script>");
+		    
+		    session.setAttribute("name",mb_name);	
+		 	String path="newtest.jsp";
+		 	request.getRequestDispatcher(path).forward(request, response);
+		 	        
+		 	        
+		 	        
 		}else {
 			System.out.println("실패");
 		}

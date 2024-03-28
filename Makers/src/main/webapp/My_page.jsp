@@ -10,17 +10,22 @@
   <title>Makers</title>
   <meta name="description" content="Figma htmlGenerator">
   <meta name="author" content="htmlGenerator">
+  
  <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CBL&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap" rel="stylesheet">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
 
   <link rel="stylesheet" href="assets/css/My_page.css?after">
 
-  <style>
-   
+ <style>
     body {
-      background: #E5E5E5;
-      margin:0;
+      background-color: rgb(240,240,240);
+      font-family: "Gowun Dodum", sans-serif;
+      margin: 0%;
+      padding: 0%;
     }
   </style>
 
@@ -30,29 +35,36 @@
   <div class="e270_6138">
     <div class="e270_6082"></div>
     <div class="e270_6083"></div>
+    
+    <div class="categories">
+      <!-- 카테고리 버튼 -->
+      <a href="Study_page.jsp" class="category-btn">
+        <div class="category-icon">&#128218;</div>
+        <div class="category-title">학습 페이지</div>
+      </a>
+  
+      <a href="newtest.jsp" class="category-btn">
+        <div class="category-icon">&#128202;</div>
+        <div class="category-title">학습 대시보드</div>
+      </a>
+  
+      <a href="My_page.jsp" class="category-btn">
+        <div class="category-icon">&#128100;</div>
+        <div class="category-title" style="color: red;">마이페이지</div>
+      </a>
+  
+      <a href="#" id="logout-btn" class="category-btn">
+        <div class="category-icon">&#128075;</div>
+        <div class="category-title">Sign Out</div>
+      </a>
+    </div>
+    
     <div class="e270_6085"><img src="img/두콩이.png" width="153" height="182"></div>
     <div class="e270_6093"><img src="img/두콩이.png" width="153" height="182"></div>
-   <div class="categories">
-            <a href="Study_page.jsp" class="category-btn">
-              <div class="category-icon">&#128218;</div>
-              <div class="category-title">학습 페이지</div>
-            </a>
-        
-            <a href="Main.jsp" class="category-btn">
-              <div class="category-icon">&#128202;</div>
-              <div class="category-title">학습 대시보드</div>
-            </a>
-        
-            <a href="My_page.jsp" class="category-btn">
-              <div class="category-icon">&#128100;</div>
-              <div class="category-title">마이페이지</div>
-            </a>
-        
-            <a href="Main_Login.jsp" class="category-btn">
-              <div class="category-icon">&#128075;</div>
-              <div class="category-title">Sign Out</div>
-            </a>
-          </div>
+    <span class="e270_6087"><a href="Study_page.html">학습 페이지</a></span>
+    <span class="e270_6091">마이페이지</span>
+    <span class="e270_6089"><a href="Main_Login.jsp">SIGN OUT</a></span>
+    <span class="e270_6088"><a href="Main.jsp">학습 대시보드</a></span>
     <h1 class="e270_6092">마이페이지</h1>
               <%String name = (String)session.getAttribute("name"); 
           MemberDTO dto=(MemberDTO)session.getAttribute("dto");
@@ -125,6 +137,40 @@
     </div>
     <span class="e270_6128">PASSWORD 확인</span>
   </div>
+  <div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <p>로그아웃 하시겠습니까?</p>
+      <button id="confirmBtn" class="modal-btn confirm-btn">확인</button>
+      <button id="closeBtn" class="modal-btn close-btn">취소</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoutBtn = document.getElementById('logout-btn');
+      const modal = document.getElementById('logoutModal');
+      const confirmBtn = document.getElementById('confirmBtn');
+      const closeBtn = document.getElementById('closeBtn');
+
+      logoutBtn.addEventListener('click', function () {
+        modal.style.display = 'block'; // 모달 표시
+      });
+
+      confirmBtn.addEventListener('click', function () {
+        window.location.href = 'Main_Login.jsp'; // 로그아웃 페이지 경로로 수정
+      });
+
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none'; // 모달 숨김
+      });
+
+      window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none'; // 모달 숨김
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

@@ -62,7 +62,7 @@ public class LoginService extends HttpServlet {
 			session.setAttribute("dateCnt", date);
 			session.setAttribute("name", name);
 			session.setAttribute("dto", memberDTO);
-			String path="Main.jsp";
+			String path="newtest.jsp";
 	        request.getRequestDispatcher(path).forward(request, response);
 	        
 	        

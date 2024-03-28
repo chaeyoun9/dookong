@@ -4,17 +4,19 @@ const data1 = {
     datasets: [
         {
             label: '저번주 보다!',
-            data: [100, 80, 90, 70, 90, 50, 100],
+            data: [30, 40, 30, 50, 40, 60, 50],
             fill: false,
             tension: 0.4,
             pointStyle: 'circle',
+            borderColor: '#92E3E6',
         },
         {
             label: '이번주에 더!',
-            data: [40, 60, 20, 20, 30, 35, 42],
+            data: [40, 30, 40, 40, 50, 70, 60],
             fill: false,
             tension: 0.4,
             pointStyle: 'rectRounded',
+            borderColor: '#EE618B',
         }
     ]
 };
@@ -94,19 +96,22 @@ const data2 = {
     datasets: [
         {
             label: '회차별 점수',
-            data: [45, 67, 80, 55, 71, 50],
+            data: [45, 30, 80, 55, 71, 50],
             fill: false,
-            borderColor: 'purple',
+            borderColor: '#cef2f2',
             pointBackgroundColor: 'rgb(75, 192, 192)',
-            pointRadius: 6,
-            pointHoverRadius: 8,
-            borderWidth: 3,
             type: 'line',
         },
         {
             label: '',
-            data: [45, 67, 80, 55, 71, 50],
-            backgroundColor: 'rgba(75, 192, 192, 0.5)',
+            data: [45, 30, 80, 55, 71, 50],
+            backgroundColor: [
+                '#e9bbb5',
+                '#e7cba9',
+                '#aad9cd',
+                '#e8d595',
+                '#8da47e',
+            ],
             borderWidth: 1,
             type: 'bar',
         }
@@ -172,11 +177,12 @@ const data3 = {
     datasets: [{
         label: '지울거',
         data: [80, 65, 88, 70, 80],
-        backgroundColor: ['Orange',
-            'blue',
-            'rgba(75, 192, 192)',
-            'red',
-            'rgba(144, 238, 144)',
+        backgroundColor: [
+            '#47c6cd',
+            '#cef2f2',
+            '#fdd4e2',
+            '#f2c3e3',
+            '#c992b9',
         ],
         borderWidth: 0.1,
         borderRadius: 15,
@@ -239,8 +245,13 @@ const data4 = {
     datasets: [{
         label: '학습 진행률',
         data: [75, 60, 85, 50, 70],
-        backgroundColor: 'rgba(20, 255, 255, 0.5)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: [
+            '#abdee6',
+            '#cbaacb',
+            '#ffffb5',
+            '#ffccb6',
+            '#f3b0c3',
+        ],
         borderWidth: 1,
         borderRadius: 10,
         barThickness: 15,

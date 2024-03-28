@@ -41,7 +41,7 @@
               <div class="category-title">학습 페이지</div>
             </a>
         
-            <a href="Main.jsp" class="category-btn">
+            <a href="newtest.jsp" class="category-btn">
               <div class="category-icon">&#128202;</div>
               <div class="category-title">학습 대시보드</div>
             </a>

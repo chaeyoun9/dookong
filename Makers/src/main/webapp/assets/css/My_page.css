@@ -9,7 +9,7 @@
 }
 
 .e270_6082 {
-	background-image: linear-gradient(to bottom right, white, #ebc3eb);
+	background-color: #F7FBFC ;
 	width: 1425px;
 	height: 1010px;
 	position: absolute;
@@ -17,18 +17,18 @@
 	top: 0px;
 	right: 0px;
 	bottom: 0px;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid #F7FBFC;
 }
 
 .e270_6083 {
-	background-image: linear-gradient(to bottom right, white, white, #e6b5e1, #e6b5e1);
+	background-color: #D6E6F2;
 	width: 256px;
 	width: 256px;
 	height: 1010px;
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid #D6E6F2;
 }
 
 .e270_6085 {
@@ -38,7 +38,7 @@
 	position: absolute;
 	left: 51px;
 	top: 40px;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid  #D6E6F2;
 }
 
 .e270_6093 {
@@ -48,7 +48,7 @@
 	position: absolute;
 	left: 631px;
 	top: 205px;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid #F7FBFC;
 }
 
 .categories {
@@ -76,7 +76,7 @@
 	text-decoration: none;
 	color: #333;
 	display: inline-block;
-	border: 7px solid rgb(175, 238, 238);
+	border: 7px solid  #D6E6F2;
 	;
 }
 
@@ -106,6 +106,7 @@
 	text-align: left;
 	font-size: 54px;
 	letter-spacing: 0;
+	font-family: 'SUITE-Regular';
 }
 
 .e270_6094 {
@@ -116,6 +117,7 @@
 	left: 816px;
 	top: 247px;
 	text-align: left;
+	font-family: 'SUITE-Regular';
 }
 
 .e270_6095 {
@@ -128,6 +130,7 @@
 	text-align: left;
 	font-size: 23px;
 	letter-spacing: 0;
+	font-family: 'SUITE-Regular';
 }
 
 .e270_6096 {
