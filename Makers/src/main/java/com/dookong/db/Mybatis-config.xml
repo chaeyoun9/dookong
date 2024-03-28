@@ -6,6 +6,9 @@
 	<typeAliases>
 
 		<typeAlias type="com.dookong.model.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.dookong.model.QuestionDTO" alias="QuestionDTO"/>
+		<typeAlias type="com.dookong.model.Wrong_answerDTO" alias="Wrong_answerDTO"/>
+		
 	</typeAliases>
 
   <environments default="development">

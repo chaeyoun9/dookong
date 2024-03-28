@@ -135,3 +135,9 @@ function showEndTime() {
 function saveTotalTime(totalTime) {
     localStorage.setItem('totalTime', totalTime);
 }
+
+
+
+
+
+

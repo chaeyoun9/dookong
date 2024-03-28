@@ -16,6 +16,13 @@ public class Wrong_answerDTO {
 		this.created_at = created_at;
 		this.answer_YN = answer_YN;
 	}
+	
+	public Wrong_answerDTO(String mb_id, String created_at) {
+		super();
+		this.mb_id = mb_id;
+		this.created_at = created_at;
+	}
+
 	public int getQuestion_idx() {
 		return question_idx;
 	}
