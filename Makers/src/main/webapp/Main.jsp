@@ -14,6 +14,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  
+  
   <style>
     body {
       background: #E5E5E5;
@@ -94,8 +100,13 @@
           <span class="e253_59473">이번달 메이커스와 함께<h1>15일</h1>공부했어요</span><!--변수지정-->
           <button class="e253_59474">출석하기</button>
           <div class="e253_5910"></div><!--한줄지식-->
-          <div class="e253_5911"></div><!--캘린더-->
-
+          
+          <!-- FullCalendar -->
+           <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
+          
+           
+          <!--<div class="e253_5911"></div><!--캘린더-->
+			<!-- 
           <div class="calendar">
             <div class="calendar-header">
               <button onclick="prevMonth()">&lt; 이전 달</button>
@@ -105,7 +116,8 @@
             <div class="calendar-grid" id="calendar-grid"></div>
             <div class="btn-container">
             </div>
-          </div>
+          </div> -->
+          
 
           <div class="search-container2">
             <div>
@@ -155,7 +167,9 @@
   </div>
   <script src="assets/js/mapScript.js"></script>
   <script src="assets/js/Chart.js"></script>
-
+  
+  <script src="assets/js/calendar.js"></script>
+	
 </body>
 
 </html>

@@ -3,6 +3,8 @@ package com.dookong.model;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.crypto.dsig.spec.ExcC14NParameterSpec;
+
 import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -68,4 +70,17 @@ public class MemberDAO {
 //			sqlSession.close();
 //			return result;
 //		}
+		
+		// id 중복 확인
+		public boolean idCheck(String inputE) {
+			boolean checkE = false;
+			try {
+				checkE = sqlSession.selectOne("idCheck", inputE);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				sqlSession.close();
+			}
+			return checkE;
+		}	
 }

@@ -36,14 +36,17 @@ public class JoinService extends HttpServlet {
 		String nick = request.getParameter("nick");
 		String pwCheck = request.getParameter("pwCheck");
 		
+		// DAO 객체 생성
+		MemberDAO dao = new MemberDAO();
+		
 		// 3. 처리해야 하는 로직 구현 -> 회원가입!
 		MemberDTO dto = new MemberDTO(id,pw,nick);
 		
 		
-		MemberDAO dao = new MemberDAO();
 		int result = dao.join(dto);
 		
-
+	
+		
 		// 4. 결과 처리
 		if(result > 0) {
 			// 회원가입 성공시!
@@ -64,7 +67,7 @@ public class JoinService extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<script type=\"text/javascript\">");
 		    out.println("alert('아이디 또는 비밀번호가 올바르지 않습니다 다시 시도해주세요.');");
-		    out.println("window.location.href = 'Main_Login.jsp';"); // 로그인 페이지로 이동
+		    //out.println("window.location.href = 'Main_Login.jsp';"); // 로그인 페이지로 이동
 		    out.println("</script>");
 		}
 	

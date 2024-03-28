@@ -54,7 +54,8 @@
         <form action="JoinService" method="post" class="id1">
             <div class="icon-input">
                 <p>ID</p>
-                <input class="in_put" type="text" autofocus name="id" placeholder="영문,숫자 조합으로 6~12자">
+                <input onclick="idCheck()" class="in_put" type="text" autofocus name="id" placeholder="영문,숫자 조합으로 6~12자">
+             
             </div>
             <div class="icon-input">
                 <p>NICK NAME</p>

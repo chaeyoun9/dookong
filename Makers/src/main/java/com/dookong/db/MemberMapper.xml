@@ -24,5 +24,8 @@
 		update members set mb_pw=#{mb_pw}, mb_name=#{mb_name} where mb_id=#{mb_id}
 	</update>
 	
+	<select id="idCheck" parameterType="String" resultType="boolean">
+		select case when count(*)>0 then 1 else 0 end result from members where id=#{id}
+	</select>
 </mapper>
 
