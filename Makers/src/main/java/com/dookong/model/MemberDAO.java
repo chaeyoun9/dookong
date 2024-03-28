@@ -70,10 +70,11 @@ public class MemberDAO {
 			return checkE;
 		}
 		
-		public int saveToDB(MemberDTO updateCnt) {
+		public int saveToDB(MemberDTO dto) {
 			int cnt = 0;
-			cnt = sqlSession.update("checkCnt",updateCnt);
+			cnt = sqlSession.update("updateCnt",dto);
 			sqlSession.close();
+			
 			return cnt;
 		}
 		

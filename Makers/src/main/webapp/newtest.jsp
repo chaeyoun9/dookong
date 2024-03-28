@@ -1,21 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.dookong.model.MemberDTO" %>
+    
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title>Html Generated</title>
+  <title>Makers</title>
   <meta name="description" content="Figma htmlGenerator">
   <meta name="author" content="htmlGenerator">
+  
   <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CBL&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="assets/css/Main_Page.css?after">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href='fullcalendar/main.css' rel='stylesheet' />
+    <script src='fullcalendar/main.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link src: url='https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   <style>
@@ -29,7 +39,9 @@
 </head>
 
 <body>
-
+ <%String name = (String)session.getAttribute("name"); 
+          MemberDTO dto=(MemberDTO)session.getAttribute("dto");
+          %>
   <div class="e266_5958">
     <div class="e253_5953">
       <div class="e253_5898"></div>
@@ -39,27 +51,25 @@
           <div class="e253_5876"></div>
 
           <div class="categories">
-            <!-- 카테고리 버튼 -->
-            <a href="Study_page.html" class="category-btn">
+            <a href="Study_page.jsp" class="category-btn">
               <div class="category-icon">&#128218;</div>
               <div class="category-title">학습 페이지</div>
             </a>
-
-            <a href="Main_Page.html" class="category-btn">
+        
+            <a href="newtest.jsp" class="category-btn">
               <div class="category-icon">&#128202;</div>
-              <div class="category-title" style="color: red;">학습 대시보드</div>
+              <div class="category-title">학습 대시보드</div>
             </a>
-
-            <a href="My_page.html" class="category-btn">
+        
+            <a href="My_page.jsp" class="category-btn">
               <div class="category-icon">&#128100;</div>
               <div class="category-title">마이페이지</div>
             </a>
-
+        
             <a href="#" id="logout-btn" class="category-btn">
               <div class="category-icon">&#128075;</div>
               <div class="category-title">Sign Out</div>
             </a>
-
           </div>
 
           <div class="e253_58978"><img src="img/Makers.png" width="256" height="60"></div>
@@ -89,17 +99,73 @@
           <div class="e253_5906"></div><!--평균 점수 랭킹-->
           <div class="e253_5907"></div><!--지도API 백그라운드-->
           <div class="e253_5908"></div><!--풀이시간-->
-          <span class="e253_5942">1H 47M</span>
+           <div class="e253_5942">
+            <div id="elapsedTimeContainer"><span id="elapsedTime"></span>S</div>
+          </div>
 
           <div class="e253_5909"></div>
           <div class="e253_59099">
             <canvas id="snake5"></canvas><!--도넛새끼-->
           </div>
-          <span class="e253_59473">이번달 메이커스와 함께<h1>15일</h1>공부했어요</span><!--변수지정-->
-          <button class="e253_59474">출석하기</button>
-          <div class="e253_5910"></div><!--한줄지식-->
-          <div class="e253_5911"></div><!--캘린더-->
+          
+          
+          <!--  출석 데이터 연결 완료 -->
+          
+          
+          <span class="e253_59473">메이커스와 함께<h1 id="clickCount"><%= session.getAttribute("dateCnt") %></h1>일 공부했어요</span>
+        	<button class="e253_59474" type="submit" id="clickButton" name="clicked" onclick="updateCount()()">출석하기</button>
 
+          
+          
+    		
+          <!--  출석 데이터 연결 스크립트 -->
+			<script>
+				function updateCount(){
+					var countSpan = document.getElementById("clickCount");
+				    var currentCount = parseInt(countSpan.textContent);
+				    currentCount++;
+				    countSpan.textContent = currentCount;
+					
+				    var xhr = new XMLHttpRequest();
+			        xhr.open("POST", "ClickCountServlet", true); // insert_count.php는 실제로 데이터베이스에 삽입하는 PHP 파일입니다.
+			        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			        xhr.onreadystatechange = function () {
+			            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+			                console.log(xhr.responseText); // 서버로부터의 응답을 콘솔에 출력
+			            }
+			        };
+			        
+			        // POST 요청 보내기
+			        var data = "count=" + currentCount; // 서버로 보낼 데이터 형식을 정의합니다. 이 경우 count 값만 보냅니다.
+			        xhr.send(data);
+			        
+				    // 버튼 비활성화 및 다시 활성화
+				    document.getElementById("clickButton").disabled = true;
+				    setTimeout(function() {
+				        document.getElementById("clickButton").disabled = false;
+				    }, 24 * 60 * 60 * 1000); // 24시간 후에 다시 활성화 (24 * 60 * 60 * 1000)
+				    
+				   
+				    
+					
+				}
+				
+				
+	
+			</script>
+			
+			
+          <div class="e253_5910"></div><!--한줄지식-->
+          <!-- ==================================================================================== -->
+<!-- FullCalendar -->
+          
+          <!-- FullCalendar -->
+           <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
+          
+<!-- ==================================================================================== -->
+	<!-- 기존캘린더 작업 주석처리 -->
+          <!--<div class="e253_5911"></div><!--캘린더-->
+			<!-- 
           <div class="calendar">
             <div class="calendar-header">
               <button onclick="prevMonth()">&lt; 이전 달</button>
@@ -109,9 +175,9 @@
             <div class="calendar-grid" id="calendar-grid"></div>
             <div class="btn-container">
             </div>
-          </div>
+          </div> -->
 
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+          
 
           <div class="search-container2">
             <!-- 검색 입력창 -->
@@ -156,27 +222,31 @@
         <div class="e253_59471"></div>
         <h1 class="e253_59481">:Makers 평균 점수 랭킹</h1>
 
+        
         <div class="search-container">
           <div>
-            <input id="search-input" type="text" autofocus name="question" placeholder="주소를 입력하세요">
+            <input id="searchInput" type="text" placeholder="주소를 입력하세요">
           </div>
           <div>
-            <button id="search-btn">검색</button>
+            <button id="search-btn" type="submit" onclick="search()" >검색</button>
           </div>
         </div>
+        
 
-        <div id="search-results">
+        <div class="e253_59492">
+        <div id="map" style="width:320px;height:200px;"></div>
+   
+
+		
+		
         </div>
-
-
-        <div class="e253_59492">지도API 추가</div>
+        
         <div class="e253_59491"></div>
         <span class="e253_5952">사용자가 어떤 방식으로</span>
         <span class="e253_5954">응용 프로그램을 이용하는가를 설계하는 작업이다.</span>
       </div>
     </div>
-    <h1 class="e253_5941">완두콩님의</h1>
-    <h1 class="e266_5957">회차당 평균 풀이시간</h1>
+    <h1 class="e253_5941">완두콩님의<br>회차당 평균 풀이시간</h1>
   </div>
 
 
@@ -200,7 +270,7 @@
       });
 
       confirmBtn.addEventListener('click', function () {
-        window.location.href = 'Login.html'; // 로그아웃 페이지 경로로 수정
+        window.location.href = 'Main_Login.jsp'; // 로그아웃 페이지 경로로 수정
       });
 
       closeBtn.addEventListener('click', function () {
@@ -247,7 +317,7 @@
       searchButton.disabled = true;
 
       try {
-        const apiUrl = 'http://localhost:3000/makers';
+        const apiUrl = 'http://localhost:8081/Makers';
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
@@ -319,10 +389,18 @@
     function displayError(message) {
       alert(`에러 발생: ${message}`);
     }
+    
+    window.onload = function () {
+        showTotalTime();
+      };
+      
   </script>
 
+   <script src="assets/js/calendar.js"></script>
+  <script src="assets/js/mapScript.js"></script>
   <script src="assets/js/Chart.js"></script>
-
+  
+ 
 </body>
 
 </html>

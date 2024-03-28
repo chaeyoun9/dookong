@@ -16,19 +16,19 @@
 }
 
 .e296_3409 {
-	background-image: linear-gradient(to bottom right, white, #ebc3eb);
+	background-color: #F7FBFC ;
 	width: 1425px;
-	height: 1010px;
+	height: 1005px;
 	position: absolute;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid #F7FBFC ;
 }
 
 .e296_3411 {
-	background-image: linear-gradient(to bottom right, white,white,#e6b5e1,#e6b5e1);
+	background-color: #D6E6F2;
 	width: 255.8223419189453px;
 	height: 1007px;
 	position: absolute;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid#D6E6F2;
 }
 
 .e296_3410 {
@@ -38,7 +38,7 @@
 	position: absolute;
 	left: 51px;
 	top: 40px;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid #D6E6F2;
 }
 
 .e296_3412 {
@@ -401,9 +401,9 @@
 }
 
 .category-btn {
-	width: 150px; 
-    height: 100px;
-    max-width: 100%;
+	width: 150px;
+	height: 100px;
+	max-width: 100%;
 	max-width: 200px;
 	text-align: center;
 	background-color: white;
@@ -415,7 +415,8 @@
 	text-decoration: none;
 	color: #333;
 	display: inline-block;
-	border: 7px solid rgb(175,238,238);;
+	border: 7px solid #D6E6F2;
+	;
 }
 
 .category-btn:hover {
@@ -621,13 +622,13 @@
 }
 
 .e296_3464 {
-	background-color: rgb(240,240,240);
+	background-color: rgb(240, 240, 240);
 	width: 1035px;
 	height: 920px;
 	left: 330px;
-	top: 87px;
+	top: 82px;
 	position: absolute;
-	border: 8px solid rgb(152, 251, 152);
+	border: 8px solid #F7FBFC ;
 
 }
 
@@ -637,8 +638,9 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	background-color: rgb(240,240,240);
+	background-color: rgb(240, 240, 240);
 }
+
 .file-item {
 	margin-left: 80px;
 	margin-right: 80px;
@@ -651,13 +653,15 @@
 
 .file-icon {
 	font-size: 100px;
-	color: #3498db;
+	color: blue;
 }
+
 .file-label {
 	margin-top: 5px;
 	font-size: 16px;
 	color: #333;
 }
+
 .e253_58978 {
 	background-color: black;
 	width: 256px;
@@ -666,7 +670,7 @@
 	left: 8px;
 	bottom: 8px;
 }
-/*======================gpt========================*/
+
 .search-container2 {
 	display: flex;
 	align-items: center;
@@ -679,7 +683,7 @@
 
 #search-input2 {
 	flex: 1;
-	padding:16px 40px;
+	padding: 16px 40px;
 	width: calc(500% - 10px);
 	height: calc(200% - 10px);
 	border-radius: 20px;
@@ -751,7 +755,8 @@
 	text-decoration: none;
 	cursor: pointer;
 }
-/*======================gpt========================*/
+
+/*=========================gpt===========================*/
 .modal {
 	display: none;
 	position: fixed;
