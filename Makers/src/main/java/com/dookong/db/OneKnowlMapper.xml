@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dookong.db.OneKnowl">
+
+
+	<select id="select_all" resultType="com.dookong.model.OneKnowl">
+		SELECT knowl_title, knowl_content from one_knowl
+	</select>
+
+
+	<select id="select_num" resultType="com.dookong.model.OneKnowlDTO">
+		select knowl_title, knowl_content FROM one_knowl where know_seq = #{know_seq}
+	</select>
+
+</mapper>
