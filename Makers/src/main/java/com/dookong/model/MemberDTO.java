@@ -6,20 +6,32 @@ public class MemberDTO {
 	private String mb_pw;
 	private String mb_name;
 	private int mb_date;
+	private String mb_image;
 
 	
 	
-	public MemberDTO(String mb_id, String mb_pw, String mb_name, int mb_date) {
+	public MemberDTO(String mb_id, String mb_pw, String mb_name, int mb_date,String mb_image) {
 		super();
 		this.mb_id = mb_id;
 		this.mb_pw = mb_pw;
 		this.mb_name = mb_name;
 		this.mb_date=mb_date;
+		this.mb_image=mb_image;
 	}
 	
 	
 	public MemberDTO() {
 		
+	}
+
+
+	public String getMb_image() {
+		return mb_image;
+	}
+
+
+	public void setMb_image(String mb_image) {
+		this.mb_image = mb_image;
 	}
 
 

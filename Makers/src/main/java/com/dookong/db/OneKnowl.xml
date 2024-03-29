@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dookong.db.OneKnowl">
+
+
+	<select id="select_all" resultType="OneKnowl">
+		select knowl_sub, knowl_title from one_knowl
+	</select>
+
+
+	<select id="select_num" parameterType="int" resultType="OneKnowl">
+		SELECT * FROM one_knowl WHERE know_seq = #{know_seq}
+	</select>
+
+</mapper>

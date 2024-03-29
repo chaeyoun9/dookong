@@ -31,7 +31,7 @@ public class OneKnowl extends HttpServlet {
 		// 페이지로 데이터를 전달하고 forward 방식으로 페이지 이동
 		dispatcher.forward(request, response);
 		
-		System.out.println("서비스 rdq확인"+rdQ);
+		// System.out.println("서비스 rdq확인"+rdQ);
 	}
 
 }

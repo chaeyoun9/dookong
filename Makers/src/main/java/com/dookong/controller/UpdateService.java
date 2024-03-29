@@ -34,6 +34,10 @@ public class UpdateService extends HttpServlet {
 		String mb_pw = request.getParameter("cur_pw");
 		String re_pw = request.getParameter("re_pw");
 		String check_pw = request.getParameter("check_pw");
+		String mb_image = request.getParameter("previewId");
+		
+		System.out.println("image :"+mb_image);
+		
 		
 		String mb_id=memDTO.getMb_id();
 		
@@ -62,6 +66,7 @@ public class UpdateService extends HttpServlet {
 		updateMember.setMb_id(mb_id);
 		updateMember.setMb_pw(re_pw);
 		updateMember.setMb_name(mb_name);
+		
 		
 		// MemberDTO 객체 생성하기
 		

@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import com.dookong.model.TakeTestsDAO;
 import com.dookong.model.TakeTestsDTO;
+import com.google.gson.Gson;
 
 @WebServlet("/TakeTests")
 public class TakeTests extends HttpServlet {
@@ -44,12 +45,15 @@ public class TakeTests extends HttpServlet {
 			// TestList가 null일 때의 처리
 			System.out.println("TestList=null");
 		}
+		Gson gson = new Gson();
+		
 		PrintWriter out = response.getWriter();
-		out.print(jsonArray);
+		//out.print(jsonArray);
 		// JSON 데이터를 클라이언트로 전송
-		response.setContentType("application/json");
+		//response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		out.print(jsonArray.toString());
+		//out.print(gson.toJson(TestList).toString());
 		out.flush();
 	}
 

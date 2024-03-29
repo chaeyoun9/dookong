@@ -25,7 +25,7 @@
 
 
 <link rel="stylesheet" href="assets/css/My_page.css?after">
-
+<link rel="icon" type="image/png" href="http://example.com/myicon.png">
 <style>
 body {
 	background-color: rgb(240, 240, 240);
@@ -62,14 +62,14 @@ body {
 		<div class="e270_6085">
 			<img src="img/두콩이.png" width="153" height="182">
 		</div>
-		<div class="e270_6093">
-			<img src="img/두콩이.png" width="153" height="182">
+		<div class="e270_6093" id="profile-picture">
+			<!-- <form action="ProfilePictureUploadServlet" method="post" enctype="multipart/form-data"> -->
+			<img src="img/두콩이.png" width="153" height="182" id="previewId">
+			<input type="file" name="profile"
+				onchange="previewImage(event, 'previewId')" />
+
 		</div>
-		<span class="e270_6087"><a href="Study_page.html">학습 페이지</a></span> <span
-			class="e270_6091">마이페이지</span> <span class="e270_6089"><a
-			href="Main_Login.jsp">SIGN OUT</a></span> <span class="e270_6088"><a
-			href="Main.jsp">학습 대시보드</a></span>
-		<h1 class="e270_6092">마이페이지</h1>
+		
 		<%
 		String name = (String) session.getAttribute("name");
 		MemberDTO dto = (MemberDTO) session.getAttribute("dto");
@@ -81,6 +81,13 @@ body {
 			PASSWORD</span> <span class="e270_6107">현재 PASSWORD</span>
 
 		<form action="UpdateService" method="post">
+			<div class="e270_6093" id="profile-picture">
+				<!-- <form action="ProfilePictureUploadServlet" method="post" enctype="multipart/form-data"> -->
+				<img src="img/두콩이.png" width="153" height="182" id="previewId">
+				<input type="file" name="profile"
+					onchange="previewImage(event, 'previewId')" />
+
+			</div>
 			<div>
 				<input class="co_1" type="test" autofocus name="nick"
 					placeholder="  한글/영문 1~10자"> <input class="co_2"
@@ -177,6 +184,112 @@ body {
 				}
 			});
 		});
+
+		/* document.addEventListener('DOMContentLoaded', function(){
+			const profilePicture = document.getElementById('profile-picture');
+			
+			profilePicture.addEventListener('click', function(){
+				// 파일 선택 창 열기
+				const input = document.createElement('input');
+				input.type = 'file';
+				input.accept = 'image/*';
+				input.onchange = function(event){
+					const file = event.target.files[0];
+					if(file){
+						// 파일 업로드
+						const formData = new FormData();
+						// 파일 이름을 url 인코딩해서 FormData에 추가
+						const encodedFileName = encodeURIComponent(file.name);
+						// 프로필 이미지를 profilePicture라는 이름으로 서버로 전송 
+						formData.append('profilePicture', file);
+						
+						fetch('ProfilePictureUploadServlet', {
+							method : 'POST',
+							body : formData
+						})
+						.then(response => {
+							if(response.ok){
+								// 파일 업로드가 성공하면 이미지를 표시할 url 받아오기
+								return response.text();
+							}else{
+								throw new Error('프로필 이미지를 업로드하는 중 오류가 발생했습니다.');
+							}
+						})
+						.then(imageUrl => {
+							// 이미지를 표시할 img 요소의 src 속성에 imageUrl 설정
+							const profileImage = document.getElementById('profile-picture').getElementsByTagName('img')[0];
+							profileImage.src = imageUrl;
+						})
+						.catch(error => {
+							console.error(error);
+							alert(error.message);
+						})
+					  }
+					};
+				input.click();
+			  });
+			}); */
+
+		function previewImage(event, previewId) {
+			let input = event.target;
+
+			var reader = new FileReader();
+			reader.onload = function() {
+				var dataURL = reader.result;
+				var preview = document.getElementById(previewId);
+				preview.src = dataURL;
+			};
+
+			reader.readAsDataURL(input.files[0]);
+		}
+			
+			// 마이페이지의 JavaScript 코드 일부분
+
+			function uploadProfilePicture(file) {
+			    const formData = new FormData();
+			    formData.append('profile', file);
+
+			    fetch('ProfilePictureUploadServlet', {
+			        method: 'POST',
+			        body: formData
+			    })
+			    .then(response => {
+			        if (response.ok) {
+			            return response.text();
+			        } else {
+			            throw new Error('프로필 이미지를 업로드하는 중 오류가 발생했습니다.');
+			        }
+			    })
+			    .then(imageUrl => {
+			        // 이미지 URL을 받아온 후, 이를 사용하여 프로필 이미지를 변경
+			        const profileImage = document.getElementById('profile-picture').getElementsByTagName('img')[0];
+			        profileImage.src = imageUrl;
+
+			        // 이미지 경로를 데이터베이스에 저장
+			        saveImagePathToDatabase(imageUrl);
+			    })
+			    .catch(error => {
+			        console.error(error);
+			        alert(error.message);
+			    });
+			}
+
+			function saveImagePathToDatabase(imageUrl) {
+			    // Ajax를 사용하여 서버에 이미지 경로를 전송하고, 서버에서는 데이터베이스에 저장하는 작업을 수행
+			    // jQuery를 사용하는 경우 아래와 같이 작성할 수 있습니다.
+			    $.ajax({
+			        url: 'SaveImageServlet', // 이미지 경로를 저장할 서블릿 주소
+			        type: 'POST',
+			        data: {imageUrl: imageUrl},
+			        success: function(response) {
+			            console.log('이미지 경로가 성공적으로 저장되었습니다.');
+			        },
+			        error: function(xhr, status, error) {
+			            console.error('이미지 경로 저장 중 오류 발생:', error);
+			        }
+			    });
+			}
+	
 	</script>
 </body>
 

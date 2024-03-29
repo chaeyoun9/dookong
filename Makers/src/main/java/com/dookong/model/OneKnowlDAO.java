@@ -21,11 +21,11 @@ public class OneKnowlDAO {
 		int randomSequence = 0;
 		
 		if (result != null) {
-			System.out.println("전체 출력 성공!");
+			// System.out.println("전체 출력 성공!");
 			int maxNum = result.size();
 			System.out.println(maxNum);
 			randomSequence = new Random().nextInt(maxNum)+1;
-			System.out.println("TEST "+ randomSequence);
+			// System.out.println("TEST "+ randomSequence);
 		}
 		return randomSequence;
 	}
@@ -36,9 +36,9 @@ public class OneKnowlDAO {
 		OneKnowlDTO result = sqlSession.selectOne("select_num",know_seq);
 		System.out.println(result+" Test2");
 		if (result != null) {
-			System.out.println("문제 출력 성공!");
+			// System.out.println("문제 출력 성공!");
 		} else {
-			System.out.println("문제 출력 실패!");
+			// System.out.println("문제 출력 실패!");
 		}
 
 		sqlSession.close();

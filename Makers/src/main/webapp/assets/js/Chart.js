@@ -105,7 +105,7 @@ const data2 = {
         },
         {
             label: '',
-            data: [40, 30, 80, 55, 71, 50],
+            data: [30, 20, 80, 55, 71, 50],
             backgroundColor: [
                 '#e9bbb5',
                 '#e7cba9',
