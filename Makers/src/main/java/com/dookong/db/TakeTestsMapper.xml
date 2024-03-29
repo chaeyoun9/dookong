@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dookong.db.TakeTestsMapper">
 
-<select id="selectScore" resultType="TakeTestsDTO">
+<select id="selectScore" resultType="com.dookong.model.TakeTestsDTO">
 	select tested_at, tt_score from take_tests where mb_id=#{mb_id}
 </select>
 
