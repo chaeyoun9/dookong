@@ -405,10 +405,70 @@ body {
         var question = document.getElementById("search-input2").value;
         console.log("question");
         
+<<<<<<< HEAD
         // 질문이 비어 있는지 확인
         if (question.trim() === "") {
             alert("질문을 입력하세요.");
             return;
+=======
+        <div class="search-container">
+          <div>
+            <input id="searchInput" type="text" placeholder="주소를 입력하세요">
+          </div>
+          <div>
+            <button id="search-btn" type="submit" onclick="search()" >검색</button>
+          </div>
+        </div>
+        
+
+        <div class="e253_59492">
+        <div id="map" style="width:320px;height:200px;"></div>
+   
+
+		
+		
+        </div>
+        
+        <div class="e253_59491"></div>
+        <span class="e253_5952">사용자가 어떤 방식으로</span>
+        <span class="e253_5954">응용 프로그램을 이용하는가를 설계하는 작업이다.</span>
+      </div>
+    </div>
+    <h1 class="e253_5941"><%=name %>님의<br>오늘 풀이시간</h1>
+  </div>
+
+
+  <div id="logoutModal" class="modal">
+    <div class="modal-content">
+      <p>로그아웃 하시겠습니까?</p>
+      <button id="confirmBtn" class="modal-btn confirm-btn">확인</button>
+      <button id="closeBtn" class="modal-btn close-btn">취소</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoutBtn = document.getElementById('logout-btn');
+      const modal = document.getElementById('logoutModal');
+      const confirmBtn = document.getElementById('confirmBtn');
+      const closeBtn = document.getElementById('closeBtn');
+
+      logoutBtn.addEventListener('click', function () {
+        modal.style.display = 'block'; // 모달 표시
+      });
+
+      confirmBtn.addEventListener('click', function () {
+        window.location.href = 'Main_Login.jsp'; // 로그아웃 페이지 경로로 수정
+      });
+
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none'; // 모달 숨김
+      });
+
+      window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none'; // 모달 숨김
+>>>>>>> branch 'master' of https://github.com/chaeyoun9/dookong.git
         }
         
      // 서버로 질문 보내기

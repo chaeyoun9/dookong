@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.dookong.model.QuestionDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.dookong.model.QuestionDAO"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,6 +72,45 @@
             <button id="endBtn">시험종료</button>
             <div class="elapsed-time-container" id="elapsedTimeEnd">경과 시간: 0초</div>
           </div>
+   			<div class=question_main>
+   				<table>
+   				<tr>
+   				<td>번호</td>
+   				<td>문제</td>
+   				<td>1</td>
+   				<td>2</td>
+   				<td>3</td>
+   				<td>4</td>
+   				<td>정답</td>
+   				</tr>
+   				<%
+   				List<QuestionDTO> questions=null;
+   				if(session.getAttribute("num")!=null){
+   				int num =(Integer)session.getAttribute("num");
+   				questions = new QuestionDAO().allQustion(num);
+   				int count = 1;
+   				for (QuestionDTO q : questions) {
+   				    if (count<=5) {
+   						%>				
+   				<tr>
+   					<td><%=count %></td>
+   				    <td><%= q.getQuestion()%></td>
+   				    <td><%= q.getEx1() %></td>
+   				    <td><%= q.getEx2() %></td>
+   				    <td><%= q.getEx3() %></td>
+   				    <td><%= q.getEx4() %></td>
+   				    <td><input type="text" name="answer_<%=q.getQuestion_idx()%>"></td>
+   				</tr>
+   						<% }
+   				%>
+   				<%
+   				    }
+   				    count++;
+   				}
+   				%>
+
+   				</table>
+   			</div>
         </div>
 
         <!-- 알림 창 -->
