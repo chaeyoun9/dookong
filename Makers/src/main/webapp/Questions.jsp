@@ -1,5 +1,7 @@
+<%@page import="com.google.gson.JsonObject"%>
+<%@page import="com.google.gson.Gson"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.dookong.model.QuestionDTO"%>
 <%@page import="java.util.List"%>
@@ -8,313 +10,236 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Html Generated</title>
-  <meta name="description" content="Figma htmlGenerator">
-  <meta name="author" content="htmlGenerator">
-  <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CBL&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/questions.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #E5E5E5;
-      font-family: "Gowun Dodum", sans-serif;
-    }
-  </style>
+<title>Html Generated</title>
+<meta name="description" content="Figma htmlGenerator">
+<meta name="author" content="htmlGenerator">
+<link
+	href="https://fonts.googleapis.com/css?family=SeoulHangang+CBL&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="assets/css/questions.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	rel="stylesheet">
+<style>
+body {
+	background: #E5E5E5;
+	font-family: "Gowun Dodum", sans-serif;
+}
+</style>
 
 </head>
 
 <body>
-  <div class="e296_3574">
-    <div class="e296_3519">
-      <div class="e296_3409"></div>
-      <div class="e296_3411"></div>
+	<div class="e296_3574">
+		<div class="e296_3519">
+			<div class="e296_3409"></div>
+			<div class="e296_3411"></div>
 
-      <div class="categories">
-        <a href="Study_page.jsp" class="category-btn">
-          <div class="category-icon">&#128218;</div>
-          <div class="category-title" style="color: red;">학습 페이지</div>
-        </a>
+			<div class="categories">
+				<a href="Study_page.jsp" class="category-btn">
+					<div class="category-icon">&#128218;</div>
+					<div class="category-title" style="color: red;">학습 페이지</div>
+				</a> <a href="newtest.jsp" class="category-btn">
+					<div class="category-icon">&#128202;</div>
+					<div class="category-title">학습 대시보드</div>
+				</a> <a href="My_page.jsp" class="category-btn">
+					<div class="category-icon">&#128100;</div>
+					<div class="category-title">마이페이지</div>
+				</a> <a href="#" id="logout-btn" class="category-btn">
+					<div class="category-icon">&#128075;</div>
+					<div class="category-title">Sign Out</div>
+				</a>
+			</div>
+			<div class="e253_58978">
+				<img src="img/Makers.png" width="256" height="60">
+			</div>
 
-        <a href="newtest.jsp" class="category-btn">
-          <div class="category-icon">&#128202;</div>
-          <div class="category-title">학습 대시보드</div>
-        </a>
+			<div class="e296_3410">
+				<img src="img/사용자 프로필.jpg" width="153px" height="182px">
+			</div>
+			<div class="e296_3459"></div>
 
-        <a href="My_page.jsp" class="category-btn">
-          <div class="category-icon">&#128100;</div>
-          <div class="category-title">마이페이지</div>
-        </a>
+			<!--===========================28일 오전 추가 ↓ ====================================-->
+			<div class="e296_3464">
+				<div class="back_button">
+					<div class="button-container">
+						<button onclick="history.back()">뒤로가기</button>
+						<button id="startBtn">시험시작</button>
+						<button id="endBtn" onclick="saveAnswers()">시험종료</button>
+						<div class="elapsed-time-container" id="elapsedTimeEnd">경과
+							시간: 0초</div>
+					</div>
 
-        <a href="#" id="logout-btn" class="category-btn">
-          <div class="category-icon">&#128075;</div>
-          <div class="category-title">Sign Out</div>
-        </a>
-      </div>
-      <div class="e253_58978"><img src="img/Makers.png" width="256" height="60"></div>
+					<!--  시험 문제 출력 29일 오전 채영 수정 -->
+					<div class=question_main>
 
-      <div class="e296_3410">
-        <img src="img/사용자 프로필.jpg" width="153px" height="182px">
-      </div>
-      <div class="e296_3459"></div>
+						<%
+						int num = (Integer) session.getAttribute("num");
 
-      <!--===========================28일 오전 추가 ↓ ====================================-->
-      <div class="e296_3464">
-        <div class="back_button">
-          <div class="button-container">
-            <button onclick="history.back()">뒤로가기</button>
-            <button id="startBtn">시험시작</button>
-            <button id="endBtn">시험종료</button>
-            <div class="elapsed-time-container" id="elapsedTimeEnd">경과 시간: 0초</div>
-          </div>
-   			<div class=question_main>
-   				<table>
-   				
-   				<tr>
-   				<td>번호</td>
-   				<td>문제</td>
-   				<td>1</td>
-   				<td>2</td>
-   				<td>3</td>
-   				<td>4</td>
-   				<td>정답</td>
-   				</tr>
-   				<%
-   				List<QuestionDTO> questions=null;
-   				if(session.getAttribute("num")!=null){
-   				int num =(Integer)session.getAttribute("num");
-   				questions = new QuestionDAO().allQustion(num);
-   				int count = 1;
-   				for (QuestionDTO q : questions) {
-   				    if (count<=5) {
-   						%>				
-   				<tr>
-   					<td><%=count %></td>
-   				    <td><%= q.getQuestion()%></td>
-   				    <td><%= q.getEx1() %></td>
-   				    <td><%= q.getEx2() %></td>
-   				    <td><%= q.getEx3() %></td>
-   				    <td><%= q.getEx4() %></td>
-   				    <td><input type="text" name="answer_<%=q.getQuestion_idx()%>"></td>
-   				</tr>
-   						<% }
-   				%>
-   				<%
-   				    count++;
-   				    }
-   				}
-   				%>
+						List<QuestionDTO> questions = new QuestionDAO().allQustion(num);
 
-   				</table>
-   			</div>
-        </div>
-		<button id="nextQuestionBtn">다음</button>
-		<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // 초기 페이지 설정
-    let currentPage = parseInt(sessionStorage.getItem('currentPage')) || 1;
-    showQuestionsByPage(currentPage);
+						// 새 Json 객체 생성
+						JsonObject jsonObject = new JsonObject();
 
-    // 다음 버튼에 클릭 이벤트 리스너 등록
-    const nextQuestionBtn = document.getElementById('nextQuestionBtn');
-    nextQuestionBtn.addEventListener('click', function() {
-      currentPage++; // 다음 페이지로 이동
-      showQuestionsByPage(currentPage);
-    });
+						// 100번 반복 -> questions 길이만큼 반복하도록
+						for (int i = 0; i < questions.size(); i++) {
 
-    // 이전 버튼에 클릭 이벤트 리스너 등록 (선택사항)
-    const prevQuestionBtn = document.getElementById('prevQuestionBtn');
-    if (prevQuestionBtn) {
-      prevQuestionBtn.addEventListener('click', function() {
-        currentPage--; // 이전 페이지로 이동
-        showQuestionsByPage(currentPage);
-      });
-    }
+							jsonObject.addProperty("question" + i, questions.get(i).getQuestion());
+							jsonObject.addProperty("ex1" + i, questions.get(i).getEx1());
+							jsonObject.addProperty("ex2" + i, questions.get(i).getEx2());
+							jsonObject.addProperty("ex3" + i, questions.get(i).getEx3());
+							jsonObject.addProperty("ex4" + i, questions.get(i).getEx4());
 
-    // 페이지 번호에 따라 문제 행을 보여주는 함수
-    function showQuestionsByPage(page) {
-      // 전체 문제 행 가져오기
-      const allQuestions = document.querySelectorAll('.question-row');
-      // 전체 문제 행 숨기기
-      allQuestions.forEach(function(questionRow) {
-        questionRow.style.display = 'none';
-      });
-      // 현재 페이지에 해당하는 문제 행 보여주기
-      const startIndex = (page - 1) * 5;
-      const endIndex = startIndex + 5;
-      for (let i = startIndex; i < endIndex; i++) {
-        if (allQuestions[i]) {
-          allQuestions[i].style.display = 'table-row';
-        }
-      }
-      // 현재 페이지 번호를 세션 스토리지에 저장
-      sessionStorage.setItem('currentPage', page);
-    }
-  });
-</script>
-
-        <!-- 알림 창 -->
-        <div class="alert-container" id="startAlert">
-          <div class="alert-message">시험을 시작합니다!</div>
-          <div class="countdown-text" id="countdownText">3</div>
-          <div class="elapsed-time" id="elapsedTime">경과 시간: 0초</div>
-        </div>
-
-        <div class="alert-container" id="endAlert">
-          <div class="alert-message">시험이 종료되었습니다.<br>수고하셨습니다.</div>
-          <div class="end-container" id="endTime">경과 시간: 0초</div>
-        </div>
-      </div>
-      <!--===========================28일 오전 추가 ↑ ====================================-->
-
-      <button class="e296_3465" onclick="toggleNote()">문제 풀이</button>
-      <button class="e296_3466" onclick="WrongNote()">오답노트</button>
+						}
+						%>
 
 
-      <div class="search-container2">
-        <input type="text" id="search-input2" autofocus name="question" placeholder="궁금한 것이 있나요?">
-        <button id="search-btn2" aria-label="Search" onclick="openModal()" disabled>
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-      <div id="search-results2"></div>
-      <div id="myModal" class="modal1">
-        <div class="modal-content1">
-          <span class="close1" onclick="closeModal()">&times;</span>
-          <button id="prev-button" onclick="showPrev()">이전</button>
-          <button id="next-button" onclick="showNext()">다음</button>
-          <div id="modal-content1"></div>
-        </div>
-      </div>
+						<p>현재 페이지</p>
+						<table id="questionTable">
+							<tr>
+								<td>번호</td>
+								<td>문제</td>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>정답</td>
+							</tr>
+						</table>
 
-      <div class="e296_3491">
-        <div class="ei296_3491_3_9146"></div>
-        <div class="ei296_3491_3_9147"></div>
-      </div>
-    </div>
-  </div>
-  <script src="assets/js/script.js"></script>
-  <div id="logoutModal" class="modal">
-    <div class="modal-content">
-      <p>로그아웃 하시겠습니까?</p>
-      <button id="confirmBtn" class="modal-btn confirm-btn">확인</button>
-      <button id="closeBtn" class="modal-btn close-btn">취소</button>
-    </div>
-  </div>
+						<button id="prevButton" onclick="prevPage()">이전</button>
+						<button id="nextButton" onclick="nextPage()">다음</button>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const logoutBtn = document.getElementById('logout-btn');
-      const modal = document.getElementById('logoutModal');
-      const confirmBtn = document.getElementById('confirmBtn');
-      const closeBtn = document.getElementById('closeBtn');
+						<script>
+							var answers={}; // 입력받을 answer 객체 생성
+   							var questions = <%=jsonObject.toString()%>; // JSON 객체 받아오기
+   							var currentIndex = 0; // 현재 질문 인덱스
+   							
+    						function displayQuestions(startIndex) {
+        						var table = document.getElementById("questionTable");
 
-      logoutBtn.addEventListener('click', function () {
-        modal.style.display = 'block';
-      });
+        						// 테이블 초기화
+        						table.innerHTML = "<tr><td>번호</td><td>문제</td><td>1</td><td>2</td><td>3</td><td>4</td><td>정답</td></tr>";
 
-      confirmBtn.addEventListener('click', function () {
-        window.location.href = 'Login.html';
-      });
+        						// 질문 테이블 추가
+        						for (var i = startIndex; i < startIndex + 5 && i < Object.keys(questions).length; i++) {
+            						var question = questions["question" + i];
+            						var ex1 = questions["ex1" + i];
+            						var ex2 = questions["ex2" + i];
+            						var ex3 = questions["ex3" + i];
+            						var ex4 = questions["ex4" + i];
+            						table.innerHTML += "<tr><td>" + (i + 1) + "</td><td>" + question + "</td><td>" + ex1 + "</td><td>" + ex2 + "</td><td>" + ex3 + "</td><td>" + ex4 + "</td><td><input type='text' id='answer" + i + "'></td></tr>";
+        						}
+    						}
 
-      closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none';
-      });
+    					function prevPage() {
+        					currentIndex -= 5; // 이전 페이지의 시작 인덱스로 이동
+        					if (currentIndex < 0) {
+            					currentIndex = 0; // 마이너스값 안되게
+        						}
+        					displayQuestions(currentIndex); // 질문 출력
+    					}
 
-      window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-    const searchInput = document.getElementById('search-input2');
-    const searchButton = document.getElementById('search-btn2');
-    const modal = document.getElementById('myModal');
-    const modalContent = document.getElementById('modal-content1');
-    const prevButton = document.getElementById('prev-button');
-    const nextButton = document.getElementById('next-button');
+    					function nextPage() {
+        					currentIndex += 5; // 다음 페이지의 시작 인덱스로 이동
+        					if(currentIndex>=95){
+        						currentIndex=95; // 100 안 넘어가게 조정
+        					}
+        					displayQuestions(currentIndex); // 질문 출력
+    					}
+						
+    					function saveAnswers() {
+    				        // 답변 저장
+    				        for (var i = 1; i<Object.keys(questions).length; i++) {
+    				        	console.log(i);
+    				            var answer = document.getElementById("answer" + i).value;
+    				            answers["question" + i)] = answer;
+    				        }
 
-    let currentIndex = -1;
-    let questionsAndAnswers = [];
-    searchInput.addEventListener('input', () => {
-      searchButton.disabled = searchInput.value.trim() === "";
-    });
-    async function openModal() {
-      const question = searchInput.value.trim();
+    				        // 테스트 확인 완료
+    				        console.log(answers);
 
-      if (!question) {
-        return;
-      }
-
-      searchButton.disabled = true;
-
-      try {
-        const apiUrl = 'http://localhost:3000/makers';
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ question }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`궁금증 해결 실패! HTTP status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        if (data && data.assistant) {
-          modalContent.innerHTML = `<strong>답변:</strong> ${data.assistant}`;
-          modal.style.display = 'block';
-
-          questionsAndAnswers.push({ question, answer: data.assistant });
-          currentIndex = questionsAndAnswers.length - 1;
-          updateButtonStates();
-        } else {
-          displayError('정보를 가져오는 데 문제가 발생했습니다.');
-        }
-      } catch (error) {
-        displayError(`에러 발생: ${error.message}`);
-      } finally {
-        searchButton.disabled = false;
-        searchInput.value = '';
-      }
-    }
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-    function showPrev() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateModalContent();
-      }
-    }
-    function showNext() {
-      if (currentIndex < questionsAndAnswers.length - 1) {
-        currentIndex++;
-        updateModalContent();
-      }
-    }
-    function updateModalContent() {
-      modalContent.innerHTML = `<strong>질문:</strong> ${questionsAndAnswers[currentIndex].question}<br><strong>답변:</strong> ${questionsAndAnswers[currentIndex].answer}`;
-      updateButtonStates();
-    }
-    function updateButtonStates() {
-      prevButton.disabled = currentIndex <= 0;
-      nextButton.disabled = currentIndex >= questionsAndAnswers.length - 1;
-    }
-    function displayError(message) {
-      alert(`에러 발생: ${message}`);
-    }
+    				       
+    				    }
+    		
+    			        
+    					//초기 질문 출력
+    					displayQuestions(currentIndex);
+						</script>
 
 
-    //<!--===========================28일 오전 추가 ↓ ====================================-->
 
+					</div>
+				</div>
+
+				<!-- 알림 창 -->
+				<div class="alert-container" id="startAlert">
+					<div class="alert-message">시험을 시작합니다!</div>
+					<div class="countdown-text" id="countdownText">3</div>
+					<div class="elapsed-time" id="elapsedTime">경과 시간: 0초</div>
+				</div>
+
+				<div class="alert-container" id="endAlert">
+					<div class="alert-message">
+						시험이 종료되었습니다.<br>수고하셨습니다.
+					</div>
+					<div class="end-container" id="endTime">경과 시간: 0초</div>
+				</div>
+			</div>
+			<!--===========================28일 오전 추가 ↑ ====================================-->
+
+			<button class="e296_3465" onclick="toggleNote()">문제 풀이</button>
+			<button class="e296_3466" onclick="WrongNote()">오답노트</button>
+
+
+			<div class="search-container2">
+				<input type="text" id="search-input2" autofocus name="question"
+					placeholder="궁금한 것이 있나요?">
+				<button id="search-btn2" aria-label="Search" onclick="openModal()"
+					disabled>
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+			<div id="search-results2"></div>
+			<div id="myModal" class="modal1">
+				<div class="modal-content1">
+					<span class="close1" onclick="closeModal()">&times;</span>
+					<button id="prev-button" onclick="showPrev()">이전</button>
+					<button id="next-button" onclick="showNext()">다음</button>
+					<div id="modal-content1"></div>
+				</div>
+			</div>
+
+			<div class="e296_3491">
+				<div class="ei296_3491_3_9146"></div>
+				<div class="ei296_3491_3_9147"></div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/js/script.js"></script>
+	<div id="logoutModal" class="modal">
+		<div class="modal-content">
+			<p>로그아웃 하시겠습니까?</p>
+			<button id="confirmBtn" class="modal-btn confirm-btn">확인</button>
+			<button id="closeBtn" class="modal-btn close-btn">취소</button>
+		</div>
+	</div>
+
+
+	//
+	<!--===========================28일 오전 추가 ↓ ====================================-->
+
+	<script>
     let intervalTimer;
     let startTime;
     let elapsedTimeEnd = document.getElementById('elapsedTimeEnd');

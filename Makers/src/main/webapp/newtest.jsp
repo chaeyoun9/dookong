@@ -187,7 +187,7 @@
 				    countSpan.textContent = currentCount;
 					
 				    var xhr = new XMLHttpRequest();
-			        xhr.open("POST", "ClickCountServlet", true); // insert_count.php는 실제로 데이터베이스에 삽입하는 PHP 파일입니다.
+			        xhr.open("POST", "ClickCountServlet", true); 
 			        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			        xhr.onreadystatechange = function () {
 			            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

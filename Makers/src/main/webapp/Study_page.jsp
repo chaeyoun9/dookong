@@ -255,7 +255,7 @@
       searchButton.disabled = true;
 
       try {
-        const apiUrl = 'http://localhost:3000/makers';
+        const apiUrl = 'http://localhost:8081/Makers/newtest.jsp';
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
