@@ -63,7 +63,9 @@ body {
 	const port1 = 3000;
 
 	// OpenAI 인스턴스 생성
-	
+	const openai = new OpenAI({
+	  apiKey: "api key",
+	});
 
 	// CORS 문제 해결
 	app1.use(cors());
