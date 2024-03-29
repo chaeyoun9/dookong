@@ -309,7 +309,7 @@ const data5 = {
         data: [30, 70],
         backgroundColor: [
             "white",
-            'rgba(144, 238, 144)',
+            'rgba(180, 240, 150)',
         ],
         borderWidth: 4,
         hoverOffset: 4

@@ -8,7 +8,7 @@
   <title>Makers</title>
   <meta name="description" content="Figma htmlGenerator">
   <meta name="author" content="htmlGenerator">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?after">
 
  
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
@@ -24,7 +24,7 @@
     <h1 class="Login_Study_with">Study with us!</h1>
     <p class="Login_Study">메이커스와 함께 공부해보세요</p>
 
-    <h1 class="you">you are new? <a href="Join.html">Create new</a></h1>
+    <h1 class="you">you are new? <a href="Main_Join.jsp">Create new</a></h1>
     
     <!-- <div class="e239_4043"></div> -->
     <div class="myChart">
