@@ -3,7 +3,7 @@
 <mapper namespace="com.dookong.db.QuestionMapper">
 	
 	
-	<select id="questionSelect">
+	<select id="questionSelect" resultType="com.dookong.model.QuestionDTO">
 		select * from Questions where test_idx=#{text_idx}
 	</select>
 	

@@ -156,7 +156,39 @@
       </div>
     </div>
   </div>
+<!--  3/28 채영연결 -->
 
+
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    var fileItems = document.querySelectorAll('.file-item');
+	    fileItems.forEach(function(item) {
+	        item.addEventListener('click', function() {
+	            var fileLabel = item.querySelector('.file-label').textContent;
+	            sendDataToServlet(fileLabel);
+	        });
+	    });
+	});
+
+	function sendDataToServlet(fileLabel) {
+	    var xhr = new XMLHttpRequest();
+	    xhr.open("POST", "QuestionServlet", true);
+	    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	    xhr.onreadystatechange = function () {
+	        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+	           
+	            console.log(xhr.responseText);
+	        }
+	    };
+
+	    var data = "fileLabel=" + encodeURIComponent(fileLabel);
+	    xhr.send(data);
+	}
+	</script>
+
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
   <div id="logoutModal" class="modal">
     <div class="modal-content">
       <p>로그아웃 하시겠습니까?</p>
