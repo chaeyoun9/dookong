@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function toggleNote() {
     // 현재 페이지로 이동
-    window.location.href = "Study_page.html";
+    window.location.href = "Study_page.jsp";
 }
 
 function WrongNote() {
     // 오답노트 페이지로 이동 
-    window.location.href = "answer_note.html";
+    window.location.href = "Answer_note.jsp";
 }
 // 페이지 이동 함수
 function openNotePage(url) {

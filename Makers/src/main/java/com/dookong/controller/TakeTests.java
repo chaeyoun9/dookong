@@ -37,7 +37,7 @@ public class TakeTests extends HttpServlet {
 			jsonArray.put(jsonObject);
 			
 		}
-System.out.println(jsonArray);
+		System.out.println(jsonArray);
 	}
 
 }

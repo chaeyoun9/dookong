@@ -6,15 +6,17 @@ public class Wrong_answerDTO {
 	private int question_idx;
 	private String created_at;
 	private String answer_YN;
+	private int tt_idx;
 
 	
-	public Wrong_answerDTO(int wrong_idx, String mb_id, int question_idx, String created_at, String answer_YN) {
+	public Wrong_answerDTO(int wrong_idx, String mb_id, int question_idx, String created_at, String answer_YN, int tt_idx) {
 		super();
 		this.wrong_idx = wrong_idx;
 		this.mb_id = mb_id;
 		this.question_idx = question_idx;
 		this.created_at = created_at;
 		this.answer_YN = answer_YN;
+		this.tt_idx=tt_idx;
 	}
 	
 	public Wrong_answerDTO(String mb_id, String created_at) {
@@ -29,6 +31,15 @@ public class Wrong_answerDTO {
 	public void setQuestion_idx(int question_idx) {
 		this.question_idx = question_idx;
 	}
+	
+	public int getTt_idx() {
+		return tt_idx;
+	}
+	
+	public void setTt_idx(int tt_idx) {
+		this.tt_idx=tt_idx;
+	}
+	
 	public String getCreated_at() {
 		return created_at;
 	}

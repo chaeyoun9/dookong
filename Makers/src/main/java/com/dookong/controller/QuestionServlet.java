@@ -21,13 +21,13 @@ public class QuestionServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String fileLabel = request.getParameter("fileLabel");
 		
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();	
 		HttpSession session = request.getSession();
 		
+		String fileLabel = request.getParameter("fileLabel");
 		
 		int num = 0;
 		
@@ -47,17 +47,18 @@ public class QuestionServlet extends HttpServlet {
 			num=7;
 		}else if(fileLabel.equals("2022_04_24")) {
 			num=8;
-		}else if(fileLabel.equals("1 과목(소프트웨어 설계)")) {
+		}else if(fileLabel.equals("1과목")) {
 			num=11;
-		}else if(fileLabel.equals("2 과목(소프트웨어 개발)")) {
+		}else if(fileLabel.equals("2과목")) {
 			num=12;
-		}else if(fileLabel.equals("3 과목(데이터 베이스 구축)")) {
+		}else if(fileLabel.equals("3과목")) {
 			num=13;
-		}else if(fileLabel.equals("4 과목(프로그래밍 언어 활용)")) {
+		}else if(fileLabel.equals("4과목")) {
 			num=14;
-		}else if(fileLabel.equals("5 과목(정보시스템 구축관리)")) {
+		}else if(fileLabel.equals("5과목")) {
 			num=15;
 		}
+		
 		session.setAttribute("num", num);
 		
 		String path="Questions.jsp";

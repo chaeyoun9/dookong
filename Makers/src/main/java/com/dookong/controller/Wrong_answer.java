@@ -18,12 +18,12 @@ public class Wrong_answer extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		
-		//session.getAttribute("created_at");
-		//session.getAttribute("mb_id");
-		String created_at = null; 
-		String mb_id = null;
-		new Wrong_answerDAO().Wrong(created_at, mb_id);
+//		
+//		//session.getAttribute("created_at");
+//		//session.getAttribute("mb_id");
+//		String created_at = null; 
+//		String mb_id = null;
+//		new Wrong_answerDAO().Wrong(created_at, mb_id);
 	}
 
 }
