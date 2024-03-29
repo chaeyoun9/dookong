@@ -64,7 +64,7 @@ body {
 
 	// OpenAI 인스턴스 생성
 	const openai = new OpenAI({
-	  apiKey: "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",
+	  apiKey: "api key",
 	});
 
 	// CORS 문제 해결
