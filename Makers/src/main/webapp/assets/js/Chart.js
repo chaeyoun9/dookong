@@ -91,12 +91,13 @@ var myChart1 = new Chart(ctx1, config1);
 
 
 //두 번째 그래프 데이터 설정
+
 const data2 = {
     labels: ['22.10.28', '22.11.24', '23.02.15', '23.02.24', '23.03.18', '23.04.25'],
     datasets: [
         {
             label: '회차별 점수',
-            data: [45, 30, 80, 55, 71, 50],
+            data: [5, 20, 87, 55, 71, 50],
             fill: false,
             borderColor: '#cef2f2',
             pointBackgroundColor: 'rgb(75, 192, 192)',
@@ -104,7 +105,7 @@ const data2 = {
         },
         {
             label: '',
-            data: [45, 30, 80, 55, 71, 50],
+            data: [40, 30, 80, 55, 71, 50],
             backgroundColor: [
                 '#e9bbb5',
                 '#e7cba9',
@@ -169,8 +170,8 @@ const config2 = {
 };
 
 var ctx2 = document.getElementById('snake2').getContext('2d');
-var myChart2 = new Chart(ctx2, config2);
 
+var myChart2 = new Chart(ctx2, config2);
 // 세 번째 그래프 설정 및 생성 (Bar chart)
 const data3 = {
     labels: ['1과목', '2과목', '3과목', '4과목', '5과목'],

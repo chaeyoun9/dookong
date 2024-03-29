@@ -1,6 +1,7 @@
 package com.dookong.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -21,23 +22,35 @@ public class TakeTests extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String mb_id = "mb_id 0001";
-		
-		JSONArray jsonArray = new JSONArray();
+		System.out.println("Test123");
+		String mb_id = "test";
+
 		List<TakeTestsDTO> TestList = new TakeTestsDAO().take(mb_id);
-		for (TakeTestsDTO test : TestList) {
-			JSONObject jsonObject = new JSONObject();
-			String date = test.getTested_at();
-			int score = test.getTt_score();
 
-			jsonObject.put("date", date);
-			jsonObject.put("score", score);
+		JSONArray jsonArray = new JSONArray();
 
-			jsonArray.put(jsonObject);
-			
+		if (TestList != null) {
+			for (TakeTestsDTO test : TestList) {
+				JSONObject jsonObject = new JSONObject();
+				String date = test.getTested_at();
+				int score = test.getTt_score();
+
+				jsonObject.put("date", date);
+				jsonObject.put("score", score);
+
+				jsonArray.put(jsonObject);
+			}
+		} else {
+			// TestList가 null일 때의 처리
+			System.out.println("TestList=null");
 		}
-System.out.println(jsonArray);
+		PrintWriter out = response.getWriter();
+		out.print(jsonArray);
+		// JSON 데이터를 클라이언트로 전송
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
+		out.print(jsonArray.toString());
+		out.flush();
 	}
 
 }

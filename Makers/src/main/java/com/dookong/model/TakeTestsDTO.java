@@ -29,6 +29,8 @@ public class TakeTestsDTO {
 		this.tt_score = tt_score;
 	}
 
+	 public TakeTestsDTO() {
+	    }
 
 	public int getTt_idx() {
 		return tt_idx;
