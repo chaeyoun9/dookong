@@ -31,7 +31,7 @@
       <div class="e296_3409"></div>
       <div class="e296_3411"></div>
       <div class="e296_3410">
-        <img src="img/두콩이.png" width="153px" height="182px">
+        <img src="img/사용자 프로필.jpg" width="153px" height="182px">
       </div>
       <div class="e296_3459"></div>
 
@@ -78,7 +78,68 @@
     <div id="search-results3"></div>
   </div>
   </div>
+<div class="e296_3464">
+    <div class="file-container">
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2020_06_06</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2020_08_22</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2020_09_26</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2021_03_07</div>
+      </div>
+    </div>
 
+    <div class="file-container">
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2021_05_15</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2021_08_14</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2022_03_05</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="fas fa-book file-icon"></i>
+        <div class="file-label">2022_04_24</div>
+      </div>
+    </div>
+
+    <div class="file-container">
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="far fa-file-alt file-icon"></i>
+        <div class="file-label">1 과목(소프트웨어 설계)</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="far fa-file-alt file-icon"></i>
+        <div class="file-label">2 과목(소프트웨어 개발)</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="far fa-file-alt file-icon"></i>
+        <div class="file-label">3 과목(데이터 베이스 구축)</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="far fa-file-alt file-icon"></i>
+        <div class="file-label">4 과목(프로그래밍 언어 활용)</div>
+      </div>
+      <div class="file-item" onclick="openNotePage('Questions.jsp')">
+        <i class="far fa-file-alt file-icon"></i>
+        <div class="file-label">5 과목(정보시스템 구축관리)</div>
+      </div>
+    </div>
+  </div>
 
 
 

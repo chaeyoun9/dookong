@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dookong.db.Wrong_answerMapper">
+
+	<select id="wrongCnt" parameterType="Wrong_answerDTO" resultType="String">
+		select answer_yn from wrong_answers where caeated_at =#{created_at} and
+		mb_id =#{mb_id}
+	</select>
+
+	<select id="WrongSelect" parameterType="Wrong_answerDTO" resultType="QuestionDTO">
+		select a.*
+		from questions a inner join wrong_answers b
+		on a.question_idx = b.question_idx
+		where b.created_at = #{created_at} and b.mb_id =#{mb_id}
+	</select>
+</mapper>

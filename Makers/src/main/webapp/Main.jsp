@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/Main_Page.css?after">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+
   <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=011f9701e3d12de2d1801227d712e025&libraries=services"></script>
 
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -145,6 +146,7 @@
           
           <!-- FullCalendar -->
            <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
+           <button id="addEventButton">일정 추가</button>
           
 <!-- ==================================================================================== -->
 	<!-- 기존캘린더 작업 주석처리 -->
