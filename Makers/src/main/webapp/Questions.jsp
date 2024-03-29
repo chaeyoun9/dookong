@@ -1,3 +1,4 @@
+<%@page import="com.google.gson.JsonArray"%>
 <%@page import="com.google.gson.JsonObject"%>
 <%@page import="com.google.gson.Gson"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -35,7 +36,24 @@ body {
 	background: #E5E5E5;
 	font-family: "Gowun Dodum", sans-serif;
 }
+
+#questionTable {
+	width: 100%;
+	height: 800px;
+	border-collapse: collapse;
+}
+
+#questionTable td {
+	border: 1px solid black;
+	padding: 5px;
+}
+
+#questionTable tr:first-child {
+	height: 5px;
+}
+
 </style>
+
 
 </head>
 
@@ -75,7 +93,7 @@ body {
 					<div class="button-container">
 						<button onclick="history.back()">뒤로가기</button>
 						<button id="startBtn">시험시작</button>
-						<button id="endBtn" onclick="saveAnswers()">시험종료</button>
+						<button id="endBtn" onclick="sendDataToServer()">시험종료</button>
 						<div class="elapsed-time-container" id="elapsedTimeEnd">경과
 							시간: 0초</div>
 					</div>
@@ -87,24 +105,28 @@ body {
 						int num = (Integer) session.getAttribute("num");
 
 						List<QuestionDTO> questions = new QuestionDAO().allQustion(num);
+						
 
 						// 새 Json 객체 생성
-						JsonObject jsonObject = new JsonObject();
+						JsonArray jArray = new JsonArray();
+						
+						
 
 						// 100번 반복 -> questions 길이만큼 반복하도록
 						for (int i = 0; i < questions.size(); i++) {
-
+							JsonObject jsonObject = new JsonObject();
 							jsonObject.addProperty("question" + i, questions.get(i).getQuestion());
 							jsonObject.addProperty("ex1" + i, questions.get(i).getEx1());
 							jsonObject.addProperty("ex2" + i, questions.get(i).getEx2());
 							jsonObject.addProperty("ex3" + i, questions.get(i).getEx3());
 							jsonObject.addProperty("ex4" + i, questions.get(i).getEx4());
+							
+							jArray.add(jsonObject);
+							
 
 						}
 						%>
 
-
-						<p>현재 페이지</p>
 						<table id="questionTable">
 							<tr>
 								<td>번호</td>
@@ -122,9 +144,9 @@ body {
 
 						<script>
 							var answers={}; // 입력받을 answer 객체 생성
-   							var questions = <%=jsonObject.toString()%>; // JSON 객체 받아오기
+   							var questions = <%=jArray.toString()%>; // JSON 객체 받아오기
    							var currentIndex = 0; // 현재 질문 인덱스
-   							
+   							var currentStartIndex = 0;
     						function displayQuestions(startIndex) {
         						var table = document.getElementById("questionTable");
 
@@ -132,12 +154,12 @@ body {
         						table.innerHTML = "<tr><td>번호</td><td>문제</td><td>1</td><td>2</td><td>3</td><td>4</td><td>정답</td></tr>";
 
         						// 질문 테이블 추가
-        						for (var i = startIndex; i < startIndex + 5 && i < Object.keys(questions).length; i++) {
-            						var question = questions["question" + i];
-            						var ex1 = questions["ex1" + i];
-            						var ex2 = questions["ex2" + i];
-            						var ex3 = questions["ex3" + i];
-            						var ex4 = questions["ex4" + i];
+        						for (var i = startIndex; i < startIndex + 5 && i < questions.length; i++) {
+        							var question = questions[i]["question" + i];
+            						var ex1 = questions[i]["ex1" + i];
+            						var ex2 = questions[i]["ex2" + i];
+            						var ex3 = questions[i]["ex3" + i];
+            						var ex4 = questions[i]["ex4" + i];
             						table.innerHTML += "<tr><td>" + (i + 1) + "</td><td>" + question + "</td><td>" + ex1 + "</td><td>" + ex2 + "</td><td>" + ex3 + "</td><td>" + ex4 + "</td><td><input type='text' id='answer" + i + "'></td></tr>";
         						}
     						}
@@ -151,26 +173,47 @@ body {
     					}
 
     					function nextPage() {
+        					saveAnswers()
+    						
         					currentIndex += 5; // 다음 페이지의 시작 인덱스로 이동
         					if(currentIndex>=95){
         						currentIndex=95; // 100 안 넘어가게 조정
         					}
+        					
+        					
         					displayQuestions(currentIndex); // 질문 출력
     					}
 						
     					function saveAnswers() {
+    						
     				        // 답변 저장
-    				        for (var i = 1; i<Object.keys(questions).length; i++) {
-    				        	console.log(i);
+    				        for (var i = currentIndex; i<currentIndex+5; i++) {
     				            var answer = document.getElementById("answer" + i).value;
-    				            answers["question" + i)] = answer;
+    				            answers["question" + i] = answer;
     				        }
-
-    				        // 테스트 확인 완료
-    				        console.log(answers);
-
-    				       
     				    }
+    					
+    					function sendDataToServer() {
+    					    var xhr = new XMLHttpRequest();
+    					    xhr.open("POST", "AnswerService", true);
+    					    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    					    xhr.onreadystatechange = function() {
+    					        if (xhr.readyState === 4 && xhr.status === 200) {
+    					           
+    					        }
+    					    };
+    					    
+    					    // 데이터 전송
+    					    var data = "";
+    					    for (var key in answers) {
+    					        data += encodeURIComponent("question") + "=" + encodeURIComponent(key) + "&" +
+    					                encodeURIComponent("answer") + "=" + encodeURIComponent(answers[key]) + "&";
+    					    }
+    					    // 마지막 '&' 제거
+    					    data = data.slice(0, -1);
+
+    					    xhr.send(data);
+    					}
     		
     			        
     					//초기 질문 출력
@@ -188,10 +231,10 @@ body {
 					<div class="countdown-text" id="countdownText">3</div>
 					<div class="elapsed-time" id="elapsedTime">경과 시간: 0초</div>
 				</div>
-
 				<div class="alert-container" id="endAlert">
 					<div class="alert-message">
-						시험이 종료되었습니다.<br>수고하셨습니다.
+						시험이 종료되었습니다. <br>수고 많으셨습니다. <br>결과: <span
+							id="resultText"></span>
 					</div>
 					<div class="end-container" id="endTime">경과 시간: 0초</div>
 				</div>
@@ -236,7 +279,7 @@ body {
 	</div>
 
 
-	//
+	
 	<!--===========================28일 오전 추가 ↓ ====================================-->
 
 	<script>

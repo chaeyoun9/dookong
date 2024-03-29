@@ -1,162 +1,169 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <title>Html Generated</title>
-  <meta name="description" content="Figma htmlGenerator">
-  <meta name="author" content="htmlGenerator">
-  <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CBL&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/Study_page.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #E5E5E5;
-      font-family: "Gowun Dodum", sans-serif;
-    }
-  </style>
+<title>Html Generated</title>
+<meta name="description" content="Figma htmlGenerator">
+<meta name="author" content="htmlGenerator">
+<link
+	href="https://fonts.googleapis.com/css?family=SeoulHangang+CBL&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=SeoulHangang+CB&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="assets/css/Study_page.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+	rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	rel="stylesheet">
+
+<style>
+body {
+	background: #E5E5E5;
+	font-family: "Gowun Dodum", sans-serif;
+}
+</style>
 
 </head>
-
+<script src="assets/js/script.js"></script>
 <body>
-  <div class="e296_3574">
-    <div class="e296_3519">
-      <div class="e296_3409"></div>
-      <div class="e296_3411"></div>
+	<div class="e296_3574">
+		<div class="e296_3519">
+			<div class="e296_3409"></div>
+			<div class="e296_3411"></div>
 
-      <div class="categories">
-            <a href="Study_page.jsp" class="category-btn">
-              <div class="category-icon">&#128218;</div>
-              <div class="category-title">학습 페이지</div>
-            </a>
-        
-            <a href="newtest.jsp" class="category-btn">
-              <div class="category-icon">&#128202;</div>
-              <div class="category-title">학습 대시보드</div>
-            </a>
-        
-            <a href="My_page.jsp" class="category-btn">
-              <div class="category-icon">&#128100;</div>
-              <div class="category-title">마이페이지</div>
-            </a>
-        
-            <a href="#" id="logout-btn" class="category-btn">
-              <div class="category-icon">&#128075;</div>
-              <div class="category-title">Sign Out</div>
-            </a>
-          </div>
-      <div class="e253_58978"><img src="img/Makers.png" width="256" height="60"></div>
+			<div class="categories">
+				<a href="Study_page.jsp" class="category-btn">
+					<div class="category-icon">&#128218;</div>
+					<div class="category-title">학습 페이지</div>
+				</a> <a href="newtest.jsp" class="category-btn">
+					<div class="category-icon">&#128202;</div>
+					<div class="category-title">학습 대시보드</div>
+				</a> <a href="My_page.jsp" class="category-btn">
+					<div class="category-icon">&#128100;</div>
+					<div class="category-title">마이페이지</div>
+				</a> <a href="#" id="logout-btn" class="category-btn">
+					<div class="category-icon">&#128075;</div>
+					<div class="category-title">Sign Out</div>
+				</a>
+			</div>
+			<div class="e253_58978">
+				<img src="img/Makers.png" width="256" height="60">
+			</div>
 
-      <div class="e296_3410">
-        <img src="img/사용자 프로필.jpg" width="153px" height="182px">
-      </div>
-      <div class="e296_3459"></div>
+			<div class="e296_3410">
+				<img src="img/사용자 프로필.jpg" width="153px" height="182px">
+			</div>
+			<div class="e296_3459"></div>
 
-      <div class="e296_3464"></div>
-      <button class="e296_3465" onclick="toggleNote()">문제 풀이</button>
-      <button class="e296_3466" onclick="WrongNote()">오답노트</button>
+			<div class="e296_3464"></div>
+			<button class="e296_3465" onclick="toggleNote()">문제 풀이</button>
+			<button class="e296_3466" onclick="WrongNote()">오답노트</button>
 
 
-      <div class="search-container2">
-        <!-- 검색 입력창 -->
-        <input type="text" id="search-input2" autofocus name="question" placeholder="궁금한 것이 있나요?">
-        <!-- 검색 버튼 -->
-        <button id="search-btn2" aria-label="Search" onclick="openModal()" disabled>
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-      <!-- 검색 결과 표시 영역 -->
-      <div id="search-results2"></div>
-      <!-- 모달 창 -->
-      <div id="myModal" class="modal1">
-        <div class="modal-content1">
-          <!-- 모달 창 닫기 버튼 -->
-          <span class="close1" onclick="closeModal()">&times;</span>
-          <!-- 이전 버튼 -->
-          <button id="prev-button" onclick="showPrev()">이전</button>
-          <!-- 다음 버튼 -->
-          <button id="next-button" onclick="showNext()">다음</button>
-          <!-- 모달 내용 표시 영역 -->
-          <div id="modal-content1"></div>
-        </div>
-      </div>
+			<div class="search-container2">
+				<!-- 검색 입력창 -->
+				<input type="text" id="search-input2" autofocus name="question"
+					placeholder="궁금한 것이 있나요?">
+				<!-- 검색 버튼 -->
+				<button id="search-btn2" aria-label="Search" onclick="openModal()"
+					disabled>
+					<i class="fas fa-search"></i>
+				</button>
+			</div>
+			<!-- 검색 결과 표시 영역 -->
+			<div id="search-results2"></div>
+			<!-- 모달 창 -->
+			<div id="myModal" class="modal1">
+				<div class="modal-content1">
+					<!-- 모달 창 닫기 버튼 -->
+					<span class="close1" onclick="closeModal()">&times;</span>
+					<!-- 이전 버튼 -->
+					<button id="prev-button" onclick="showPrev()">이전</button>
+					<!-- 다음 버튼 -->
+					<button id="next-button" onclick="showNext()">다음</button>
+					<!-- 모달 내용 표시 영역 -->
+					<div id="modal-content1"></div>
+				</div>
+			</div>
 
-      <div class="e296_3491">
-        <div class="ei296_3491_3_9146"></div>
-        <div class="ei296_3491_3_9147"></div>
-      </div>
-    </div>
-  </div>
-  <div class="e296_3464">
-    <div class="file-container">
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2020_06_06</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2020_08_22</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2020_09_26</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2021_03_07</div>
-      </div>
-    </div>
+			<div class="e296_3491">
+				<div class="ei296_3491_3_9146"></div>
+				<div class="ei296_3491_3_9147"></div>
+			</div>
+		</div>
+	</div>
+	<div class="e296_3464">
+		<div class="file-container">
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2020_06_06</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2020_08_22</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2020_09_26</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2021_03_07</div>
+			</div>
+		</div>
 
-    <div class="file-container">
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2021_05_15</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2021_08_14</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2022_03_05</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="fas fa-book file-icon"></i>
-        <div class="file-label">2022_04_24</div>
-      </div>
-    </div>
+		<div class="file-container">
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2021_05_15</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2021_08_14</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2022_03_05</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="fas fa-book file-icon"></i>
+				<div class="file-label">2022_04_24</div>
+			</div>
+		</div>
 
-    <div class="file-container">
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="far fa-file-alt file-icon"></i>
-        <div class="file-label">1 과목(소프트웨어 설계)</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="far fa-file-alt file-icon"></i>
-        <div class="file-label">2 과목(소프트웨어 개발)</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="far fa-file-alt file-icon"></i>
-        <div class="file-label">3 과목(데이터 베이스 구축)</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="far fa-file-alt file-icon"></i>
-        <div class="file-label">4 과목(프로그래밍 언어 활용)</div>
-      </div>
-      <div class="file-item" onclick="openNotePage('Questions.jsp')">
-        <i class="far fa-file-alt file-icon"></i>
-        <div class="file-label">5 과목(정보시스템 구축관리)</div>
-      </div>
-    </div>
-  </div>
-<!--  3/28 채영연결 -->
+		<div class="file-container">
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="far fa-file-alt file-icon"></i>
+				<div class="file-label">1과목</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="far fa-file-alt file-icon"></i>
+				<div class="file-label">2과목</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="far fa-file-alt file-icon"></i>
+				<div class="file-label">3과목</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="far fa-file-alt file-icon"></i>
+				<div class="file-label">4과목</div>
+			</div>
+			<div class="file-item" onclick="openNotePage('Questions.jsp')">
+				<i class="far fa-file-alt file-icon"></i>
+				<div class="file-label">5과목</div>
+			</div>
+		</div>
+	</div>
+	<!--  3/28 채영연결 -->
 
 
 	<script>
@@ -188,16 +195,16 @@
 
 
 
-<!-- ----------------------------------------------------------------------------------------------- -->
-  <div id="logoutModal" class="modal">
-    <div class="modal-content">
-      <p>로그아웃 하시겠습니까?</p>
-      <button id="confirmBtn" class="modal-btn confirm-btn">확인</button>
-      <button id="closeBtn" class="modal-btn close-btn">취소</button>
-    </div>
-  </div>
+	<!-- ----------------------------------------------------------------------------------------------- -->
+	<div id="logoutModal" class="modal">
+		<div class="modal-content">
+			<p>로그아웃 하시겠습니까?</p>
+			<button id="confirmBtn" class="modal-btn confirm-btn">확인</button>
+			<button id="closeBtn" class="modal-btn close-btn">취소</button>
+		</div>
+	</div>
 
-  <script>
+	<script>
     document.addEventListener('DOMContentLoaded', function () {
       const logoutBtn = document.getElementById('logout-btn');
       const modal = document.getElementById('logoutModal');
@@ -255,7 +262,7 @@
       searchButton.disabled = true;
 
       try {
-        const apiUrl = 'http://localhost:8081/Makers/newtest.jsp';
+        const apiUrl = 'http://localhost:8081/Makers';
         const response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
@@ -329,13 +336,13 @@
     }
   </script>
 
-  <!--카테고리 일단 보류-->
+	<!--카테고리 일단 보류-->
 
-  <!-- <div class="e296_3504"></div> -->
-  <!-- <div class="e296_3511"></div> -->
-  <!-- <h1 class="e296_35111">회차 및 과목을 선택해 주세요!</h1> -->
+	<!-- <div class="e296_3504"></div> -->
+	<!-- <div class="e296_3511"></div> -->
+	<!-- <h1 class="e296_35111">회차 및 과목을 선택해 주세요!</h1> -->
 
-  <!-- <div class="custom-container">
+	<!-- <div class="custom-container">
       <div class="custom-categories">
         <div class="custom-category-btn" id="custom-type-category">
           <div class="custom-category-icon">&#128196;</div>
@@ -369,7 +376,7 @@
         <div class="custom-subcategory">5과목 : 정보시스템 구축관리 (20문항)</div>
       </div>
     </div> -->
-  <script src="assets/js/script.js"></script>
+
 </body>
 
 </html>

@@ -32,10 +32,9 @@
 		<mapper resource="com/dookong/db/MemberMapper.xml" />
 		<mapper resource="com/dookong/db/OneKnowlMapper.xml" />
 		<mapper resource="com/dookong/db/TakeTestsMapper.xml" />
-
-		<mapper resource="com/dookong/db/Wrong_answerMapper.xml" />
-		<mapper resource="com/dookong/db/QuestionMapper.xml" />
-	</mappers>
-
+    <mapper resource="com/dookong/db/Wrong_answerMapper.xml"/>
+    <mapper resource="com/dookong/db/QuestionMapper.xml"/>
+    <mapper resource="com/dookong/db/AnswerMapper.xml"/>
+  </mappers>
 
 </configuration>

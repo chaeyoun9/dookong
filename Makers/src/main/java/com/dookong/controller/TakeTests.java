@@ -45,6 +45,7 @@ public class TakeTests extends HttpServlet {
 			// TestList가 null일 때의 처리
 			System.out.println("TestList=null");
 		}
+
 		Gson gson = new Gson();
 		
 		PrintWriter out = response.getWriter();
@@ -55,6 +56,9 @@ public class TakeTests extends HttpServlet {
 		out.print(jsonArray.toString());
 		//out.print(gson.toJson(TestList).toString());
 		out.flush();
+
+		System.out.println(jsonArray);
+
 	}
 
 }
