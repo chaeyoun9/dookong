@@ -6,7 +6,10 @@
 	<typeAliases>
 
 		<typeAlias type="com.dookong.model.MemberDTO" alias="MemberDTO"/>
-		<typeAlias type="com.dookong.model.OneKnowlDTO" alias="OneKnowl"/>
+		<typeAlias type="com.dookong.model.OneKnowlDTO" alias="OneKnowlDTO"/>
+		<typeAlias type="com.dookong.model.TakeTestsDTO" alias="TakeTestsDTO"/>
+		
+		
 	</typeAliases>
 
   <environments default="development">
@@ -22,10 +25,10 @@
   </environments>
   <mappers>
     <mapper resource="com/dookong/db/MemberMapper.xml"/>
-
     <mapper resource="com/dookong/db/OneKnowlMapper.xml"/>
-
     <mapper resource="com/dookong/db/QuestionMapper.xml"/>
+    
+    <mapper resource="com/dookong/db/TakeTestsMapper.xml"/>
 
   </mappers>
 </configuration>
