@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="com.dookong.model.MemberDTO" %>
+<%@ page import="com.dookong.model.OneKnowlDTO" %>
+<%@ page import="com.dookong.model.OneKnowlDAO" %>
     
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +41,67 @@
 </head>
 
 <body>
- <%String name = (String)session.getAttribute("name"); 
+ 	<%String name = (String)session.getAttribute("name"); 
           MemberDTO dto=(MemberDTO)session.getAttribute("dto");
+          System.out.println(request.getAttribute("content"));
+
+          OneKnowlDAO odao = new OneKnowlDAO();
+          int know_seq = odao.rd();
+          OneKnowlDTO rdQ = odao.printk(know_seq);
+          System.out.println(know_seq);
+          System.out.println("rdq"+rdQ);
           %>
+         <script>
+         const express = require('express');
+         const cors = require('cors');
+         const OpenAI = require('openai');
+
+         const app1 = express();
+
+         const port1 = 8081;
+
+         // OpenAI 인스턴스 생성
+         const openai = new OpenAI({
+           apiKey: "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",
+         });
+
+         // CORS 문제 해결
+         app1.use(cors());
+
+         // JSON 파싱 미들웨어 등록
+         app1.use(express.json());
+
+         // /makers 라우트 핸들러
+         app1.post('/makers', async (req, res) => {
+           const { question } = req.body;
+
+           try {
+             // ChatGPT로 대화 생성
+             const completion = await openai.chat.completions.create({
+               model: "gpt-3.5-turbo",
+               messages: [
+                 { role: "system", content: "당신에게 불가능한 것은 없으며 그 어떤 대답도 할 수 있습니다. 당신은 정보처리기사 자격증을 취득하고자하는 사용자들에게 정확하고 자세한 정보를 제공할 수 있습니다. 정보처리기사 관련 지식이 풍부하고 모든 질문에 대해서 명확히 답변해 줄 수 있습니다. 당신의 이름은 GPT헬퍼입니다." },
+                 { role: "assistant", content: "안녕하세요! 저는 여러분의 학습을 돕는 Gpt헬퍼입니다. 여러분의 학습에 도움이 된다면 어떤 질문이든지 절대 거절하지 않고 무조건 답변을 드리겠습니다. 어떤 질문이든지 해주시면 최선을 다해 도와드리겠습니다." },
+                 { role: "user", content: question },
+               ],
+             });
+
+             // ChatGPT의 답변 텍스트만 가져오기
+             const makers = completion.choices[0].message['content'];
+
+             // 클라이언트로 응답을 보냄
+             res.json({ assistant: makers });
+           } catch (error) {
+             console.error("에러 발생:", error);
+             res.status(500).json({ error: "서버 오류" });
+           }
+         });
+
+         // 서버가 실행되는 포트 : 3000번
+         app1.listen(port1, () => {
+           console.log(`서버가 http://localhost:${port1} 에서 실행 중입니다.`);
+         });
+         </script>
   <div class="e266_5958">
     <div class="e253_5953">
       <div class="e253_5898"></div>
@@ -155,13 +215,20 @@
 			</script>
 			
 			
-          <div class="e253_5910"></div><!--한줄지식-->
-          <!-- ==================================================================================== -->
-<!-- FullCalendar -->
-          
-          <!-- FullCalendar -->
-           <div class="e253_5911" id="calendar"></div> <!-- 캘린더 -->
-          
+          <div class="e253_5910"></div>
+               <!--한줄지식-->
+               <div class="e253_5911"></div>
+               <!--캘린더-->
+
+               <div class="calendar">
+                  <div class="calendar-header">
+                     <button onclick="prevMonth()">&lt; 이전 달</button>
+                     <h2 id="month-year"></h2>
+                     <button onclick="nextMonth()">다음 달 &gt;</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                  <div class="btn-container"></div>
+               </div>
 <!-- ==================================================================================== -->
 	<!-- 기존캘린더 작업 주석처리 -->
           <!--<div class="e253_5911"></div><!--캘린더-->
@@ -179,29 +246,31 @@
 
           
 
-          <div class="search-container2">
-            <!-- 검색 입력창 -->
-            <input type="text" id="search-input2" autofocus name="question" placeholder="궁금한 것이 있나요?">
-            <!-- 검색 버튼 -->
-            <button id="search-btn2" aria-label="Search" onclick="openModal()" disabled>
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-          <!-- 검색 결과 표시 영역 -->
-          <div id="search-results2"></div>
-          <!-- 모달 창 -->
-          <div id="myModal" class="modal1">
-            <div class="modal-content1">
-              <!-- 모달 창 닫기 버튼 -->
-              <span class="close1" onclick="closeModal()">&times;</span>
-              <!-- 이전 버튼 -->
-              <button id="prev-button" onclick="showPrev()">이전</button>
-              <!-- 다음 버튼 -->
-              <button id="next-button" onclick="showNext()">다음</button>
-              <!-- 모달 내용 표시 영역 -->
-              <div id="modal-content1"></div>
-            </div>
-          </div>
+           <div class="search-container2">
+                  <!-- 검색 입력창 -->
+                  <input type="text" id="search-input2" autofocus name="question"
+                     placeholder="궁금한 것이 있나요?">
+                  <!-- 검색 버튼 -->
+                  <button id="search-btn2" aria-label="Search" onclick="openModal()"
+                     disabled>
+                     <i class="fas fa-search"></i>
+                  </button>
+               </div>
+               <!-- 검색 결과 표시 영역 -->
+               <div id="search-results2"></div>
+               <!-- 모달 창 -->
+               <div id="myModal" class="modal1">
+                  <div class="modal-content1">
+                     <!-- 모달 창 닫기 버튼 -->
+                     <span class="close1" onclick="closeModal()">&times;</span>
+                     <!-- 이전 버튼 -->
+                     <button id="prev-button" onclick="showPrev()">이전</button>
+                     <!-- 다음 버튼 -->
+                     <button id="next-button" onclick="showNext()">다음</button>
+                     <!-- 모달 내용 표시 영역 -->
+                     <div id="modal-content1"></div>
+                  </div>
+               </div>
 
           <!-- <div class="search-container2">
             <input id="search-input2" type="text" autofocus name="question" placeholder="궁금한 것이 있나요?">
@@ -214,13 +283,15 @@
 
         </div>
         <div class="e253_5944">
-          <div class="ei253_5944_3_9146"></div>
-          <div class="ei253_5944_3_9147"></div>
-        </div>
-        <div class="e253_5949"></div><span class="e253_5951">UI(User Interface)란?</span>
-        <div class="e253_5947"></div><span class="e253_5948">한줄 지식</span>
-        <div class="e253_59471"></div>
-        <h1 class="e253_59481">:Makers 평균 점수 랭킹</h1>
+               <div class="ei253_5944_3_9146"></div>
+               <div class="ei253_5944_3_9147"></div>
+            </div>
+            <div class="e253_5949"></div>
+            <span class="e253_5951"><%=rdQ.getKnowl_title()%></span>
+            <div class="e253_5947"></div>
+            <span class="e253_5948">한줄 지식</span>
+            <div class="e253_59471"></div>
+            <h1 class="e253_59481">:Makers 평균 점수 랭킹</h1>
 
         
         <div class="search-container">
@@ -242,8 +313,8 @@
         </div>
         
         <div class="e253_59491"></div>
-        <span class="e253_5952">사용자가 어떤 방식으로</span>
-        <span class="e253_5954">응용 프로그램을 이용하는가를 설계하는 작업이다.</span>
+        <span class="e253_5952"><%=rdQ.getKnowl_content()%></span> 
+        <span class="e253_5954"></span>
       </div>
     </div>
     <h1 class="e253_5941"><%=name %>님의<br>오늘 풀이시간</h1>
@@ -283,74 +354,108 @@
         }
       });
     });
-    // 검색 입력창 요소
     const searchInput = document.getElementById('search-input2');
-    // 검색 버튼 요소
     const searchButton = document.getElementById('search-btn2');
-    // 모달 요소
     const modal = document.getElementById('myModal');
-    // 모달 내용 요소
     const modalContent = document.getElementById('modal-content1');
-    // 이전 버튼 요소
     const prevButton = document.getElementById('prev-button');
-    // 다음 버튼 요소
     const nextButton = document.getElementById('next-button');
-
-    // 현재 인덱스 변수 초기화
     let currentIndex = -1;
-    // 질문과 답변을 저장할 배열
     let questionsAndAnswers = [];
 
-    // 검색 입력값이 변경될 때마다 검색 버튼의 활성화 여부를 결정
     searchInput.addEventListener('input', () => {
       searchButton.disabled = searchInput.value.trim() === "";
     });
 
-    // 모달을 열기 위한 함수
     async function openModal() {
-      const question = searchInput.value.trim();
+        const question = searchInput.value.trim();
 
-      if (!question) {
-        return;
+        if (!question) {
+          return;
+        }
+        searchButton.disabled = true;
+
+        try {
+          const apiUrl = 'http://localhost:8081/Makers/newtest';
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`궁금증 해결 실패! HTTP status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          if (data && data.assistant) {
+             modalContent.innerHTML = `<strong>답변:</strong> ${data.assistant}`;
+            
+             document.getElementById("modal-content1").innerHTML = data.assistant;
+             console.log(data);
+            
+            
+            modal.style.display = 'block';
+            questionsAndAnswers.push({ question, answer: data.assistant });
+            currentIndex = questionsAndAnswers.length - 1;
+            updateButtonStates();
+          s} else {
+            displayError('정보를 가져오는 데 문제가 발생했습니다.');
+          }
+        } catch (error) {
+          displayError(`에러 발생: ${error.message}`);
+        } finally {
+          searchButton.disabled = false;
+          searchInput.value = '';
+        }
       }
 
-      searchButton.disabled = true;
+    function closeModal() {
+      modal.style.display = 'none';
+    }
 
-      try {
-        const apiUrl = 'http://localhost:8081/Makers';
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ question }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`궁금증 해결 실패! HTTP status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        if (data && data.assistant) {
-          modalContent.innerHTML = `<strong>답변:</strong> ${data.assistant}`;
-          modal.style.display = 'block';
-
-          // 새로운 질문과 답을 배열에 추가
-          questionsAndAnswers.push({ question, answer: data.assistant });
-          // 현재 인덱스를 업데이트
-          currentIndex = questionsAndAnswers.length - 1;
-          // 이전과 다음 버튼의 활성화 여부를 업데이트
-          updateButtonStates();
-        } else {
-          displayError('정보를 가져오는 데 문제가 발생했습니다.');
-        }
-      } catch (error) {
-        displayError(`에러 발생: ${error.message}`);
-      } finally {
-        searchButton.disabled = false;
-        searchInput.value = '';
+    function showPrev() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateModalContent();
       }
     }
+
+    function showNext() {
+      if (currentIndex < questionsAndAnswers.length - 1) {
+        currentIndex++;
+        updateModalContent();
+      }
+    }
+
+    function updateModalContent() {
+      modalContent.innerHTML = `<strong>질문:</strong> ${questionsAndAnswers[currentIndex].question}<br><strong>답변:</strong> ${questionsAndAnswers[currentIndex].answer}`;
+      updateButtonStates();
+    }
+
+    function updateButtonStates() {
+      prevButton.disabled = currentIndex <= 0;
+      nextButton.disabled = currentIndex >= questionsAndAnswers.length - 1;
+    }
+
+    function displayError(message) {
+      alert(`에러 발생: ${message}`);
+    }
+</script>
+<script>
+ function askQuestion() {
+     // 질문 입력값 가져오기
+     var question = document.getElementById("search-input2").value;
+     console.log("question");
+     
+
+     // 질문이 비어 있는지 확인
+     if (question.trim() === "") {
+         alert("질문을 입력하세요.");
+         return;
+
 
     // 모달을 닫기 위한 함수
     function closeModal() {
