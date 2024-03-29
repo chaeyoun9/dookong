@@ -74,6 +74,7 @@
           </div>
    			<div class=question_main>
    				<table>
+   				
    				<tr>
    				<td>번호</td>
    				<td>문제</td>
@@ -104,14 +105,58 @@
    						<% }
    				%>
    				<%
-   				    }
    				    count++;
+   				    }
    				}
    				%>
 
    				</table>
    			</div>
         </div>
+		<button id="nextQuestionBtn">다음</button>
+		<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 초기 페이지 설정
+    let currentPage = parseInt(sessionStorage.getItem('currentPage')) || 1;
+    showQuestionsByPage(currentPage);
+
+    // 다음 버튼에 클릭 이벤트 리스너 등록
+    const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+    nextQuestionBtn.addEventListener('click', function() {
+      currentPage++; // 다음 페이지로 이동
+      showQuestionsByPage(currentPage);
+    });
+
+    // 이전 버튼에 클릭 이벤트 리스너 등록 (선택사항)
+    const prevQuestionBtn = document.getElementById('prevQuestionBtn');
+    if (prevQuestionBtn) {
+      prevQuestionBtn.addEventListener('click', function() {
+        currentPage--; // 이전 페이지로 이동
+        showQuestionsByPage(currentPage);
+      });
+    }
+
+    // 페이지 번호에 따라 문제 행을 보여주는 함수
+    function showQuestionsByPage(page) {
+      // 전체 문제 행 가져오기
+      const allQuestions = document.querySelectorAll('.question-row');
+      // 전체 문제 행 숨기기
+      allQuestions.forEach(function(questionRow) {
+        questionRow.style.display = 'none';
+      });
+      // 현재 페이지에 해당하는 문제 행 보여주기
+      const startIndex = (page - 1) * 5;
+      const endIndex = startIndex + 5;
+      for (let i = startIndex; i < endIndex; i++) {
+        if (allQuestions[i]) {
+          allQuestions[i].style.display = 'table-row';
+        }
+      }
+      // 현재 페이지 번호를 세션 스토리지에 저장
+      sessionStorage.setItem('currentPage', page);
+    }
+  });
+</script>
 
         <!-- 알림 창 -->
         <div class="alert-container" id="startAlert">

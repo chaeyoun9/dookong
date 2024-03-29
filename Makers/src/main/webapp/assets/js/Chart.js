@@ -341,66 +341,6 @@ var myChart5 = new Chart(ctx5, config5);
 document.getElementById('snake5').style.width = '220px';
 document.getElementById('snake5').style.height = '170px';
 
-// 캘린더 디자인
-let currentDate = new Date();
-let currentMonth = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
-const dayNames = ['일', '월', '화', '수', '목', '금', '토'];
-
-function generateCalendar(month, year) {
-    const firstDayOfMonth = new Date(year, month, 1);
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    document.getElementById('month-year').innerText = `${monthNames[month]} ${year}`;
-
-    const calendarGrid = document.getElementById('calendar-grid');
-    calendarGrid.innerHTML = '';
-
-    for (let i = 0; i < dayNames.length; i++) {
-        const dayNameCell = document.createElement('div');
-        dayNameCell.classList.add('calendar-day');
-        dayNameCell.textContent = dayNames[i];
-        dayNameCell.style.backgroundColor = '#f0f0f0';
-        calendarGrid.appendChild(dayNameCell);
-    }
-
-    for (let i = 0; i < firstDayOfMonth.getDay(); i++) {
-        const emptyCell = document.createElement('div');
-        emptyCell.classList.add('calendar-day', 'empty-cell');
-        calendarGrid.appendChild(emptyCell);
-    }
-
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayCell = document.createElement('div');
-        dayCell.classList.add('calendar-day');
-        dayCell.textContent = day;
-        calendarGrid.appendChild(dayCell);
-    }
-}
-
-function prevMonth() {
-    currentMonth--;
-    if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-    }
-    generateCalendar(currentMonth, currentYear);
-}
-
-function nextMonth() {
-    currentMonth++;
-    if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-    }
-    generateCalendar(currentMonth, currentYear);
-}
-
-generateCalendar(currentMonth, currentYear);
-
-
-//==============================================캘린더
 //주소검색 스크립트
 document.getElementById("search-btn").addEventListener("click", function () {
     var userInput = document.getElementById("search-input").value;
