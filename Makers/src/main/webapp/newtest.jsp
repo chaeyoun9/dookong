@@ -64,7 +64,7 @@ body {
 
 	// OpenAI 인스턴스 생성
 	const openai = new OpenAI({
-	  apiKey: "api key",
+	  apiKey: "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",
 	});
 
 	// CORS 문제 해결
@@ -405,12 +405,12 @@ body {
         var question = document.getElementById("search-input2").value;
         console.log("question");
         
-<<<<<<< HEAD
+
         // 질문이 비어 있는지 확인
         if (question.trim() === "") {
             alert("질문을 입력하세요.");
             return;
-=======
+
         <div class="search-container">
           <div>
             <input id="searchInput" type="text" placeholder="주소를 입력하세요">
@@ -434,7 +434,7 @@ body {
         <span class="e253_5954">응용 프로그램을 이용하는가를 설계하는 작업이다.</span>
       </div>
     </div>
-    <h1 class="e253_5941"><%=name %>님의<br>오늘 풀이시간</h1>
+     <h1 class="e253_5941"><%=name %>님의<br>오늘 풀이시간</h1>
   </div>
 
 
@@ -468,7 +468,7 @@ body {
       window.addEventListener('click', function (event) {
         if (event.target === modal) {
           modal.style.display = 'none'; // 모달 숨김
->>>>>>> branch 'master' of https://github.com/chaeyoun9/dookong.git
+	 'master' of https://github.com/chaeyoun9/dookong.git
         }
         
      // 서버로 질문 보내기
