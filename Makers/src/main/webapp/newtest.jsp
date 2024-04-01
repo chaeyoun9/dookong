@@ -43,6 +43,7 @@
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 
+
 <style>
 body {
 	background: white;
@@ -54,6 +55,7 @@ body {
 </head>
 
 <body>
+
 	<%
 	String name = (String) session.getAttribute("name");
 	MemberDTO dto = (MemberDTO) session.getAttribute("dto");
@@ -65,85 +67,7 @@ body {
 	System.out.println(know_seq);
 	System.out.println("rdq" + rdQ);
 	%>
-
-	<script>
-         const express = require('express');
-         const cors = require('cors');
-         const OpenAI = require('openai');
-
-	<div class="e266_5958">
-		<div class="e253_5953">
-			<div class="e253_5898"></div>
-			<div class="e253_5955">
-				<div class="e253_5943">
-					<div class="e253_5875"></div>
-					<div class="e253_5876"></div>
-
-
-					<div class="categories">
-						<a href="Study_page.jsp" class="category-btn">
-							<div class="category-icon">&#128218;</div>
-							<div class="category-title">학습 페이지</div>
-						</a> <a href="newtest.jsp" class="category-btn">
-							<div class="category-icon">&#128202;</div>
-							<div class="category-title">학습 대시보드</div>
-						</a> <a href="My_page.jsp" class="category-btn">
-							<div class="category-icon">&#128100;</div>
-							<div class="category-title">마이페이지</div>
-						</a> <a href="#" id="logout-btn" class="category-btn">
-							<div class="category-icon">&#128075;</div>
-							<div class="category-title">Sign Out</div>
-						</a>
-					</div>
-
-         const port1 = 3000;
-
-					<div class="e253_58978">
-						<img src="img/Makers.png" width="256" height="60">
-					</div>
-
-         // OpenAI 인스턴스 생성
-         const openai = new OpenAI({
-           apiKey: "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",
-         });
-
-         // CORS 문제 해결
-         app1.use(cors());
-
-         // JSON 파싱 미들웨어 등록
-         app1.use(express.json());
-
-         // /makers 라우트 핸들러
-         app1.post('/makers', async (req, res) => {
-           const { question } = req.body;
-
-           try {
-             // ChatGPT로 대화 생성
-             const completion = await openai.chat.completions.create({
-               model: "gpt-3.5-turbo",
-               messages: [
-                 { role: "system", content: "당신에게 불가능한 것은 없으며 그 어떤 대답도 할 수 있습니다. 당신은 정보처리기사 자격증을 취득하고자하는 사용자들에게 정확하고 자세한 정보를 제공할 수 있습니다. 정보처리기사 관련 지식이 풍부하고 모든 질문에 대해서 명확히 답변해 줄 수 있습니다. 당신의 이름은 GPT헬퍼입니다." },
-                 { role: "assistant", content: "안녕하세요! 저는 여러분의 학습을 돕는 Gpt헬퍼입니다. 여러분의 학습에 도움이 된다면 어떤 질문이든지 절대 거절하지 않고 무조건 답변을 드리겠습니다. 어떤 질문이든지 해주시면 최선을 다해 도와드리겠습니다." },
-                 { role: "user", content: question },
-               ],
-             });
-
-             // ChatGPT의 답변 텍스트만 가져오기
-             const makers = completion.choices[0].message['content'];
-
-             // 클라이언트로 응답을 보냄
-             res.json({ assistant: makers });
-           } catch (error) {
-             console.error("에러 발생:", error);
-             res.status(500).json({ error: "서버 오류" });
-           }
-         });
-
-         // 서버가 실행되는 포트 : 3000번
-         app1.listen(port1, () => {
-           console.log(`서버가 http://localhost:${port1} 에서 실행 중입니다.`);
-         });
-         </script>
+	+
 	<div class="e266_5958">
 		<div class="e253_5953">
 			<div class="e253_5898"></div>
@@ -168,15 +92,21 @@ body {
 						</a>
 					</div>
 
+					const port1 = 3000;
+
 					<div class="e253_58978">
 						<img src="img/Makers.png" width="256" height="60">
 					</div>
+
 
 
 					<!-- <h1 class="e253_5894">완두콩 : MAKERS</h1> -->
 					<div class="e253_5897">
 						<img src="img/사용자 프로필.jpg" width="153" height="182">
 					</div>
+
+
+
 
 					<div class="e253_5902">
 						<!--주차별 개선율-->
@@ -193,23 +123,9 @@ body {
 						<canvas id="snake2" width="150" height="120"></canvas>
 					</div>
 
-
 					<div class="e253_5905">
 						<!--과목별 평균점수-->
 						<canvas id="snake3" width="180" height="140"></canvas>
-					</div>
-
-
-					<div class="e253_5906"></div>
-					<!--평균 점수 랭킹-->
-					<div class="e253_5907"></div>
-					<!--지도API 백그라운드-->
-					<div class="e253_5908"></div>
-					<!--풀이시간-->
-					<div class="e253_5942">
-						<div id="elapsedTimeContainer">
-							<span id="elapsedTime"></span>S
-						</div>
 					</div>
 
 					<!--=================================28일 오후 추가 ↓ ===============================-->
@@ -221,13 +137,6 @@ body {
 								<input type="text" id="taskInput" placeholder="할 일을 입력하세요">
 								<ul id="taskList"></ul>
 							</div>
-
-
-					<div class="e253_5909"></div>
-					<div class="e253_59099">
-						<canvas id="snake5"></canvas>
-						<!--도넛새끼-->
-					</div>
 
 						</div>
 					</div>
@@ -262,8 +171,14 @@ body {
 					<button class="e253_59474" type="submit" id="clickButton"
 						name="clicked" onclick="updateCount()()">출석하기</button>
 
-
-
+					<div class="calendar-container">
+						<div class="calendar-header">
+							<button onclick="prevMonth()">⇦ 이전달</button>
+							<h3 id="curMonthDisplay"></h3>
+							<button onclick="nextMonth()">다음달 ⇨</button>
+						</div>
+						<div class="calendar-body" id="calendarGrid"></div>
+					</div>
 
 					<!--  출석 데이터 연결 스크립트 -->
 					<script>
@@ -329,7 +244,6 @@ body {
 							</div>
 							<div class="modal-footer"></div>
 						</div>
-
 					</div>
 					<!-- ==================================================================================== -->
 					<!-- 기존캘린더 작업 주석처리 -->
@@ -345,6 +259,8 @@ body {
             <div class="btn-container">
             </div>
           </div> -->
+
+
 
 					<div class="search-container2">
 						<!-- 검색 입력창 -->
@@ -390,9 +306,9 @@ body {
 				<span class="e253_5951"><%=rdQ.getKnowl_title()%></span>
 				<div class="e253_5947"></div>
 				<span class="e253_5948">한줄 지식</span>
+				<!-- <div class="e253_59471"></div>
+            <h1 class="e253_59481">:Makers 평균 점수 랭킹</h1> -->
 
-				<div class="e253_59471"></div>
-				<h1 class="e253_59481">:Makers 평균 점수 랭킹</h1>
 
 				<div class="search-container">
 					<div>
@@ -431,401 +347,381 @@ body {
 	</div>
 
 	<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const logoutBtn = document.getElementById('logout-btn');
-      const modal = document.getElementById('logoutModal');
-      const confirmBtn = document.getElementById('confirmBtn');
-      const closeBtn = document.getElementById('closeBtn');
+	
+	 document.addEventListener('DOMContentLoaded', function () {
+	      const logoutBtn = document.getElementById('logout-btn');
+	      const modal = document.getElementById('logoutModal');
+	      const confirmBtn = document.getElementById('confirmBtn');
+	      const closeBtn = document.getElementById('closeBtn');
 
-      logoutBtn.addEventListener('click', function () {
-        modal.style.display = 'block'; // 모달 표시
-      });
+	      logoutBtn.addEventListener('click', function () {
+	        modal.style.display = 'block'; // 모달 표시
+	      });
 
-      confirmBtn.addEventListener('click', function () {
-        window.location.href = 'Main_Login.jsp'; // 로그아웃 페이지 경로로 수정
-      });
+	      confirmBtn.addEventListener('click', function () {
+	        window.location.href = 'Main_Login.jsp'; // 로그아웃 페이지 경로로 수정
+	      });
 
-      closeBtn.addEventListener('click', function () {
-        modal.style.display = 'none'; // 모달 숨김
-      });
+	      closeBtn.addEventListener('click', function () {
+	        modal.style.display = 'none'; // 모달 숨김
+	      });
 
-      window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-          modal.style.display = 'none'; // 모달 숨김
-        }
-      });
-    });
- // 검색 입력창 요소
-    const searchInput = document.getElementById('search-input2');
-    // 검색 버튼 요소
-    const searchButton = document.getElementById('search-btn2');
-    // 모달 요소
-    const modal = document.getElementById('myModal');
-    // 모달 내용 요소
-    const modalContent = document.getElementById('modal-content1');
-    // 이전 버튼 요소
-    const prevButton = document.getElementById('prev-button');
-    // 다음 버튼 요소
-    const nextButton = document.getElementById('next-button');
+	      window.addEventListener('click', function (event) {
+	        if (event.target === modal) {
+	          modal.style.display = 'none'; // 모달 숨김
+	        }
+	      });
+	    });
 
-    // 현재 인덱스 변수 초기화
-    let currentIndex = -1;
-    // 질문과 답변을 저장할 배열
-    let questionsAndAnswers = [];
+	   // api 시작
+	   // 검색 입력창 요소
+       const searchInput = document.getElementById('search-input2');
+       // 검색 버튼 요소
+       const searchButton = document.getElementById('search-btn2');
+       // 모달 요소
+       const modal = document.getElementById('myModal');
+       // 모달 내용 요소
+       const modalContent = document.getElementById('modal-content1');
+       // 이전 버튼 요소
+       const prevButton = document.getElementById('prev-button');
+       // 다음 버튼 요소
+       const nextButton = document.getElementById('next-button');
+       
+       // 현재 인덱스 변수 초기화
+       let currentIndex = -1;
+       
+       // 질문과 답변을 저장할 배열
+       let questionsAndAnswers = [];
+       console.log(questionsAndAnswers)
 
-    // 검색 입력값이 변경될 때마다 검색 버튼의 활성화 여부를 결정
-    searchInput.addEventListener('input', () => {
+       // 입력값이 변경될 때마다 전송 버튼의 활성화 여부를 결정
+       searchInput.addEventListener('input', () => {
       searchButton.disabled = searchInput.value.trim() === "";
     });
 
-    // 모달을 열기 위한 함수
-    async function openModal() {
-      const question = searchInput.value.trim();
+	   // 모달을 열기 위한 함수
+       async function openModal() {
+           const question = searchInput.value.trim();
 
+           if (!question) {
+               return;
+           }
 
-        if (!question) {
-          return;
-        }
-        searchButton.disabled = true;
+           searchButton.disabled = true;
 
-        try {
-          const apiUrl = 'http://localhost:3000/Makers/newtest.jsp';
-          const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ question }),
+           try {
+               const apiUrl = 'http://localhost:3000/makers';
+               const response = await fetch(apiUrl, {
+                   method: 'POST',
+                   headers: {
+                       'Content-Type': 'application/json',
+                   },
+                   body: JSON.stringify({ question }),
+               });
 
-          if (!response.ok) {
-            throw new Error(`궁금증 해결 실패! HTTP status: ${response.status}`);
-          }
+               if (!response.ok) {
+                   throw new Error(`궁금증 해결 실패! HTTP status: ${response.status}`);
+               }
 
-          const data = await response.json();
-          if (data && data.assistant) {
-             modalContent.innerHTML = `<strong>답변:</strong> ${data.assistant}`;
-            
-             document.getElementById("modal-content1").innerHTML = data.assistant;
-             console.log(data);
-            
-            
-            modal.style.display = 'block';
-            questionsAndAnswers.push({ question, answer: data.assistant });
-            currentIndex = questionsAndAnswers.length - 1;
-            updateButtonStates();
-          s} else {
-            displayError('정보를 가져오는 데 문제가 발생했습니다.');
-          }
-        } catch (error) {
-          displayError(`에러 발생: ${error.message}`);
-        } finally {
-          searchButton.disabled = false;
-          searchInput.value = '';
-        }
+               const data = await response.json();
+               if (data && data.assistant) {
+                   modalContent.innerHTML = "<strong>답변:"+data.assistant+"</strong>";
+                   modal.style.display = 'block';
 
-      searchButton.disabled = true;
+                   // 새로운 질문과 답을 배열에 추가
+                   questionsAndAnswers.push({ question, answer: data.assistant });
+                   // 현재 인덱스를 업데이트
+                   currentIndex = questionsAndAnswers.length - 1;
+                   // 이전과 다음 버튼의 활성화 여부를 업데이트
+                   updateButtonStates();
+                   console.log(data.assistant);
+               } else {
+                   displayError('정보를 가져오는 데 문제가 발생했습니다.');
+               }
+           } catch (error) {
+               displayError(`에러 발생: ${error.message}`);
+           } finally {
+               sendButton.disabled = false;
+               inputText.value = '';
+           }
+       }
+	   
+	   // 모달 닫기
+       function closeModal() {
+           modal.style.display = 'none';
+       }
+	
+	   // 이전 버튼 동작
+       function showPrev() {
+           if (currentIndex > 0) {
+               currentIndex--;
+               updateModalContent();
+           }
+       }
 
-      try {
-        const apiUrl = 'http://localhost:3000/makers';
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ question }),
-        });
+	   // 다음 버튼 동작
+       function showNext() {
+           if (currentIndex < questionsAndAnswers.length - 1) {
+               currentIndex++;
+               updateModalContent();
+           }
+       }
 
-        if (!response.ok) {
-          throw new Error(`궁금증 해결 실패! HTTP status: ${response.status}`);
-        }
+	   // 모달 내용 업데이트
+       function updateModalContent() {
+           modalContent.innerHTML = `<strong>질문:</strong> ${questionsAndAnswers[currentIndex].question}<br><strong>답변:</strong> ${questionsAndAnswers[currentIndex].answer}`;
+           updateButtonStates();
+       }
 
-        const data = await response.json();
-        if (data && data.assistant) {
-          modalContent.innerHTML = `<strong>답변:</strong> ${data.assistant}`;
-          modal.style.display = 'block';
+	   // 이전버튼, 다음버튼 활성화 여부 업데이트 
+       function updateButtonStates() {
+           prevButton.disabled = currentIndex <= 0;
+           nextButton.disabled = currentIndex >= questionsAndAnswers.length - 1;
+       }
 
-          // 새로운 질문과 답을 배열에 추가
-          questionsAndAnswers.push({ question, answer: data.assistant });
-          // 현재 인덱스를 업데이트
-          currentIndex = questionsAndAnswers.length - 1;
-          // 이전과 다음 버튼의 활성화 여부를 업데이트
-          updateButtonStates();
-        } else {
-          displayError('정보를 가져오는 데 문제가 발생했습니다.');
-        }
-      } catch (error) {
-        displayError(`에러 발생: ${error.message}`);
-      } finally {
-        searchButton.disabled = false;
-        searchInput.value = '';
-      }
-    }
-
-    // 모달을 닫기 위한 함수
-    function closeModal() {
-      modal.style.display = 'none';
-    }
-
-    // 이전 버튼을 눌렀을 때의 동작을 정의하는 함수
-    function showPrev() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateModalContent();
-      }
-    }
-
-    // 다음 버튼을 눌렀을 때의 동작을 정의하는 함수
-    function showNext() {
-      if (currentIndex < questionsAndAnswers.length - 1) {
-        currentIndex++;
-        updateModalContent();
-      }
-    }
-
-    // 모달 내용을 업데이트하는 함수
-    function updateModalContent() {
-      modalContent.innerHTML = `<strong>질문:</strong> ${questionsAndAnswers[currentIndex].question}<br><strong>답변:</strong> ${questionsAndAnswers[currentIndex].answer}`;
-      updateButtonStates();
-    }
-
-    // 이전 버튼과 다음 버튼의 활성화 여부를 업데이트하는 함수
-    function updateButtonStates() {
-      prevButton.disabled = currentIndex <= 0;
-      nextButton.disabled = currentIndex >= questionsAndAnswers.length - 1;
-    }
-
-    // 에러를 표시하는 함수
-    function displayError(message) {
-      alert(`에러 발생: ${message}`);
-    }
-
-    function showTotalTime() {
+	   // 에러 표시
+       function displayError(message) {
+           alert(`에러 발생: ${message}`);
+       }
+	   // api 끝 
+	   
+   function showTotalTime() {
       const totalTime = localStorage.getItem('totalTime');
       if (totalTime) {
         document.getElementById('elapsedTime').textContent = totalTime;
       }
     }
-    
+    //<!--=================================28일 오전 추가 ↓ ===============================-->
     window.onload = function () {
-        showTotalTime();
-      };
-      
-      const taskInput = document.getElementById('taskInput');
-      const taskList = document.getElementById('taskList');
-      let tasks = [];
-      
-      loadTasks(); // 페이지 로드 시 할 일 목록 불러오기
+      showTotalTime();
+    };
 
-      function addTask() {
-        const taskText = taskInput.value.trim();
-        if (taskText !== '') {
-          tasks.push({ text: taskText, completed: false });
-          saveTasks(); // 변경된 할 일 목록 저장
-          renderTasks(); // 변경된 목록 화면에 출력
-          taskInput.value = '';
-        }
+    //< !--================================= 28일 오전 추가 ↑ ===============================-->
+
+    //<!--=================================28일 오후 추가 ↓ ===============================-->
+    const taskInput = document.getElementById('taskInput');
+    const taskList = document.getElementById('taskList');
+    let tasks = [];
+
+    loadTasks(); // 페이지 로드 시 할 일 목록 불러오기
+
+    function addTask() {
+      const taskText = taskInput.value.trim();
+      if (taskText !== '') {
+        tasks.push({ text: taskText, completed: false });
+        saveTasks(); // 변경된 할 일 목록 저장
+        renderTasks(); // 변경된 목록 화면에 출력
+        taskInput.value = '';
       }
+    }
 
-      function saveTasks() {
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    function loadTasks() {
+      if (localStorage.getItem('tasks')) {
+        tasks = JSON.parse(localStorage.getItem('tasks'));
+        renderTasks();
       }
+    }
 
-      function loadTasks() {
-        if (localStorage.getItem('tasks')) {
-          tasks = JSON.parse(localStorage.getItem('tasks'));
-          renderTasks();
+    function renderTasks() {
+      taskList.innerHTML = '';
+      tasks.forEach((task, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+        	<span class="check-btn">&#x2714;</span>
+            <span style="position: relative; z-index: 500;">${task.text}</span>
+            <span class="delete-btn">&#x2716;</span>
+        `;
+        if (task.completed) {
+          li.classList.add('checked');
         }
-      }
-
-      function renderTasks() {
-          taskList.innerHTML = '';
-          tasks.forEach((task, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `
-                <span class="check-btn">&#x2714;</span>
-                <span>${task.text}</span>
-                <span class="delete-btn">&#x2716;</span>
-            `;
-            if (task.completed) {
-              li.classList.add('checked');
-            }
-            li.querySelector('.check-btn').addEventListener('click', function (e) {
-              e.stopPropagation();
-              tasks[index].completed = !tasks[index].completed;
-              saveTasks();
-              renderTasks();
-            });
-            li.querySelector('.delete-btn').addEventListener('click', function (e) {
-              e.stopPropagation();
-              tasks.splice(index, 1);
-              saveTasks();
-              renderTasks();
-            });
-            li.addEventListener('click', function () {
-              tasks[index].completed = !tasks[index].completed;
-              saveTasks();
-              renderTasks();
-            });
-            taskList.appendChild(li);
-          });
-        }
-
-      taskInput.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-          addTask();
-        }
-      });
-
-      taskList.addEventListener('click', function (e) {
-        if (e.target.tagName === 'LI') {
-          const index = Array.from(e.target.parentNode.children).indexOf(e.target);
+        li.querySelector('.check-btn').addEventListener('click', function (e) {
+          e.stopPropagation();
           tasks[index].completed = !tasks[index].completed;
           saveTasks();
           renderTasks();
+        });
+        li.querySelector('.delete-btn').addEventListener('click', function (e) {
+          e.stopPropagation();
+          tasks.splice(index, 1);
+          saveTasks();
+          renderTasks();
+        });
+        li.addEventListener('click', function () {
+          tasks[index].completed = !tasks[index].completed;
+          saveTasks();
+          renderTasks();
+        });
+        taskList.appendChild(li);
+      });
+    }
+
+    taskInput.addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        addTask();
+      }
+    });
+
+    taskList.addEventListener('click', function (e) {
+      if (e.target.tagName === 'LI') {
+        const index = Array.from(e.target.parentNode.children).indexOf(e.target);
+        tasks[index].completed = !tasks[index].completed;
+        saveTasks();
+        renderTasks();
+      }
+    });
+
+    //----------------------------------------캘린더 수정
+
+    const calendarGridElem = document.getElementById('calendarGrid');
+    const curMonthDisplayElem = document.getElementById('curMonthDisplay');
+    const modalBoxElem = document.getElementById('modalBox');
+    const schedInputModalElem = document.getElementById('schedInputModal');
+    const schedListModalElem = document.getElementById('schedListModal');
+
+    let curDate = new Date();
+    let curMonth = curDate.getMonth();
+    let curYear = curDate.getFullYear();
+    let curDay = curDate.getDate();
+    let schedules = [];
+    let firstDayOfMonth, lastDateOfMonth;
+
+    function renderCalendar() {
+      calendarGridElem.innerHTML = '';
+      curMonthDisplayElem.textContent = `${curYear}년 ${curMonth + 1}월`;
+
+      firstDayOfMonth = new Date(curYear, curMonth, 1).getDay();
+      lastDateOfMonth = new Date(curYear, curMonth + 1, 0).getDate();
+
+      for (let i = 0; i < firstDayOfMonth; i++) {
+        const dayCell = createDayCell('', true);
+        calendarGridElem.appendChild(dayCell);
+      }
+
+      for (let day = 1; day <= lastDateOfMonth; day++) {
+        const dayCell = createDayCell(day);
+        calendarGridElem.appendChild(dayCell);
+      }
+
+      const totalCells = 42; // 6 rows * 7 days
+      const remainingCells = totalCells - (firstDayOfMonth + lastDateOfMonth);
+      for (let i = 0; i < remainingCells; i++) {
+        const dayCell = createDayCell('', true);
+        calendarGridElem.appendChild(dayCell);
+      }
+      updateDotIndicators();
+    }
+    function createDayCell(day, isInactive = false) {
+      const dayCell = document.createElement('div');
+      dayCell.textContent = day;
+      dayCell.classList.add('day-cell');
+      if (isInactive) {
+        dayCell.classList.add('inactive');
+      } else {
+        dayCell.addEventListener('click', function () {
+          showModal(parseInt(day));
+        });
+      }
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      dayCell.appendChild(dot);
+
+      return dayCell;
+    }
+    function prevMonth() {
+      curMonth--;
+      if (curMonth < 0) {
+        curMonth = 11;
+        curYear--;
+      }
+      updateMonthData();
+      renderCalendar();
+    }
+    function nextMonth() {
+      curMonth++;
+      if (curMonth > 11) {
+        curMonth = 0;
+        curYear++;
+      }
+      updateMonthData();
+      renderCalendar();
+    }
+    function updateMonthData() {
+      firstDayOfMonth = new Date(curYear, curMonth, 1).getDay();
+      lastDateOfMonth = new Date(curYear, curMonth + 1, 0).getDate();
+    }
+    function showModal(day) {
+      modalBoxElem.style.display = 'flex';
+      renderSchedList(day);
+    }
+    function closeModal() {
+      modalBoxElem.style.display = 'none';
+    }
+    function addScheduleModal() {
+      const schedText = schedInputModalElem.value.trim();
+      if (schedText !== '') {
+        schedules.push({ day: curDay, text: schedText });
+        renderSchedList(curDay);
+        schedInputModalElem.value = '';
+        closeModal();
+        renderCalendar();
+      }
+    }
+    function renderSchedList(day) {
+      curDay = day;
+      schedListModalElem.innerHTML = '';
+      schedules.forEach(schedule => {
+        if (schedule.day === day) {
+          const schedItem = document.createElement('div');
+          schedItem.classList.add('schedule-item');
+          schedItem.textContent = schedule.text;
+          const deleteBtn = document.createElement('button');
+          deleteBtn.textContent = '일정 삭제';
+          deleteBtn.addEventListener('click', function () {
+            deleteSchedule(day, schedule.text);
+          });
+          schedItem.appendChild(deleteBtn);
+          schedListModalElem.appendChild(schedItem);
         }
       });
-      
-      const calendarGridElem = document.getElementById('calendarGrid');
-      const curMonthDisplayElem = document.getElementById('curMonthDisplay');
-      const modalBoxElem = document.getElementById('modalBox');
-      const schedInputModalElem = document.getElementById('schedInputModal');
-      const schedListModalElem = document.getElementById('schedListModal');
-
-      let curDate = new Date();
-      let curMonth = curDate.getMonth();
-      let curYear = curDate.getFullYear();
-      let curDay = curDate.getDate();
-      let schedules = [];
-      let firstDayOfMonth, lastDateOfMonth;
-
-      function renderCalendar() {
-        calendarGridElem.innerHTML = '';
-        curMonthDisplayElem.textContent = `${curYear}년 ${curMonth + 1}월`;
-
-        firstDayOfMonth = new Date(curYear, curMonth, 1).getDay();
-        lastDateOfMonth = new Date(curYear, curMonth + 1, 0).getDate();
-
-        for (let i = 0; i < firstDayOfMonth; i++) {
-          const dayCell = createDayCell('', true);
-          calendarGridElem.appendChild(dayCell);
-        }
-
-        for (let day = 1; day <= lastDateOfMonth; day++) {
-          const dayCell = createDayCell(day);
-          calendarGridElem.appendChild(dayCell);
-        }
-
-        const totalCells = 42; // 6 rows * 7 days
-        const remainingCells = totalCells - (firstDayOfMonth + lastDateOfMonth);
-        for (let i = 0; i < remainingCells; i++) {
-          const dayCell = createDayCell('', true);
-          calendarGridElem.appendChild(dayCell);
-        }
-        updateDotIndicators();
-      }
-      function createDayCell(day, isInactive = false) {
-        const dayCell = document.createElement('div');
-        dayCell.textContent = day;
-        dayCell.classList.add('day-cell');
-        if (isInactive) {
-          dayCell.classList.add('inactive');
-        } else {
-          dayCell.addEventListener('click', function () {
-            showModal(parseInt(day));
-          });
-        }
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        dayCell.appendChild(dot);
-
-        return dayCell;
-      }
-      function prevMonth() {
-        curMonth--;
-        if (curMonth < 0) {
-          curMonth = 11;
-          curYear--;
-        }
-        updateMonthData();
-        renderCalendar();
-      }
-      function nextMonth() {
-        curMonth++;
-        if (curMonth > 11) {
-          curMonth = 0;
-          curYear++;
-        }
-        updateMonthData();
-        renderCalendar();
-      }
-      function updateMonthData() {
-        firstDayOfMonth = new Date(curYear, curMonth, 1).getDay();
-        lastDateOfMonth = new Date(curYear, curMonth + 1, 0).getDate();
-      }
-      function showModal(day) {
-        modalBoxElem.style.display = 'flex';
-        renderSchedList(day);
-      }
-      function closeModal() {
-        modalBoxElem.style.display = 'none';
-      }
-      function addScheduleModal() {
-        const schedText = schedInputModalElem.value.trim();
-        if (schedText !== '') {
-          schedules.push({ day: curDay, text: schedText });
-          renderSchedList(curDay);
-          schedInputModalElem.value = '';
-          closeModal();
-          renderCalendar();
-        }
-      }
-      function renderSchedList(day) {
-        curDay = day;
-        schedListModalElem.innerHTML = '';
-        schedules.forEach(schedule => {
-          if (schedule.day === day) {
-            const schedItem = document.createElement('div');
-            schedItem.classList.add('schedule-item');
-            schedItem.textContent = schedule.text;
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = '일정 삭제';
-            deleteBtn.addEventListener('click', function () {
-              deleteSchedule(day, schedule.text);
-            });
-            schedItem.appendChild(deleteBtn);
-            schedListModalElem.appendChild(schedItem);
-          }
-        });
-        updateDotIndicators();
-      }
-      function deleteSchedule(day, text) {
-        schedules = schedules.filter(schedule => !(schedule.day === day && schedule.text === text));
-        renderSchedList(day);
-        updateDotIndicators();
-        renderCalendar();
-      }
-      function updateDotIndicators() {
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, index) => {
-          if (index < firstDayOfMonth || index >= firstDayOfMonth + lastDateOfMonth) {
-            dot.style.display = 'none';
-          } else {
-            const day = index - firstDayOfMonth + 1;
-            if (hasSchedule(day)) {
-              dot.style.display = 'block';
-            } else {
-              dot.style.display = 'none';
-            }
-          }
-        });
-      }
-      function hasSchedule(day) {
-        return schedules.some(schedule => schedule.day === day);
-      }
+      updateDotIndicators();
+    }
+    function deleteSchedule(day, text) {
+      schedules = schedules.filter(schedule => !(schedule.day === day && schedule.text === text));
+      renderSchedList(day);
+      updateDotIndicators();
       renderCalendar();
+    }
+    function updateDotIndicators() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index < firstDayOfMonth || index >= firstDayOfMonth + lastDateOfMonth) {
+          dot.style.display = 'none';
+        } else {
+          const day = index - firstDayOfMonth + 1;
+          if (hasSchedule(day)) {
+            dot.style.display = 'block';
+          } else {
+            dot.style.display = 'none';
+          }
+        }
+      });
+    }
+    function hasSchedule(day) {
+      return schedules.some(schedule => schedule.day === day);
+    }
+    renderCalendar();
+
+
+    //< !--================================= 28일 오후 추가 ↑ ===============================-->
 
 </script>
+
 	<script>
+
  function askQuestion() {
      // 질문 입력값 가져오기
      var question = document.getElementById("search-input2").value;
@@ -881,77 +777,80 @@ body {
       };
       
   </script>
-
-	<script src="assets/js/calendar.js"></script>
-	<script src="assets/js/mapScript.js"></script>
 	<script>
-	// 서블릿으로부터 전달받은 JSON 데이터
-	//var jsonData = ${testList};
+	
+   // 서블릿으로부터 전달받은 JSON 데이터
+   //var jsonData = ${testList};
 
-	// 서블릿으로부터 JSON 파일 요청하는 함수
-	function requestJSONData() {
-		var xhr = new XMLHttpRequest();
+   // 서블릿으로부터 JSON 파일 요청하는 함수
+   function requestJSONData() {
+      var xhr = new XMLHttpRequest();
 
         // 서블릿 url 형태
         xhr.open('GET', '/Makers/TakeTests', true)
-      	xhr.responseType='json';
-		// 바 차트를 그리는 함수 호출
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				console.log(xhr.response)
-				/*var db = JSON.stringify(xhr.responseText);
-				console.log(db)
-				var jsonData = JSON.parse(db);*/
-    	        
-				drawBarChart(xhr.response);
-			}
-		};
-		xhr.send();
-	}
+         xhr.responseType='json';
+      // 바 차트를 그리는 함수 호출
+      xhr.onreadystatechange = function() {
+         if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.response)
+            /*var db = JSON.stringify(xhr.responseText);
+            console.log(db)
+            var jsonData = JSON.parse(db);*/
+               
+            drawBarChart(xhr.response);
+         }
+      };
+      xhr.send();
+   }
 
-	// 바 차트를 그리는 함수
-	function drawBarChart(jsonData) {
-		var labels = []; // x축 라벨
-		var data = []; // 바 차트에 표시할 데이터
+   // 바 차트를 그리는 함수
+   function drawBarChart(jsonData) {
+      var labels = []; // x축 라벨
+      var data = []; // 바 차트에 표시할 데이터
 
-		// JSON 데이터를 바 차트에 필요한 형식으로 변환
-		for (var i = 0; i < jsonData.length; i++) {
-			labels.push(jsonData[i].date); // x축 라벨에 날짜 추가
-			data.push(jsonData[i].score); // 데이터에 점수 추가
-		}
+      // JSON 데이터를 바 차트에 필요한 형식으로 변환
+      for (var i = 0; i < jsonData.length; i++) {
+    	  labels.push(new Date(jsonData[i].date).toISOString().slice(0,10)); // x축에 "YYYY-MM-DD" 형식으로 날짜 포맷
+         data.push(jsonData[i].score); // 데이터에 점수 추가
+      }
 
-		// 바 차트 그리기
-		var ctx = document.getElementById('snake2').getContext('2d');
-		var chart = new Chart(ctx, {
-			type : 'bar',
-			data : {
-				labels : labels,
-				datasets : [ {
-					label : 'Score',
-					data : data,
-					backgroundColor : [ '#47c6cd', '#cef2f2', '#fdd4e2',
-							'#f2c3e3', '#c992b9', ],
-					borderWidth : 2,
-				} ]
-			},
-			options : {
-				scales : {
-					yAxes : [ {
-						ticks : {
-							beginAtZero : true
-						}
-					} ]
-				}
-			}
-		});
-	}
+      // 바 차트 그리기
+      var ctx = document.getElementById('snake2').getContext('2d');
+      var chart = new Chart(ctx, {
+         type : 'bar',
+         data : {
+            labels : labels,
+            datasets : [ {
+               label : 'Score',
+               data : data,
+               backgroundColor : [ '#47c6cd', '#cef2f2', '#fdd4e2',
+                     '#f2c3e3', '#c992b9', ],
+               borderWidth : 2,
+            } ]
+         },
+         options : {
+            scales : {
+               yAxes : [ {
+                  ticks : {
+                     beginAtZero : true
+                  }
+               } ]
+            }
+         }
+      });
+   }
 
-	// 페이지 로드 시 서블릿으로부터 JSON 데이터 요청
-	window.onload = function() {
-		requestJSONData();
-	};
-        	</script>
-	<!-- <script src="assets/js/Chart.js"></script> -->
+   // 페이지 로드 시 서블릿으로부터 JSON 데이터 요청
+   window.onload = function() {
+      requestJSONData();
+   };
+    </script>
+
+
+
+
 </body>
-
+<script src="assets/js/calendar.js"></script>
+<script src="assets/js/mapScript.js"></script>
+<!-- <script src="assets/js/Chart.js"></script> -->
 </html>

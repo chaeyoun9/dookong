@@ -6,4 +6,8 @@
 	select tested_at, tt_score from take_tests where mb_id=#{mb_id}
 </select>
 
+<select id="selectScore2" parameterType="String" resultType="com.dookong.model.TakeTestsDTO">
+	select test_idx, tt_score from take_tests where mb_id=#{mb_id}
+</select>
+
 </mapper>

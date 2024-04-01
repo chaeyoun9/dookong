@@ -18,9 +18,9 @@
 		function requestJSONData() {
 			var xhr = new XMLHttpRequest();
 
-	        // 서블릿 url 형태
-	        xhr.open('GET', '/Makers/TakeTests', true)
-	      	xhr.responseType='json';
+			// 서블릿 url 형태
+			xhr.open('GET', '/Makers/TakeTests', true)
+			xhr.responseType = 'json';
 			// 바 차트를 그리는 함수 호출
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState == 4 && xhr.status == 200) {
@@ -28,7 +28,7 @@
 					/*var db = JSON.stringify(xhr.responseText);
 					console.log(db)
 					var jsonData = JSON.parse(db);*/
-        	        
+
 					drawBarChart(xhr.response);
 				}
 			};

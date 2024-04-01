@@ -23,7 +23,11 @@ public class TakeTests extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("Test123");
+		
+		// 디버깅용 출력문
+		// System.out.println("Test123");
+		
+		// 사용자 아이디 설정
 		String mb_id = "test";
 
 		List<TakeTestsDTO> TestList = new TakeTestsDAO().take(mb_id);
@@ -38,7 +42,6 @@ public class TakeTests extends HttpServlet {
 
 				jsonObject.put("date", date);
 				jsonObject.put("score", score);
-
 				jsonArray.put(jsonObject);
 			}
 		} else {
@@ -47,14 +50,14 @@ public class TakeTests extends HttpServlet {
 		}
 
 		Gson gson = new Gson();
-		
+
 		PrintWriter out = response.getWriter();
-		//out.print(jsonArray);
+		// out.print(jsonArray);
 		// JSON 데이터를 클라이언트로 전송
-		//response.setContentType("application/json");
+		// response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		out.print(jsonArray.toString());
-		//out.print(gson.toJson(TestList).toString());
+		// out.print(gson.toJson(TestList).toString());
 		out.flush();
 
 		System.out.println(jsonArray);
