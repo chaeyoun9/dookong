@@ -30,7 +30,7 @@ public class TakeTests_avg extends HttpServlet {
 		String mb_id = "test";
 
 		// 시험 데이터 가져오기
-		List<TakeTestsDTO> TestList2 = new TakeTestsDAO().take(mb_id);
+		List<TakeTestsDTO> TestList2 = new TakeTestsDAO().take2(mb_id);
 
 		// 과목별로 점수를 합산하여 총 점수를 저장할 배열
 		int[] totalScores = new int[5];

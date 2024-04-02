@@ -258,6 +258,7 @@ const data4 = {
         barThickness: 15,
     }]
 };
+
 const config4 = {
     type: 'bar',
     data: data4,
