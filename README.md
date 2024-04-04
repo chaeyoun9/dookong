@@ -31,23 +31,33 @@
         <td>
             <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white"/>
             <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/>
-            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"/>
             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/>
         </td>
     </tr>
-    <tr>
-        <td>API</td>
+     <tr>
+        <td>프레임워크</td>
         <td>
-            <img src="https://images.openai.com/blob/8264d3d7-922c-4343-b43d-6665e44bcb91/paper-airplanes.jpg?trim=0,0,0,0&width=2000"/>
-            <img src="https://developers.kakao.com/static/images/pc/product/homeicon/map.pnge"/>
-<img src="https://www.chartjs.org/img/chartjs-logo.svg"/>
+            <img src="https://img.shields.io/badge/Jwt-000000?style=for-the-badge&logo=JSONWebTokens&logoColor=white">
+        </td>
+    </tr>
+    <tr>
+        <td>디자인</td>
+        <td><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white"/>
+        <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"></td>
+    </tr>
+    <tr>
+        <td>라이브러리</td>
+        <td>
+            <img src="https://img.shields.io/badge/Kakao Map Api-007CE2?style=for-the-badge&logo=KaKao Map Api&logoColor=white">
+            <img src="https://img.shields.io/badge/openai-412991?style=for-the-badge&logo=css3&logoColor=black">
+            <img src="https://img.shields.io/badge/chartdotjs-FF6384?style=for-the-badge&logo=css3&logoColor=black">
         </td>
     </tr>
     <tr>
         <td>개발도구</td>
         <td>
             <img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=Eclipse&logoColor=white"/>
-            <img src="https://code.visualstudio.com/assets/images/code-stable.png"/>
+            <img src="https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=white"/>
         </td>
     </tr>
     <tr>
