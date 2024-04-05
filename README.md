@@ -84,9 +84,6 @@
 
 <br>
 
-## ⚙ 시스템 아키텍처(구조) 예시 
-![](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
-<br>
 
 ## 📌 유스케이스
 
@@ -95,6 +92,7 @@
 <br>
 
 ## 📌 서비스 흐름도
+![KakaoTalk_20240405_084838876](https://github.com/chaeyoun9/dookong/assets/156051073/daf3edee-df22-4b5b-9e9c-6dd57d36ae52)
 
 <br>
 
